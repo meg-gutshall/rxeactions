@@ -2,8 +2,8 @@
 
 **Name:** Reaxtions<br>
 **Models:** Users, Medications<br>
-**User Properties:** name, email, password, date of birth<br>
-**Medication Properties:** name, dosage, form, instruction, prescribing doctor, start date, end date, ailment treated, reaction, entry timestamp<br>
+**User Properties:** `name`, `email`, `password`, `birth_date`<br>
+**Medication Properties:** `name`, `dosage`, `dosage_form`, `instruction`, `prescribing_doctor`, `start_date`, `end_date`, `ailment_treated`, `reaction`, `entry_timestamp`<br>
 
 **Interface & Functionality:**
 
