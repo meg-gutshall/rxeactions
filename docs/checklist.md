@@ -6,7 +6,8 @@
 - [x] **What is the purpose of ActiveRecord?**<br>
 ActiveRecord acts as a link between Ruby and our SQLite database. ActiveRecord takes the Ruby objects that we create in the app’s controller files and persists them to our database each time an object is saved. We’re able to do this because we use the `sinatra-activerecord` gem which extends Sinatra with ActiveRecord helper methods and Rake tasks.
 
-- [ ] **What models and associations will you have and why?**<br>
+- [x] **What models and associations will you have and why?**<br>
+My models will be `Users`, `Medications`, and `Reactions`. `Users` will have many `Medications` and a `Medication` will belong to a `User`. `Medications` will have many `Reactions` and a `Reaction` will belong to a `Medication`. Therefore, `Users` will have many `Reactions` through `Medications` and a `Reaction` will belong to a `User` through a `Medication`.
 
 - [ ] **What validations will you use on your models?**<br>
 
