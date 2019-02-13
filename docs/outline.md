@@ -1,6 +1,7 @@
 # Project Idea
 
-**Name:** Reaxtions<br>
+## **Name:** Reaxtions
+
 **Models:** Users, Medications, Reactions<br>
 **User Properties:** `name`, `email`, `password`, `birth_date`<br>
 **Medication Properties:** `name`, `dosage`, `dosage_form`, `instruction`, `prescribing_doctor`, `start_date`, `end_date`, `ailment_treated`<br>
