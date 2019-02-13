@@ -9,7 +9,8 @@ ActiveRecord acts as a link between Ruby and our SQLite database. ActiveRecord t
 - [x] **What models and associations will you have and why?**<br>
 My models will be `Users`, `Medications`, and `Reactions`. `Users` will have many `Medications` and a `Medication` will belong to a `User`. `Medications` will have many `Reactions` and a `Reaction` will belong to a `Medication`. Therefore, `Users` will have many `Reactions` through `Medications` and a `Reaction` will belong to a `User` through a `Medication`.
 
-- [ ] **What validations will you use on your models?**<br>
+- [x] **What validations will you use on your models?**<br>
+For the user, I will first have to validate their input in the signup form and then the login form upon subsequent returns to the app. As they browse the pages, I'll have to validate that the user is logged in to decide whether or not to display certain content. Also I'll have to determine which medications and reactions are associated with the current user in order to allow them to view, edit, or delete any of the objects.
 
 - [ ] **How will you implement an authentication system?**<br>
 
