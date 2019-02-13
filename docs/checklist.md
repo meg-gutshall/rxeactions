@@ -13,6 +13,7 @@ My models will be `Users`, `Medications`, and `Reactions`. `Users` will have man
 For the user, I will first have to validate their input in the signup form and then the login form upon subsequent returns to the app. As they browse the pages, I'll have to validate that the user is logged in to decide whether or not to display certain content. Also I'll have to determine which medications and reactions are associated with the current user in order to allow them to view, edit, or delete any of the objects.
 
 - [ ] **How will you implement an authentication system?**<br>
+I will take the input from the login form and create a new `user` instance using the `.find_by` method with the user's email input as the argument. Then, I will require that the `user` not be `nil` and call the `authenticate` method on `user` with the user's password input as the argument. If both of these conditions return true, I can then set the `session[:id]` equal to my `user.id`, effectively logging in my `user`. I can use the `authenticate` method because I inserted the `has_secure_password` macro to my `User` class, `bcrypt` to my Gemfile, and the `password_digest` attribute to my user migration table.
 
 - [ ] **Who should be able to edit and destroy a model?**<br>
 
