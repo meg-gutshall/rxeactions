@@ -3,9 +3,9 @@
 ## Name: Reaxtions
 
 **Models:** Users, Medications, Reactions<br>
-**User Properties:** `name`, `email`, `password`, `birth_date`<br>
-**Medication Properties:** `name`, `dosage`, `dosage_form`, `instruction`, `prescribing_doctor`, `start_date`, `end_date`, `ailment_treated`<br>
-**Reaction Properties:** `comment`, `entry_timestamp`<br>
+**User Attributes:** `name`, `email`, `password`, `birth_date`, `known_allergies`<br>
+**Medication Attributes:** `name`, `dosage_amount`, `dosage_form`, `label_instructions`, `prescribing_doctor`, `start_date`, `end_date`, `ailment_treated`<br>
+**Reaction Attributes:** `title`, `good_reaction`, `bad_reaction`, `status`, `entry_timestamp`<br>
 
 **Interface & Functionality:**
 
@@ -24,9 +24,10 @@
 - Track the quantity of a medication and when the user will need a refill
   - Possibly send an alert to the prescribing doctor
 - Sort medications by prescribing doctor
+- Use date pickers
+- Tally good reactions vs. bad reactions to see whether a medication is overall good or bad for the user
 
 ## Project Summary
 
 My app acts as a medication diary, allowing users to track medications they’ve been prescribed and their associated side effects.<br>
-The home page will be a dashboard that lists the user’s currently prescribed medications and some information about each one. Users will also have the option to view previously prescribed medications or view all.<br>
-Users will sign up for the app by providing their `name`, `email`, `password`, and `birth_date` and log in with just their `email` and `password`. They will only be able to perform CRUD actions on their own medications. When they create a new medication, the following fields will be requested: `name`, `dosage`, `dosage_form`, `instruction`, `prescribing_doctor`, `start_date`, `end_date`, and `ailment_treated`. Each medication will also be able to have reactions. The reaction form will include a textarea field `comments` where users can write any side effects they experienced or jot down any notes related to the medication. An `entry_timestamp` will auto-populate on submission of each reaction.
+The home page will be a dashboard that lists the user’s currently prescribed medications and some information about each one. Users will also have the option to view previously prescribed medications or view all.
