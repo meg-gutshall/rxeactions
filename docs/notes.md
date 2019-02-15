@@ -23,3 +23,7 @@
 ## New Medications Form
 
 - [ ] Use [this PDF](http://www.srmuniv.ac.in/sites/default/files/downloads/Dosage_forms.pdf) to create a dropdown list to select a `dosage_form`.
+
+## README.md
+
+- [ ] Update `README.md` with project info.
