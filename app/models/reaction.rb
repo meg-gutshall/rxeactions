@@ -3,5 +3,5 @@ class Reaction < ActiveRecord::Base
 
 
   # Add associations here
-  belongs_to :medication
+  belongs_to :medication, include: :user
 end
