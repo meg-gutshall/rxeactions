@@ -3,6 +3,6 @@ class Medication < ActiveRecord::Base
 
 
   # Add associations here
-  has_many :reactions
   belongs_to :user
+  has_many :reactions
 end
