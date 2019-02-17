@@ -4,7 +4,8 @@ class CreateReactionsTable < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :good_reaction
       t.text :bad_reaction
-      t.string :status
+      t.string :current
+      t.integer :medication_id
       t.timestamps
     end
   end

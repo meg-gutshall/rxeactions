@@ -6,9 +6,10 @@ class CreateMedicationsTable < ActiveRecord::Migration[5.2]
       t.string :dosage_form
       t.text :usage_instructions
       t.string :prescribing_doctor
-      t.datetime :start_date
-      t.datetime :end_date
+      t.date :start_date
+      t.date :end_date
       t.string :ailment_treated
+      t.integer :user_id
     end
   end
 end
