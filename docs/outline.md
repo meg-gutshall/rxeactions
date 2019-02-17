@@ -5,7 +5,7 @@
 **Models:** Users, Medications, Reactions<br>
 **User Attributes:** `name`, `email`, `password`, `birth_date`, `known_allergies`<br>
 **Medication Attributes:** `name`, `dosage_amount`, `dosage_form`, `usage_instructions`, `prescribing_doctor`, `start_date`, `end_date`, `ailment_treated`<br>
-**Reaction Attributes:** `title`, `good_reaction`, `bad_reaction`, `current`, `entry_timestamp`<br>
+**Reaction Attributes:** `title`, `reaction_detail`, `current`, `entry_timestamp`<br>
 
 **Interface & Functionality:**
 

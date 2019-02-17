@@ -26,8 +26,9 @@ Each helper accepts an arbitrary number of attribute names, so with a single lin
 
 ### Reaction Model -- ActiveRecord Validation Helpers
 
-- I used the `presence` helper to make sure my users the title on the reaction form.
+- I used the `presence` helper to make sure my users complete all required fields on the new reaction form.
 
 ## Other Notes
 
 - Use `yyyy-mm-dd [hh:mm:ss]` as a string representation for a `DateTime` datatype.
+  - Going to have to find a way to accept just `yyyy-mm` as input.
