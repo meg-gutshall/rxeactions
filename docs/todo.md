@@ -6,7 +6,7 @@
 
 ### User Model
 
-- [ ] Consider birthdate input and storage format.
+- [ ] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ## Controllers
 

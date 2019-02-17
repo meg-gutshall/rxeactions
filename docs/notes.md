@@ -26,7 +26,7 @@ Each helper accepts an arbitrary number of attribute names, so with a single lin
 
 ### Reaction Model -- ActiveRecord Validation Helpers
 
-- I used the `presence` helper to make sure my users completed all required fields on the reaction form.
+- I used the `presence` helper to make sure my users the title on the reaction form.
 
 ## Other Notes
 
