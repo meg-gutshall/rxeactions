@@ -69,8 +69,8 @@ Medication.create!(
   dosage_form: "pill",
   usage_instructions: "Take once daily",
   prescribing_doctor: "",
-  start_date: "2004-10-01",
-  end_date: "2014-09-01",
+  start_date: "2013-10-01",
+  end_date: "2017-09-01",
   ailment_treated: "birth control",
   user_id: "2"
 )
