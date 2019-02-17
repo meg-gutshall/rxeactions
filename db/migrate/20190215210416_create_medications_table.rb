@@ -10,6 +10,7 @@ class CreateMedicationsTable < ActiveRecord::Migration[5.2]
       t.date :end_date
       t.string :ailment_treated
       t.integer :user_id
+      t.timestamps
     end
   end
 end
