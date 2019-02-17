@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   # Add validation helpers here
   validates :email, :password, :name, :birth_date, presence: true
-  validates :email, on: :create, uniqueness: { case_sensitive: false }, message: "An account has already been made with this email address."
+  validates :email, on: :create, uniqueness: { case_sensitive: false, message: "An account has already been made with this email address." }
   validates :password, length: { in: 6..20 }
 
   # Add associations here
