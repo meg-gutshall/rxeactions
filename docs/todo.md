@@ -4,6 +4,10 @@
 
 - [ ] Add validations directly into my models. Check for presence, `email` uniqueness, `password` length, etc.
 
+### User Model
+
+- [ ] Consider birthdate input and storage format.
+
 ## Controllers
 
 - [ ] Decide whether or not to use bang versions for methods that trigger validations (i.e. `create`, `save`, `update`). These methods will only save to the database if the object is valid, otherwise:
