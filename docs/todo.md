@@ -6,7 +6,7 @@
 
 ### User Model
 
-- [ ] Consider birthdate input and storage format.
+- [ ] Consider birthdate input and storage format. **Change column type to `:date`.**
 
 ## Controllers
 
