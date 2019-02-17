@@ -19,3 +19,11 @@ Each helper accepts an arbitrary number of attribute names, so with a single lin
 - I used the `presence` helper to make sure my users completed all required fields on the signup form.
 - I used the `length` helper with the `:in` option to make sure my users set their password between 6 and 20 characters.
 - I used the `uniqueness` helper with the `on: :create` and custom `:message` options when it came to validating my users' email address. I specified it to only check for this on creation because I didn't want a message saying that the email already has an account because, duh it's theirs!
+
+### Medication Model -- ActiveRecord Validation Helpers
+
+- I used the `presence` helper to make sure my users completed all required fields on the new medication form.
+
+### Reaction Model -- ActiveRecord Validation Helpers
+
+- I used the `presence` helper to make sure my users completed all required fields on the reaction form.
