@@ -2,7 +2,7 @@ require_relative './config/environment'
 require 'sinatra/activerecord/rake'
 
 desc "Start a new Pry session in the terminal"
-task :console => :environment do
+task :console do
   Pry.start
 end
 
