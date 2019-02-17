@@ -1,7 +1,7 @@
 class Reaction < ActiveRecord::Base
-  # Add validations here
+  # Add validation helpers here
 
 
   # Add associations here
-  belongs_to :medication, include: :user
+  belongs_to :medication
 end
