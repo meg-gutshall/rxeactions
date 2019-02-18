@@ -41,6 +41,7 @@
 ## New Medications Form
 
 - [ ] Use [this PDF](http://www.srmuniv.ac.in/sites/default/files/downloads/Dosage_forms.pdf) to create a dropdown list to select a `dosage_form`.
+- [ ] Use `input type="month"` for medication start and end dates. See [source](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_month).
 
 ## README.md
 
