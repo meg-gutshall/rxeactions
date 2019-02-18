@@ -1,7 +1,5 @@
 # My Experience Building Reaxtions
 
-[ActiveRecord has_many_through Association](https://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
-
 ## Fri, Feb 15
 
 Was kind of slacking off until now. I had an idea of what I wanted to do but I couldn't really formulate it and after that Fwitter lab I just lost all of my drive. First thing this morning I had a chat with DJ and was able to get a few questions answered that helped me feel more secure in the direction I'll be going with this.
