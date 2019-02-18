@@ -1,0 +1,3 @@
+class ReactionsController < ApplicationController
+
+end
