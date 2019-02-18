@@ -1,0 +1,33 @@
+<%# TODO: Redo form layout for Bootstrap %>
+
+<div class="login">
+
+  <form method="POST" action="/login">
+    <h1>Log In to Record Your Reaxtions!</h1>
+    <p>Required fields are followed by <strong>*</strong>.</p>
+
+    <section>
+        <label for="name">Name: <strong>*</strong></label>
+        <input id="name" type="text" name="user[name]" required><br>
+
+        <label for="email">Email: <strong>*</strong></label>
+        <input id="email" type="email" name="user[email]" required><br>
+
+        <label for="pwd">Password: <strong>*</strong></label>
+        <input id="pwd" type="password" name="user[password]" required><br>
+
+        <label for="bday">Birthday: <strong>*</strong></label>
+        <%# TODO: Calculate birthdate of someone who is 18 and load that variable into `max` below %>
+        <input id="bday" type="date" name="user[birth_date]" max="2000-01-02" required><br>
+
+        <label for="allergies">Known Allergies: </span></label>
+        <textarea id="allergies" cols="40" rows="10" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."></textarea><br><br>
+
+        <input type="submit" value="Log In"><br><br>
+
+    </section>
+  
+  </form>
+
+  <a href="/signup">Don't have an account? Sign up here!</a>
+</div>
