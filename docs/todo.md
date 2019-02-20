@@ -12,8 +12,9 @@
 
 - [ ] Consider start/end date input and storage format. Find out how the `date` datatype is accepted and processed.
 
-## Controllers
+## All Controllers
 
+- [ ] Can I wrap all of my controller routes in one validation or does it have to be separated per controller?
 - [ ] Decide whether or not to use bang versions for methods that trigger validations (i.e. `create`, `save`, `update`). These methods will only save to the database if the object is valid, otherwise:
   - The bang versions (i.e. `create!`, `save!`, `update!`) raise an exception if the record is invalid.
   - The non-bang versions dont: `save` and `update` return `false`, and `create` returns the object.
