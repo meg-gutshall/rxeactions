@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # Receives information from the sessions login form, creates a new user, then renders their dashboard
-  post '/users/signup' do
+  post '/users' do
     # Validate params using a helper method
     if signup_invalid?
       # TODO: Add error message
@@ -18,19 +18,28 @@ class UsersController < ApplicationController
 
   # Displays the current user's information, medications, and reactions
   get '/users/dashboard-:id' do
-    # TODO: Add some sort of validations
     @user = User.find_by(id: params[:id])
-    erb :'/users/user_dashboard'
+    if @user && @user.id == current_user.id
+      erb :'/users/user_dashboard'
+    else
+      # TODO: Add error message
+      redirect "/"
+    end
   end
 
   get '/users/dashboard-:id/edit' do
-    # TODO: Add some sort of validations
     @user = User.find_by(id: params[:id])
-    erb :'/users/edit_user'
+    if @user && @user.id == current_user.id
+      erb :'/users/edit_user'
+    else
+      # TODO: Add error message
+      redirect "/"
+    end
   end
 
   patch 'users/dashboard-:id' do
-    HEllo
+    @user = User.find_by(id: params[:id])
+    @user.update(params[:user])
     redirect "/users/dashboard-#{@user.id}"
   end
 
