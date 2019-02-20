@@ -1,12 +1,12 @@
 require './config/environment'
-require 'sysrandom/securerandom'
+require 'securerandom'
 
 class ApplicationController < Sinatra::Base
 
   configure do
-    # Enable the use of sessions and use the Sysrandom gem to set the session secret
+    # Enable the use of sessions and call the session_secret ENV variable
     enable :sessions
-    set :session_secret, ENV.fetch('SESSION_SECRET') {SecureRandom.hex(64)}
+    set :session_secret, "#{ENV['SESSION_SECRET']}"
     # Set app configurations
     set :public_folder, 'public'
     set :views, 'app/views'
