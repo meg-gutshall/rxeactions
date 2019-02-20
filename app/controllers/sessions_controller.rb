@@ -3,13 +3,15 @@ class SessionsController < ApplicationController
   # Renders a signup form
   # The input from this form will go to the users_controller
   get '/signup' do
-    redirect "/users/dashboard" if logged_in?
+    if logged_in?
+      redirect "/users/dashboard-#{@current_user.id}"
+    end
     erb :'/sessions/signup'
   end
 
   # Renders a login form
   get '/login' do
-    redirect "/users/dashboard" if logged_in?
+    redirect "/users/dashboard-#{@current_user.id}" if logged_in?
     erb :'/sessions/login'
   end
 
@@ -21,7 +23,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       # Log user in
       session[:user_id] = @user.id
-      redirect "/users/dashboard"
+      redirect "/users/dashboard-#{@user.id}"
     else
       # TODO: Add error message
       erb :'/sessions/login'
