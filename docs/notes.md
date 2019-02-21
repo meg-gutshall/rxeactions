@@ -4,6 +4,10 @@
 
 I decided to create my associations based off the document/section/paragraph example in the [ActiveRecord Associations docs](https://guides.rubyonrails.org/v2.3.11/association_basics.html#the-has-many-through-association).
 
+### Associations in Action
+
+I'm going to have to figure out how to set up my forms and params to accept information to create these associations inside the `POST` routes in my controllers. The way I want to construct my app is very strict as to not let the user stray from the planned path, which means they won't have options to pick from to create their associations in the forms, it should be automatically created for them. I'll have to put some thought into how to do this.
+
 ## ActiveRecord Model Validations
 
 Validations ensure that only valid data is persisted to your database. Model-level validations are the best way to ensure this because they are database-agnostic, cannot be bypassed by end users, and are convenient to test and maintain.
