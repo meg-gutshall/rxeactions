@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
   # The input from this form will go to the users_controller
   get '/signup' do
     if logged_in?
-      redirect "/users/dashboard-#{@current_user.id}"
+      redirect "/"  # TODO: Fix this later
     end
     erb :'/sessions/signup'
   end
 
   # Renders a login form
   get '/login' do
-    redirect "/users/dashboard-#{@current_user.id}" if logged_in?
+    redirect "/" if logged_in?  # TODO: Fix this later
     erb :'/sessions/login'
   end
 
