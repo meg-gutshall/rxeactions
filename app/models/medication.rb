@@ -5,4 +5,13 @@ class Medication < ActiveRecord::Base
   # Add associations here
   belongs_to :user
   has_many :reactions
+
+  # Create slug methods
+  def slug
+    name.downcase.gsub(" ","-") << "-#{id}"
+  end
+
+  def self.find_by_slug(slug)
+    self.all.find {|u| u.slug == slug}
+  end
 end
