@@ -4,4 +4,15 @@
 
   <h1>List Medications</h1>
 
+  <% @med.each do |m| %>
+    <br><p>Name: <%= m.name %></p>
+    <p>Dosage Amount: <%= m.dosage_amount %></p>
+    <p>Dosage Form: <%= m.dosage_form %></p>
+    <p>Usage Instructions: <%= m.usage_instructions %></p>
+    <p>Prescribing Doctor: <%= m.prescribing_doctor %></p>
+    <p>Start Date: <%= m.start_date %></p>
+    <p>End Date: <%= m.end_date %></p>
+    <p>Ailment Treated: <%= m.ailment_treated %></p>
+  <% end %>
+
 </div>

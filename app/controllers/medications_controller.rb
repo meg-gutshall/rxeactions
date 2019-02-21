@@ -3,6 +3,7 @@ class MedicationsController < ApplicationController
 
   # List medications
   get '/medications' do
+    @med = Medication.all.select{|m| m.user_id == session[:user_id]}
     erb :'/medications/list_medications'
   end
 
