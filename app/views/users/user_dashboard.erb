@@ -2,6 +2,14 @@
 
 <div class="user-dashboard">
 
-  <h1>User Dashboard</h1>
+  <h1><%= @user.name %>'s Dashboard</h1><br>
+  <h2>User Details</h2>
+  <p>Email: <%= @user.email %></p>
+  <p>Birth Date: <%= @user.birth_date %></p>
+  <p>Allergies: <%= @user.known_allergies %></p><br>
 
+  <h2>Current Medications</h2>
+
+
+  <br><a href="/users/dashboard-<%= @user.id %>/edit">Edit my user details</a>
 </div>
