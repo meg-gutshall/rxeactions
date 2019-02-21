@@ -11,8 +11,5 @@ ActiveRecord::Base.establish_connection(
   database: "db/#{ENV['SINATRA_ENV']}.sqlite"
 )
 
-# Set session_secret ENV variable
-ENV['SESSION_SECRET'] = "#{SecureRandom.hex(64)}"
-
 # Require program files nested under the 'app' folder
 require_all 'app'
