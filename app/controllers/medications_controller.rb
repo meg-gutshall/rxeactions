@@ -4,6 +4,7 @@ class MedicationsController < ApplicationController
   # List medications
   get '/medications' do
     @med = Medication.all.select{|m| m.user_id == session[:user_id]}
+    session[:medication_id] = @med.id
     erb :'/medications/list_medications'
   end
 
@@ -13,11 +14,13 @@ class MedicationsController < ApplicationController
 
   post '/medications' do
     @med = Medication.create(params[:med])
+    session[:medication_id] = @med.id
     redirect "/medications"
   end
 
   get '/medications/:slug' do
     @med = Medication.find_by_slug(params[:slug])
+    session[:medication_id] = @med.id
     erb :'/medications/medication_detail'
   end
 
@@ -29,6 +32,7 @@ class MedicationsController < ApplicationController
   patch '/medications/:slug' do
     @med = Medication.find_by_slug(params[:slug])
     @med.update(params[:med])
+    session[:medication_id] = @med.id
     redirect "/medications/:slug"
   end
 
