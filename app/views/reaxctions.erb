@@ -4,6 +4,19 @@
 
   <h2>To get started, either <a href="/signup">sign up</a> or <a href="/login">log in</a>.</h2>
 
-  <p>Info on idea for the app...</p>
-  
+  <p>Write a short summary of how to get started and use the app.</p>
+  <p>Write about my idea for the app...</p><br>
+  <p>A user is currently logged in: <%= logged_in? %></p>
+  <% if logged_in? %>
+    <p>The current user is: <%= current_user.name %></p>
+    <h3><a href="/users/dashboard-<%= current_user.id %>">User Dashboard</a></h3><br><br>
+  <% end %>
+
+  <p>There is a medication being currently stored in the session: <%= session_med? %></p>
+   <% if session_med? %>
+    <p>The current med is: <%= current_med.name %></p>
+
+    <h3><a href="/medications/<%= current_med.slug %>">Medication Detail</a></h3><br><br>
+  <% end %>
+
 </div>
