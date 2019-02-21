@@ -32,4 +32,9 @@ class ApplicationController < Sinatra::Base
     Medication.find_by(id: session[:medication_id])
   end
 
+  # Returns true or 'nil' if there is no current med
+  def session_med?
+    !!current_med
+  end
+
 end
