@@ -33,16 +33,16 @@
 
 ## Login & Signup Forms
 
-- [ ] Link login form to signup form and vice versa in case the user navigated to the wrong page.
+- [x] Link login form to signup form and vice versa in case the user navigated to the wrong page.
 
 ## New User Signup Form
 
-- [ ] Use [this validation](http://html5pattern.com/Emails) in the input field for my email.
+- [x] Use [this validation](http://html5pattern.com/Emails) in the input field for my email.
 
 ## New Medications Form
 
 - [ ] Use [this PDF](http://www.srmuniv.ac.in/sites/default/files/downloads/Dosage_forms.pdf) to create a dropdown list to select a `dosage_form`.
-- [ ] Use `input type="month"` for medication start and end dates. See [source](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_month).
+- [x] Use `input type="month"` for medication start and end dates. See [source](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_month).
 
 ## README.md
 
