@@ -44,4 +44,10 @@ class UsersController < ApplicationController
     redirect "/users/dashboard-#{@user.id}"
   end
 
+  ## ========== HELPER METHODS ========== ##
+
+  def signup_invalid?
+    params[:user][:email].empty? || !params[:user][:email].match(/^\w+@\w+\.\w+$/) || params[:user][:password].empty? || params[:user][:name].empty? || params[:user][:birth_date].empty?
+  end
+
 end
