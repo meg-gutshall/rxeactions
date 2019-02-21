@@ -25,3 +25,9 @@ The last thing I did today was code out my login form. I did some research onlin
 ## Tues, Feb 19
 
 Built out most of my `UsersController` today and my user edit form. I'm still trying to get the hang of interlacing the `SessionsController` and `UsersController` to create a new user as well as a new session. It's a little trickier than I had anticipated.
+
+## Wed, Feb 20
+
+I spent about 3 hours today working on an issue with my session not persisting as I browsed through different pages of my app. I tried to use some different gems to set a secure `session_secret` but it seems that the only thing that seems to work is a plain old string. I read through the Sinatra documentation but I just couldn't get it to work and I had wasted enough time on it already.
+
+After the frustrating set back, I was able to get my full CRUD done for my `UsersController` as well as code out all the views! I think tomorrow I'll be able to finish up the reactions and then start figuring out how to approach my medication changes issue. Tomorrow night there's an AMA study session for the Sinatra project which will hopefully be helpful. We'll just have to see!
