@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   # Displays the current user's information, medications, and reactions
   get '/users/dashboard-:id' do
+    # redirect "/" if !logged_in?
     @user = User.find_by(id: params[:id])
     if @user && @user.id == current_user.id
       erb :'/users/user_dashboard'
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
     end
   end
 
-  patch 'users/dashboard-:id' do
+  patch '/users/dashboard-:id' do
     @user = User.find_by(id: params[:id])
     @user.update(params[:user])
     redirect "/users/dashboard-#{@user.id}"
