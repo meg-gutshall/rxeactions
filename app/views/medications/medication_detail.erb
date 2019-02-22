@@ -9,8 +9,9 @@
   <p>Dosage Form: <%= @med.dosage_form %></p>
   <p>Usage Instructions: <%= @med.usage_instructions %></p>
   <p>Prescribing Doctor: <%= @med.prescribing_doctor %></p>
+  <p>Currently Taking? <%= @med.currently_taking %></p>
   <p>Start Date: <%= @med.start_date %></p>
-  <p>End Date: <%= @med.end_date %></p>
+  <% if @med.end_date %><p>End Date: <%= @med.end_date %></p>
   <p>Ailment Treated: <%= @med.ailment_treated %></p><br>
 
   <h2>Medication Reactions</h2>
