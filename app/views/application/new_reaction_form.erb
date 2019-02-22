@@ -1,0 +1,14 @@
+<%# TODO: Redo layout for Bootstrap %>
+
+<form method="POST" action="/reactions">
+  <p>Required fields are followed by <strong>*</strong>.</p>
+
+  <label for="title">Title: <strong>*</strong></label>
+  <input id="title" type="text" name="reax[title]" required><br>           
+
+  <label for="detail">Reaction Detail: <strong>*</strong></label>
+  <textarea id="detail" cols="40" rows="10" name="reax[reaction_detail]" placeholder="Reaction side effects and comments go here"></textarea><br><br>
+
+  <input type="submit" value="Record New Reaction">
+
+</form>

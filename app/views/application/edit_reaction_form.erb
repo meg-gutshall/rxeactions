@@ -1,0 +1,16 @@
+<%# TODO: Redo layout for Bootstrap %>
+
+<form method="POST" action="/reactions/<%= @reax.slug %>">
+  <p>Required fields are followed by <strong>*</strong>.</p>
+
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+  <label for="title">Title: <strong>*</strong></label>
+  <input id="title" type="text" name="reax[title]" value="<%= @reax.title %>" required><br>           
+
+  <label for="detail">Reaction Detail: <strong>*</strong></label>
+  <textarea id="detail" cols="40" rows="10" name="reax[reaction_detail]" placeholder="Reaction side effects and comments go here"><%= @reax.reaction_detail %></textarea><br><br>
+
+  <input type="submit" value="Update Reaction">
+
+</form>
