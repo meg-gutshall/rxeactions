@@ -19,21 +19,23 @@
   </head>
   <body>
     <div class="container-fluid">
-      <header>
-        <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
-          <%# TODO: Remove homepage link after testing %>
-          <a class="navbar-brand" href="/">
-            <%# Leaving this out until I can figure out how to properly space it
-            <img src="/images/bootstrap-solid.png" width="100px" height="100px" class="d-inline-block align-top" alt=""> %>
-            Reaxctions
-          </a>
-          <a class="nav-item nav-link" href="/users/dashboard-<%= current_user.id %>">Dashboard</a>
-          <a class="nav-item nav-link" href="/medications">Medications</a>
-          <a class="nav-item nav-link" href="/about">About</a>
-          <%# Left-align with CSS %>
-          <a class="nav-item nav-link" href="/logout">Logout</a>
-        </nav> <%# .nav %>
-      </header>
+      <% if logged_in? %>
+        <header>
+          <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+            <%# TODO: Remove homepage link after testing %>
+            <a class="navbar-brand" href="/">
+              <%# Leaving this out until I can figure out how to properly space it
+              <img src="/images/bootstrap-solid.png" width="100px" height="100px" class="d-inline-block align-top" alt=""> %>
+              Reaxctions
+            </a>
+            <a class="nav-item nav-link" href="/users/dashboard-<%= current_user.id %>">Dashboard</a>
+            <a class="nav-item nav-link" href="/medications">Medications</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <%# Left-align with CSS %>
+            <a class="nav-item nav-link" href="/logout">Logout</a>
+          </nav> <%# .nav %>
+        </header>
+      <% end %>
     </div> <%# .container-fluid %>
 
     <div class="container-fluid wrapper">
