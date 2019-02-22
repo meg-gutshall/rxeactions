@@ -2,14 +2,15 @@
 
 <div class="user-dashboard">
 
-  <h1><%= @user.name %>'s Dashboard</h1><br>
+  <h1><%= current_user.name %>'s Dashboard</h1><br>
   <h2>User Details</h2>
-  <p>Email: <%= @user.email %></p>
-  <p>Birth Date: <%= @user.birth_date %></p>
-  <p>Allergies: <%= @user.known_allergies %></p><br>
+  <p>Email: <%= current_user.email %></p>
+  <p>Birth Date: <%= current_user.birth_date %></p>
+  <p>Allergies: <%= current_user.known_allergies %></p><br>
 
   <h2>Current Medications</h2>
 
+  <%= erb :'/application/current_medications' %>
 
-  <br><a href="/users/dashboard-<%= @user.id %>/edit">Edit my user details</a>
+  <br><a href="/users/dashboard-<%= current_user.id %>/edit">Edit my user details</a>
 </div>

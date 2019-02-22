@@ -4,11 +4,16 @@
 
   <h1>List Medications</h1>
 
-  <% @med.each do |m| %>
-    <br><p>Name: <%= m.name %></p>
-    <p>Dosage Amount: <%= m.dosage_amount %></p>
-    <p>Dosage Form: <%= m.dosage_form %></p>
-    <p>Ailment Treated: <%= m.ailment_treated %></p>
-  <% end %>
+  <h2>Current Medications</h2>
+
+  <%= erb :'/application/current_medications' %>
+
+  <h2>Previous Medications</h2>
+
+  <%= erb :'/application/previous_medications' %>
+
+  <h2>All Medications</h2>
+
+  <%= erb :'/application/all_medications' %>
 
 </div>
