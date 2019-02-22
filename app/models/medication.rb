@@ -1,6 +1,7 @@
 class Medication < ActiveRecord::Base
   # Add validation helpers here
   validates :name, :dosage_amount, :dosage_form, :usage_instructions, :ailment_treated, presence: true
+  validates :currently_taking, inclusion: { in: [true, false] }
 
   # Add associations here
   belongs_to :user
