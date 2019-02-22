@@ -15,6 +15,10 @@ class ApplicationController < Sinatra::Base
     erb :reaxctions
   end
 
+  get "/about" do
+    erb :about
+  end
+
   ## ========== HELPER METHODS ========== ##
 
   # Returns the current user or 'nil' if none exists
