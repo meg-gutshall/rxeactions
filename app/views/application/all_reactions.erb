@@ -5,3 +5,7 @@
   <p>Created at: <%= r.created_at %></p>
   <p>Updated at: <%= r.updated_at %></p><br>
 <% end %>
+
+<% if current_med.reactions.empty? %>
+  <p>You have not recorded any reactions yet</p>
+<% end %>

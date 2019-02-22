@@ -1,10 +1,14 @@
 <%# Displays a list of all of the current user's previous medications %>
 
 <% current_user.medications.each do |m| %>
-  <% if !!m.end_date %>
+  <% if !m.currently_taking %>
     <p>Name: <a href="/medications/<%= m.slug %>"><%= m.name %></a></p>
     <p>Dosage Amount: <%= m.dosage_amount %></p>
     <p>Dosage Form: <%= m.dosage_form %></p>
     <p>Ailment Treated: <%= m.ailment_treated %></p><br>
   <% end %>
+<% end %>
+
+<% if current_user.medications.none? {|m| m.currently_taking == false} %>
+  <p>None</p>
 <% end %>
