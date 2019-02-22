@@ -31,3 +31,11 @@ Built out most of my `UsersController` today and my user edit form. I'm still tr
 I spent about 3 hours today working on an issue with my session not persisting as I browsed through different pages of my app. I tried to use some different gems to set a secure `session_secret` but it seems that the only thing that seems to work is a plain old string. I read through the Sinatra documentation but I just couldn't get it to work and I had wasted enough time on it already.
 
 After the frustrating set back, I was able to get my full CRUD done for my `UsersController` as well as code out all the views! I think tomorrow I'll be able to finish up the reactions and then start figuring out how to approach my medication changes issue. Tomorrow night there's an AMA study session for the Sinatra project which will hopefully be helpful. We'll just have to see!
+
+## Thurs, Feb 21
+
+I created slug helper methods for my `Reactions` model but I based them off of the `Medications` model. Basically the slug is the medication name followed by the reaction's `id`. I was trying to think of a way to persist the `medication_id` between views so I set a session key for this but I was told later that it's an insecure way to go about it and I should really set it up in my controller. I still have to figure out how to do this.
+
+I cleaned up my new and edit medication forms a bit and added more info to my homepage so I can use it to display information as I test out my app. It's really coming in handy! I also dove into Bootstrap a bit tonight to create a navbar to make it easier for me to navigate between pages while testing everything out.
+
+I started implementing partials today into my views! I like how this project is coming along. I think I'm going to get a huge chunk of it done tomorrow and then wrap it up over the weekend. After talking some more with DJ, I'm not going to worry about associating the reactions to the specific medication dosage amounts. Instead, I'll add the medication information right into the reaction as it as at the time of creation. I think that will do pretty much the same thing I was hoping for. I also took the current attribute from my reactions model and moved it to my medications model because it made more sense there.

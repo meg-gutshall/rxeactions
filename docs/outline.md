@@ -26,6 +26,7 @@
 - Sort medications by prescribing doctor
 - Use date pickers
 - Tally good reactions vs. bad reactions to see whether a medication is overall good or bad for the user
+- Implement an update history for when changes are made to a medication
 
 ## Project Summary
 
