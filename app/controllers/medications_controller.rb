@@ -38,7 +38,7 @@ class MedicationsController < ApplicationController
     @med = Medication.find_by_slug(params[:slug])
     @med.update(params[:med])
     session[:medication_id] = @med.id
-    redirect "/medications/:slug"
+    redirect "/medications/#{@med.slug}"
   end
 
   # Delete a medication
