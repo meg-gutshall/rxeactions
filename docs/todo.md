@@ -27,19 +27,26 @@
 
 - [ ] Wrap my edit and delete form routes in conditional statements for an extra layer security to ensure that only the user who created the reaction can access these routes for their own reactions.
 
-## All Forms
+## All Views
+
+### Nav Bar
+
+- [ ] Create link back to user dashboard and to log out.
+- [ ] Link to all medications and home.
+
+### All Forms
 
 - [ ] Use nested hashes.
 
-## Login & Signup Forms
+#### Login & Signup Forms
 
 - [x] Link login form to signup form and vice versa in case the user navigated to the wrong page.
 
-## New User Signup Form
+#### New User Signup Form
 
 - [x] Use [this validation](http://html5pattern.com/Emails) in the input field for my email.
 
-## New Medications Form
+#### New Medications Form
 
 - [ ] Use [this PDF](http://www.srmuniv.ac.in/sites/default/files/downloads/Dosage_forms.pdf) to create a dropdown list to select a `dosage_form`.
 - [x] Use `input type="month"` for medication start and end dates. See [source](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_month).
