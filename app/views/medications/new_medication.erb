@@ -20,6 +20,10 @@
     <label for="inst">Usage Instructions: <strong>*</strong></label>
     <textarea id="inst" cols="40" rows="10" name="med[usage_instructions]" placeholder="Usage instruction details here"></textarea><br>
 
+    <label for="current">Are you currently taking this medication? <strong>*</strong></label>
+    <input id="current" type="radio" name="med[currently_taking]" value="true" required> Yes<br>
+    <input id="current" type="radio" name="med[currently_taking]" value="false" required> No<br>
+    
     <label for="start">Start Date: </label>
     <input id="start" type="month" name="med[start_date]">
 
