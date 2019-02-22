@@ -5,7 +5,6 @@ class ReactionsController < ApplicationController
 
   # List reactions by medication
   get '/reactions' do
-    @reax = current_med.reactions
     erb :'/reactions/list_reactions'
   end
 
@@ -27,6 +26,7 @@ class ReactionsController < ApplicationController
   # Show reaction details
   get '/reactions/:slug' do
     @reax = Reaction.find_by_slug(params[:slug])
+    @med = Medication.find_by(id: @reax.medication_id)
     erb :'/reactions/reaction_detail'
   end
 
