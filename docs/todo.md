@@ -34,7 +34,7 @@
 - [x] Create links to user dashboard, user's medications, about, and to log out.
 - [ ] Decide what kind of sticky I want for the navigation and when I want it to expand.
 - [ ] Build helper method to determine active link.
-- [ ] Create validation to show nav bar only to logged in users.
+- [x] Create validation to show nav bar only to logged in users.
 
 ### All Forms
 
