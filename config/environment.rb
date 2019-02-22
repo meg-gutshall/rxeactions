@@ -1,6 +1,9 @@
 # Set Sinatra ENV variable
 ENV['SINATRA_ENV'] ||= "development"
 
+# Set session_secret variable
+ENV['SESSION_SECRET'] ||= "eggs4megs"
+
 # Require Gemfile and bundle gems with dependencies
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
