@@ -1,0 +1,36 @@
+<%# TODO: Redo layout for Bootstrap %>
+
+<form method="POST" action="/medications">
+  <p>Required fields are followed by <strong>*</strong>.</p>
+
+  <label for="name">Name: <strong>*</strong></label>
+  <input id="name" type="text" name="med[name]" required><br>
+
+  <label for="dos_amt">Dosage Amount: <strong>*</strong></label>
+  <input id="dos_amt" type="text" name="med[dosage_amount]" required>
+
+  <label for="dos_form">Dosage Form: <strong>*</strong></label>
+  <input id="dos_form" type="text" name="med[dosage_form]" required><br>              
+
+  <label for="inst">Usage Instructions: <strong>*</strong></label><br>
+  <textarea id="inst" cols="40" rows="10" name="med[usage_instructions]" placeholder="Usage instruction details here"></textarea><br>
+
+  <label for="current">Are you currently taking this medication? <strong>*</strong></label>
+  <input id="current" type="radio" name="med[currently_taking]" value="true" required> Yes
+  <input id="current" type="radio" name="med[currently_taking]" value="false" required> No<br>
+  
+  <label for="start">Start Date: </label>
+  <input id="start" type="month" name="med[start_date]">
+
+  <label for="end">End Date: </label>
+  <input id="end" type="month" name="med[end_date]"><br>
+
+  <label for="doc">Prescribing Doctor: </label>
+  <input id="doc" type="text" name="med[prescribing_doctor]"><br>
+
+  <label for="treatment">Ailment Treated: <strong>*</strong></label>
+  <input id="treatment" type="text" name="med[ailment_treated]" required><br><br>
+
+  <input type="submit" value="Save New Medication">
+
+</form>
