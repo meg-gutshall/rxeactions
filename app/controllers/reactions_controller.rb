@@ -15,18 +15,18 @@ class ReactionsController < ApplicationController
 
   # Create a new reaction based on the input collected from the user
   post '/reactions' do
-    @reax = Reaction.create(params[:reax])
     # Validate input
-    if current_med.id != @reax.medication_id
-      redirect # where??
-    end
+    @reax = Reaction.create(params[:reax])
+    @reax.medication_id = current_med.id
+    binding.pry
+    @reax.save
     redirect "/reactions/#{@reax.slug}"
   end
 
   # Show reaction details
   get '/reactions/:slug' do
     @reax = Reaction.find_by_slug(params[:slug])
-    @med = Medication.find_by(id: @reax.medication_id)
+    # @med = Medication.find_by(id: @reax.medication_id)
     erb :'/reactions/reaction_detail'
   end
 

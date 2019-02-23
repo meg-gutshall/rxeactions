@@ -7,7 +7,7 @@ class Reaction < ActiveRecord::Base
 
   # Create slug methods
   def slug
-    Medication.find_by(id: self.medication_id).name.downcase.gsub(" ","-") << "-#{id}"
+    "reaction-#{id}"
   end
 
   def self.find_by_slug(slug)
