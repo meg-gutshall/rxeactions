@@ -18,8 +18,10 @@
 
   <%= erb :'/application/all_reactions' %>
 
-  <h2>Record a New Reaction</h2>
+  <% if @med.currently_taking %>
+    <h2>Record a New Reaction</h2>
 
-  <%= erb :'/application/new_reaction_form' %>
+    <%= erb :'/application/new_reaction_form' %>
+  <% end %>
 
 </div>
