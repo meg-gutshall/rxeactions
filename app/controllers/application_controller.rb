@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :reaxctions
+    erb :rxeactions
   end
 
   get "/about" do
