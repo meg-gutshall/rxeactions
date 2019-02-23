@@ -24,7 +24,8 @@
 - Track the quantity of a medication and when the user will need a refill
   - Possibly send an alert to the prescribing doctor
 - Sort medications by prescribing doctor
-- Use date pickers
+- Require `dosage_amount` to be integer input and use dropdown list for `dosage_amount` units
+- Use dropdown list for `dosage_form` and populate with [this PDF](http://www.srmuniv.ac.in/sites/default/files/downloads/Dosage_forms.pdf)
 - Tally good reactions vs. bad reactions to see whether a medication is overall good or bad for the user
 - Implement an update history for when changes are made to a medication
 
