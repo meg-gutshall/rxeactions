@@ -58,13 +58,13 @@ Medication.create!(
 )
 Medication.create!(
   name: "Adderall",
-  dosage_amount: "75 mg",
+  dosage_amount: "25 mg",
   dosage_form: "capsule",
   usage_instructions: "Take once daily",
   prescribing_doctor: "",
   currently_taking: "true",
   start_date: "2001-07-01",
-  end_date: "",
+  end_date: "Dr. Johnston",
   ailment_treated: "ADHD",
   user_id: "2"
 )
