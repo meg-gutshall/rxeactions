@@ -8,9 +8,10 @@
   <p>Birth Date: <%= current_user.birth_date %></p>
   <p>Allergies: <%= current_user.known_allergies %></p><br>
 
+  <a href="/users/dashboard-<%= current_user.id %>/edit">Edit my user details</a><br><br>
+
   <h2>Current Medications</h2>
 
   <%= erb :'/application/current_medications' %>
 
-  <br><a href="/users/dashboard-<%= current_user.id %>/edit">Edit my user details</a>
 </div>
