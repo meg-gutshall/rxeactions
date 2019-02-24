@@ -36,17 +36,17 @@ the parent element. */
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: #DCA0A8;
-    color: #291E35;
+    background-color: rgba(220, 160, 168, 1);
+    color: rgba(41, 30, 53, 1);
     font-family: 'Libre Franklin', Helvetica, sans-serif;
     font-size: 1.6rem;
   }
 
   .wrapper {
-    background: #F9FBF2;
-    -moz-box-shadow: 0 0 1rem rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 1rem rgba(0,0,0,.3);
-    box-shadow: 0 0 1rem rgba(0,0,0,.3);
+    background: rgba(249, 251, 242, 1);
+    -moz-box-shadow: 0 0 2rem rgba(41, 30, 53, 0.5);
+    -webkit-box-shadow: 0 0 2rem rgba(41, 30, 53, 0.5);
+    box-shadow: 0 0 2rem rgba(41, 30, 53, 0.5);
     margin: 1.6rem auto;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
@@ -58,7 +58,7 @@ the parent element. */
   }
 
   h2 {
-    border-bottom: 0.2rem solid #A4B5C5;
+    border-bottom: 0.2rem solid rgba(164, 181, 197, 1);
     font-family: 'Josefin Sans', Verdana, sans-serif;
     font-size: 3.6rem;
     padding-bottom: 0.2rem;
@@ -75,12 +75,12 @@ the parent element. */
   }
 
   a {
-    color: #AF4470;
+    color: rgba(175, 68, 112, 1);
     font-weight: bold;
   }
 
   a:hover {
-    color: #702C48;
+    color: rgba(112, 44, 72, 1);
     text-decoration: none;
   }
 
