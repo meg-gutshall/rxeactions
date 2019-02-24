@@ -7,11 +7,12 @@
   <p>Reaction: <%= @reax.reaction_detail %></p>
   <p>Medication: <%= @med.name %></p>
   <p>Currently Taking: <%= @med.currently_taking %></p>
-  <p>Dosage Amount: <%= @med.dosage_amount %></p>
-  <p>Usage Instructions: <%= @med.usage_instructions %></p>
+  <p>Dosage Amount: <%= @reax.dosage_amount %></p>
+  <p>Usage Instructions: <%= @reax.usage_instructions %></p>
   <p>Created at: <%= @reax.created_at %></p>
   <p>Updated at: <%= @reax.updated_at %></p><br>
 
   <a class="button" href="/reactions/<%= @reax.slug %>/edit">Edit Reaction</a> <a class="button" href="/reactions/<%= @reax.slug %>/delete">Delete Reaction</a>
 
+  <br><br><a class="button" href="/medications/<%= @med.slug %>"><< Go back to the <%= @med.name %> detail page</a>
 </div>
