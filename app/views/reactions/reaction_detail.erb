@@ -1,18 +1,34 @@
 <%# TODO: Redo layout for Bootstrap %>
 
-<div class="reaction-detail">
+<div class="container-fluid reaction-detail">
+  
+  <div class="row">
+    <div class="col-12">
+      <h1>Reaction Details</h1>
+      <h2>Title: <%= @reax.title %></h2>
+      <p>Reaction: <%= @reax.reaction_detail %></p>
+      <p>Medication: <%= @med.name %></p>
+      <p>Currently Taking: <%= @med.currently_taking %></p>
+      <p>Dosage Amount: <%= @reax.dosage_amount %></p>
+      <p>Usage Instructions: <%= @reax.usage_instructions %></p>
+      <p>Created at: <%= @reax.created_at %></p>
+      <p>Updated at: <%= @reax.updated_at %></p><br>
+    </div>
+  </div>  
 
-  <h1>Reaction Details</h1>
-  <h2>Title: <%= @reax.title %></h2>
-  <p>Reaction: <%= @reax.reaction_detail %></p>
-  <p>Medication: <%= @med.name %></p>
-  <p>Currently Taking: <%= @med.currently_taking %></p>
-  <p>Dosage Amount: <%= @reax.dosage_amount %></p>
-  <p>Usage Instructions: <%= @reax.usage_instructions %></p>
-  <p>Created at: <%= @reax.created_at %></p>
-  <p>Updated at: <%= @reax.updated_at %></p><br>
+  <div class="row btn-row">
+    <div class="col-auto">
+      <a class="btn" href="/reactions/<%= @reax.slug %>/edit">Edit Reaction</a>
+    </div>
+    <div class="col-auto">
+      <a class="btn" href="/reactions/<%= @reax.slug %>/delete">Delete Reaction</a>
+    </div>
+  </div>
+    
+  <div class="row btn-row">
+    <div class="col-12">
+      <a class="btn" href="/medications/<%= @med.slug %>">Return to the <%= @med.name %> detail page</a>
+    </div>
+  </div>
 
-  <a class="button" href="/reactions/<%= @reax.slug %>/edit">Edit Reaction</a> <a class="button" href="/reactions/<%= @reax.slug %>/delete">Delete Reaction</a>
-
-  <br><br><a class="button" href="/medications/<%= @med.slug %>"><< Go back to the <%= @med.name %> detail page</a>
 </div>
