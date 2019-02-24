@@ -1,22 +1,51 @@
-<div class="homepage">
+<div class="container-fluid homepage">
 
-  <h1>Welcome to Rxeactions!</h1>
+  <div class="row">
+    <div class="col-12">
+      <h1>Welcome to Rxeactions!</h1>
+      <p>Write a short summary of what the app was made for and how to use the app.</p>
+    </div>
+  </div>
 
-  <h2>To get started, either <a href="/signup">sign up</a> or <a href="/login">log in</a>.</h2>
+  <div class="row">
+    <div class="col-12">
+      <h2>To get started, either sign up or log in.</h2>
+    </div>
+  </div>
 
-  <p>Write a short summary of how to get started and use the app.</p>
-  <p>Write about my idea for the app...</p><br>
-  <p>A user is currently logged in: <%= logged_in? %></p>
-  <% if logged_in? %>
-    <p>The current user is: <%= current_user.name %></p>
-    <h3><a href="/users/dashboard-<%= current_user.id %>">User Dashboard</a></h3><br><br>
-  <% end %>
+  <div class="row">
+    <div class="col-12 col-md-6 login">
+      <h3>Log In</h3>
+      <%= erb :'/application/user_login' %>
+    </div>
+    <div class="col-12 col-md-6 signup">
+      <h3>Sign Up</h3>
+      <%= erb :'/application/user_signup' %>
+    </div>
+  </div>
 
-  <p>There is a medication being currently stored in the session: <%= session_med? %></p>
-   <% if session_med? %>
-    <p>The current med is: <%= current_med.name %></p>
+  <div class="row">
+    <div class="col-12">
+      <h2>Program Testing</h2>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12 col-md-6 login">
+      <p>A user is currently logged in: <%= logged_in? %></p>
+      <% if logged_in? %>
+        <p>The current user is: <%= current_user.name %></p>
+        <h3><a href="/users/dashboard-<%= current_user.id %>">User Dashboard</a></h3><br><br>
+      <% end %>
+    </div>
+    <div class="col-12 col-md-6 login">
+      <p>There is a medication being currently stored in the session: <%= session_med? %></p>
+      <% if session_med? %>
+        <p>The current med is: <%= current_med.name %></p>
 
-    <h3><a href="/medications/<%= current_med.slug %>">Medication Detail</a></h3><br><br>
-  <% end %>
+        <h3><a href="/medications/<%= current_med.slug %>">Medication Detail</a></h3><br><br>
+      <% end %>
+    </div>
+  </div>
 
 </div>
