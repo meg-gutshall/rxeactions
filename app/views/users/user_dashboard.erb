@@ -1,21 +1,28 @@
 <%# TODO: Redo layout for Bootstrap %>
 
-<div class="user-dashboard">
+<div class="container-fluid user-dashboard">
 
-  <h1><%= current_user.name %>'s Dashboard</h1><br>
-  <h2>User Details</h2>
-  <p>Email: <%= current_user.email %></p>
-  <p>Birth Date: <%= current_user.birth_date %></p>
-  <p>Allergies: <%= current_user.known_allergies %></p><br>
+<h1><%= current_user.name %>'s Dashboard</h1><br>
 
-  <a href="/users/dashboard-<%= current_user.id %>/edit">Edit my user details</a><br><br>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h2>User Details</h2>
+      <p>Email: <%= current_user.email %></p>
+      <p>Birth Date: <%= current_user.birth_date %></p>
+      <p>Allergies: <%= current_user.known_allergies %></p><br>
 
-  <h2>Current Medications</h2>
+      <a href="/users/dashboard-<%= current_user.id %>/edit">Edit my user details</a><br><br>
 
-  <%= erb :'/application/current_medications' %>
+      <h2>Current Medications</h2>
 
-  <h2>Create a New Medication</h2>
+      <%= erb :'/application/current_medications' %>
+    </div>
 
-  <%= erb :'/application/new_medication_form' %>
+    <div class="col-md-6 col-sm-12">
+      <h2>Create a New Medication</h2>
+
+      <%= erb :'/application/new_medication_form' %>
+    </div>
+  </div>
 
 </div>

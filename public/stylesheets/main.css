@@ -13,10 +13,10 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
+    background-color: #676F98;
+    color: #676F98;
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
   }
 
   .wrapper {
@@ -25,30 +25,30 @@
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     margin: 16px auto;
-    max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
   }
 
   h1 {
-    font-size: 36px;
-    line-height: 54px;
+    font-family: 'Muli', sans-serif;
+    font-size: 2rem;
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px;
+    border-bottom: 2px solid #98B3BA;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 2px;
+    margin-bottom: 1rem;
   }
 
   h3 {
-    font-size: 18px;
-    line-height: 36px;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.25rem;
   }
 
   p {
-    margin-bottom: 18px;
+    margin-bottom: 1.25rem;
   }
 
   .main {
