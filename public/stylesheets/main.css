@@ -1,3 +1,31 @@
+/* --- App Color Scheme --- */
+/* Light Shades: #F9FBF2 (Floral White)                         */
+/* Light Accent: #A4B5C5 (Wild Blue Yonder)                     */
+/* Main Brand Color: #DCA0A8 (Pastel Pink)                      */
+/* Dark Accents: #AF4470 (Raspberry Rose), #702C48 (Wine Dregs) */
+/* Dark Shades: #291E35 (Dark Purple)                           */
+
+/* --- App Measurements --- */
+
+/* 8px = 0.5rem     */
+/* 10px = 0.625rem  */
+/* 12px = 0.75rem   */
+/* 14px = 0.875rem  */
+/* 16px = 1rem      */
+/* 18px = 1.125rem  */
+/* 20px = 1.25rem   */
+/* 24px = 1.5rem    */
+/* 28px = 1.75rem   */
+/* 32px = 2rem      */
+/* 36px = 2.25rem   */
+/* 40px = 2.5rem    */
+/* 44px = 2.75rem   */
+/* 48px = 3rem      */
+
+/* --- Import Google Fonts --- */
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i|Libre+Franklin:300,300i,400,400i,700,700i');
+
+
 @media screen {
   /* --- Reset Styles --- */
   * {
@@ -13,42 +41,52 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: #676F98;
-    color: #676F98;
-    font-family: 'Mukta', sans-serif;
+    background-color: #DCA0A8;
+    color: #291E35;
+    font-family: 'Libre Franklin', sans-serif;
     font-size: 16px;
   }
 
   .wrapper {
-    background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
+    background: #F9FBF2;
+    -moz-box-shadow: 0 0 0.625rem rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 0.625rem rgba(0,0,0,.3);
+    box-shadow: 0 0 0.625rem rgba(0,0,0,.3);
+    margin: 1rem auto;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
   }
 
   h1 {
-    font-family: 'Muli', sans-serif;
-    font-size: 2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
   }
 
   h2 {
-    border-bottom: 2px solid #98B3BA;
-    font-family: 'Muli', sans-serif;
-    font-size: 1.5rem;
+    border-bottom: 2px solid #A4B5C5;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
     padding-bottom: 2px;
     margin-bottom: 1rem;
   }
 
   h3 {
-    font-family: 'Muli', sans-serif;
-    font-size: 1.25rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
   }
 
   p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  a {
+    color: #AF4470;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: #702C48;
+    text-decoration: none;
   }
 
   .main {
@@ -69,7 +107,7 @@
   }
 
   .sidebar ul {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .branding {
@@ -78,9 +116,10 @@
 
   footer.branding {
     border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
   }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -104,12 +143,10 @@
   }
 
   h1 {
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 2.5em;
   }
 
   h2 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 2em;
   }
 }
