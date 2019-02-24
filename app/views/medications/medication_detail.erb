@@ -1,29 +1,45 @@
 <%# TODO: Redo layout for Bootstrap %>
 
-<div class="medication-detail">
+<div class="container-fluid medication-detail">
 
-  <h1>Detail page for your medication: <%= @med.name %></h1>
+  <div class="row header-row">
+    <div class="col-12">
+      <h1>Detail page for your medication: <%= @med.name %></h1>
+    </div>
+  </div>
 
-  <h2>Medication Details</h2>
-  <p>Dosage Amount: <%= @med.dosage_amount %></p>
-  <p>Dosage Form: <%= @med.dosage_form %></p>
-  <p>Usage Instructions: <%= @med.usage_instructions %></p>
-  <% if @med.prescribing_doctor %><p>Prescribing Doctor: <%= @med.prescribing_doctor %></p><% end %>
-  <p>Currently Taking? <%= @med.currently_taking %></p>
-  <% if @med.start_date %><p>Start Date: <%= @med.start_date %></p><% end %>
-  <% if @med.end_date %><p>End Date: <%= @med.end_date %></p><% end %>
-  <p>Ailment Treated: <%= @med.ailment_treated %></p><br>
+  <div class="row content-row">
+    <div class="col-12 col-md-6">
+      <h2>Medication Details</h2>
+      <p>Dosage Amount: <%= @med.dosage_amount %></p>
+      <p>Dosage Form: <%= @med.dosage_form %></p>
+      <p>Usage Instructions: <%= @med.usage_instructions %></p>
+      <% if @med.prescribing_doctor %><p>Prescribing Doctor: <%= @med.prescribing_doctor %></p><% end %>
+      <p>Currently Taking? <%= @med.currently_taking %></p>
+      <% if @med.start_date %><p>Start Date: <%= @med.start_date %></p><% end %>
+      <% if @med.end_date %><p>End Date: <%= @med.end_date %></p><% end %>
+      <p>Ailment Treated: <%= @med.ailment_treated %></p><br>
 
-  <a class="button" href="/medications/<%= @med.slug %>/edit">Edit Medication</a> <a class="button" href="/medications/<%= @med.slug %>/delete">Delete Medication</a><br><br>
+      <a class="button" href="/medications/<%= @med.slug %>/edit">Edit Medication</a> <a class="button" href="/medications/<%= @med.slug %>/delete">Delete Medication</a><br><br>
 
-  <h2>Medication Reactions</h2>
+      <h2>Medication Reactions</h2>
 
-  <%= erb :'/application/all_reactions' %>
+      <%= erb :'/application/all_reactions' %>
+    </div>
 
-  <% if @med.currently_taking %>
-    <h2>Record a New Reaction</h2>
+    <div class="col-12 col-md-6">
+      <% if @med.currently_taking %>
+        <h2>Record a New Reaction</h2>
 
-    <%= erb :'/application/new_reaction_form' %>
-  <% end %>
+        <%= erb :'/application/new_reaction_form' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <a class="btn back-btn" href="/users/dashboard-<%= current_user.id %>"><< Go back to your user dashboard</a>
+    </div>
+  </div>
 
 </div>
