@@ -2,6 +2,7 @@
 
 <% current_med.reactions.each do |r| %>
   <p>Title: <a href="/reactions/<%= r.slug %>"><%= r.title %></a></p>
+  <p>Dosage Amount: <%= r.dosage_amount %></p>
   <p>Created at: <%= r.created_at %></p>
   <p>Updated at: <%= r.updated_at %></p><br>
 <% end %>
