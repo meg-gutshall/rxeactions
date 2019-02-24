@@ -28,6 +28,8 @@
 - Use dropdown list for `dosage_form` and populate with [this PDF](http://www.srmuniv.ac.in/sites/default/files/downloads/Dosage_forms.pdf)
 - Tally good reactions vs. bad reactions to see whether a medication is overall good or bad for the user
 - Implement an update history for when changes are made to a medication
+- Include information from official prescription source about possible side effects
+- Include information about current medication interactions
 
 ## Project Summary
 
