@@ -18,7 +18,7 @@ class ReactionsController < ApplicationController
     # Validate input
     @reax = Reaction.create(params[:reax])
     @reax.medication_id = current_med.id
-    binding.pry
+    # binding.pry
     @reax.save
     redirect "/reactions/#{@reax.slug}"
   end
@@ -26,7 +26,7 @@ class ReactionsController < ApplicationController
   # Show reaction details
   get '/reactions/:slug' do
     @reax = Reaction.find_by_slug(params[:slug])
-    # @med = Medication.find_by(id: @reax.medication_id)
+    @med = Medication.find_by(id: @reax.medication_id)
     erb :'/reactions/reaction_detail'
   end
 
@@ -40,7 +40,7 @@ class ReactionsController < ApplicationController
   patch '/reactions/:slug' do
     @reax = Reaction.find_by_slug(params[:slug])
     @reax.update(params[:reax])
-    redirect "/reactions/:slug"
+    redirect "/reactions/#{@reax.id}"
   end
 
   # Delete a reaction
