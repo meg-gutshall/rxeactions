@@ -1,5 +1,13 @@
 <div class="container-fluid homepage">
 
+  <% if flash[:error] %>
+    <div class="row">
+      <div class="col-12">
+        <p> <%= flash[:error] %> </p>
+      </div>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-12">
       <h1>Welcome to Rxeactions!</h1>
