@@ -11,7 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
-gem 'sysrandom' # --> Not using this
+gem 'sinatra-flash', '~> 0.3.0'
 
 group :test do
   gem 'rspec'

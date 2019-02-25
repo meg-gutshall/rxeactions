@@ -9,6 +9,8 @@ class ApplicationController < Sinatra::Base
     # Set app configurations
     set :public_folder, 'public'
     set :views, 'app/views'
+    # Add Flash gem
+    register Sinatra::Flash
   end
 
   get "/" do
