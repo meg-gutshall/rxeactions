@@ -7,7 +7,7 @@ class ReactionsController < ApplicationController
   get '/reactions' do
     user_check
     # TODO: Figure this out
-    @reactions = Reactions.all.select {|reax| reax.medication_id == current_med.id}
+    @reactions = current_user.reactions
     erb :'/reactions/list_reactions'
   end
 
