@@ -11,7 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
-gem 'sysrandom'
+gem 'sysrandom' # --> Not using this
 
 group :test do
   gem 'rspec'
