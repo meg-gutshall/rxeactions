@@ -1,20 +1,17 @@
 <%# TODO: Redo form layout for Bootstrap %>
 
 <div class="signup-error">
+  <h1>The following errors may have kept you from signing up:</h1>
 
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>The following <%= pluralize(@user.errors.count, "error") %> prohibited this user from logging in:</h2>
-  
-      <ul>
+    <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
   <% end %>
 
-  <h1>Sign Up</h1>
+  <h2>Sign Up</h2>
   <%= erb :'/application/user_signup' %>
 
   <a href="/">Already have an account? Log in here!</a>
