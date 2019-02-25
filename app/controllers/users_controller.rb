@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     # Validate params using a helper method
     if signup_invalid?
       # TODO: Add error message
+      flash[:error] = # break down by params
       redirect "/signup-error"
     else
       # Create user
@@ -18,28 +19,24 @@ class UsersController < ApplicationController
 
   # Displays the current user's information, medications, and reactions
   get '/users/dashboard-:id' do
-    # redirect "/" if !logged_in?
     @user = User.find_by(id: params[:id])
+    user_check
     if @user && @user.id == current_user.id
       erb :'/users/user_dashboard'
-    else
-      # TODO: Add error message
-      redirect "/"
     end
   end
 
   get '/users/dashboard-:id/edit' do
     @user = User.find_by(id: params[:id])
+    user_check
     if @user && @user.id == current_user.id
       erb :'/users/edit_user'
-    else
-      # TODO: Add error message
-      redirect "/"
     end
   end
 
   patch '/users/dashboard-:id' do
     @user = User.find_by(id: params[:id])
+    user_check
     @user.update(params[:user])
     redirect "/users/dashboard-#{@user.id}"
   end
@@ -48,6 +45,13 @@ class UsersController < ApplicationController
 
   def signup_invalid?
     params[:user][:email].empty? || !params[:user][:email].match(/^\w+@\w+\.\w+$/) || params[:user][:password].empty? || params[:user][:name].empty? || params[:user][:birth_date].empty?
+  end
+
+  def user_check
+    if !logged_in? || @user == nil || @user.id != current_user.id
+      flash[:error] = "You have been logged out of your session. Please log back in to continue."
+      redirect "/"
+    end
   end
 
 end
