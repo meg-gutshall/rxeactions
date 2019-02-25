@@ -1,4 +1,4 @@
-class CreateMedicationsTable < ActiveRecord::Migration[5.2]
+class CreateMedicationsTable < ActiveRecord::Migration
   def change
     create_table :medications do |t|
       t.string :name
@@ -11,7 +11,7 @@ class CreateMedicationsTable < ActiveRecord::Migration[5.2]
       t.date :end_date
       t.string :ailment_treated
       t.integer :user_id
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
