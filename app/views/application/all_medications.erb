@@ -1,6 +1,6 @@
 <%# Displays a list of all of the current user's medications %>
 
-<% current_user.medications.each do |m| %>
+<% @meds.each do |m| %>
   <p>Name: <a href="/medications/<%= m.slug %>"><%= m.name %></a></p>
   <p>Dosage Amount: <%= m.dosage_amount %></p>
   <p>Dosage Form: <%= m.dosage_form %></p>

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     user_check
     if @user && @user.id == current_user.id
+      @meds = @user.medications
       erb :'/users/user_dashboard'
     end
   end

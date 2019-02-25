@@ -1,6 +1,6 @@
 <%# Displays a list of all of the current user's current medications %>
 
-<% current_user.medications.each do |m| %>
+<% @meds.each do |m| %>
   <% if m.currently_taking %>
     <p>Name: <a href="/medications/<%= m.slug %>"><%= m.name %></a></p>
     <p>Dosage Amount: <%= m.dosage_amount %></p>
@@ -9,6 +9,6 @@
   <% end %>
 <% end %>
 
-<% if current_user.medications.none? {|m| m.currently_taking == true} %>
+<% if @meds.none? {|m| m.currently_taking == true} %>
   <p>None</p>
 <% end %>
