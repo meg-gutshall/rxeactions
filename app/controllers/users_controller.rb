@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     # Validate params using a helper method
     if signup_invalid?
       # TODO: Add error message
-      redirect "/signup"
+      redirect "/signup-error"
     else
       # Create user
       @user = User.create(params[:user])
