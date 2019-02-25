@@ -25,7 +25,10 @@
           <a class="btn" href="/medications/<%= @med.slug %>/edit">Edit Medication</a>
         </div>
         <div class="col-auto">
-          <a class="btn" href="/medications/<%= @med.slug %>/delete">Delete Medication</a>
+          <form method="POST" action="/medications/<%= @med.slug %>">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input class="btn delete-btn" type="submit" value="Delete Medication">
+          </form>
         </div>
       </div>
 

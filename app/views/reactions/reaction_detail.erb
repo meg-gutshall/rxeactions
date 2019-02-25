@@ -21,7 +21,10 @@
       <a class="btn" href="/reactions/<%= @reax.slug %>/edit">Edit Reaction</a>
     </div>
     <div class="col-auto">
-      <a class="btn" href="/reactions/<%= @reax.slug %>/delete">Delete Reaction</a>
+      <form method="POST" action="/reactions/<%= @reax.slug %>">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input class="btn delete-btn" type="submit" value="Delete Reaction">
+      </form>
     </div>
   </div>
     
