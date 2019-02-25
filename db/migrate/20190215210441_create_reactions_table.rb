@@ -1,4 +1,4 @@
-class CreateReactionsTable < ActiveRecord::Migration
+class CreateReactionsTable < ActiveRecord::Migration[5.2]
   def change
     create_table :reactions do |t|
       t.string :title
