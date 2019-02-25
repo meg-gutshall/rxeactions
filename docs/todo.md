@@ -29,6 +29,8 @@
 
 ## All Views
 
+- [ ] Add bullet points for list items and give them slightly larger line-height spacing.
+
 ### Nav Bar
 
 - [x] Create links to user dashboard, user's medications, about, and to log out.
