@@ -3,17 +3,13 @@ class SessionsController < ApplicationController
   # Renders a signup form
   # The input from this form will go to the users_controller
   get '/signup' do
-    if logged_in?
-      redirect "/users/dashboard-#{current_user.id}"
-    end
+    redirect "/users/dashboard-#{current_user.id}" if logged_in?
     erb :'/sessions/signup'
   end
 
   # Renders a login form
   get '/login' do
-    if logged_in?
-      redirect "/users/dashboard-#{current_user.id}"
-    end
+    redirect "/users/dashboard-#{current_user.id}" if logged_in?
     erb :'/sessions/login'
   end
 
@@ -21,29 +17,30 @@ class SessionsController < ApplicationController
   post '/login' do
     # Find the user
     @user = User.find_by(email: params[:user][:email])
+    if @user == nil
+      flash[:error] = "We cannot find your email address in our user database. Please check your spelling and try again, or sign up for an account using the link below."
+      redirect "/login-error"
+    end
     # Make sure the user exists in the database and the password matches
     if @user && @user.authenticate(params[:user][:password])
       # Log user in
       session[:user_id] = @user.id
       redirect "/users/dashboard-#{@user.id}"
     else
+      flash[:error] = "The password you entered is incorrect. Please try again."
       redirect "/login-error"
     end
   end
 
   # Displays login form errors
   get '/login-error' do
-    @user = User.new
-    @user.errors.add(:email, 'may contain a typo. Please check your spelling and try again.')
-    @user.errors.add(:email, 'address may not be associated with an account. Do you need to sign up for an account?')
-    @user.errors.add(:password, 'entered may be incorrect. Please try again.')
+    redirect "/users/dashboard-#{current_user.id}" if logged_in?
     erb :'/sessions/login_error'
   end
 
   # Displays signup form errors
   get '/signup-error' do
-    @user = User.new
-    @user.errors.add(:attr, 'error message')
+    redirect "/users/dashboard-#{current_user.id}" if logged_in?
     erb :'/sessions/signup_error'
   end
 
