@@ -1,16 +1,9 @@
 <%# TODO: Redo form layout for Bootstrap %>
-<%# TODO: Handle error messages %>
+<%# TODO: Style error messages %>
 
 <div class="login-error">
-  <h1>The following errors may have kept you from logging in:</h1>
-
-  <% if @user.errors.any? %>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <h1>The following error may have kept you from logging in:</h1>
+  <p> <%= flash[:error] %> </p>
 
   <h2>Log In</h2>
   <%= erb :'/application/user_login' %>
