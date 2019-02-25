@@ -113,7 +113,7 @@ the parent element. */
     text-decoration: none;
   }
 
-  a.btn {
+  a.btn, input.delete-btn {
   background-color: rgba(164, 181, 197, 1);
     color: rgba(41, 30, 53, 1);
     font-family: 'Josefin Sans', Verdana, sans-serif;
@@ -126,7 +126,7 @@ the parent element. */
     border-radius: 0.5rem;
   }
 
-  a.btn:hover {
+  a.btn:hover, input.delete-btn:hover {
     background-color: rgba(164, 181, 197, 1);
     color: rgba(41, 30, 53, 1);
     border: 0.2rem solid rgba(164, 181, 197, 1);
