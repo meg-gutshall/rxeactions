@@ -1,7 +1,7 @@
 # Set Sinatra ENV variable
 ENV['SINATRA_ENV'] ||= "development"
 
-# Set session_secret variable
+# Set session_secret variable --> Not using this
 ENV['SESSION_SECRET'] ||= "eggs4megs"
 
 # Require Gemfile and bundle gems with dependencies
