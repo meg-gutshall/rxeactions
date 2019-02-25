@@ -6,7 +6,13 @@
       <p>Write a short summary of what the app was made for and how to use the app.</p>
     </div>
   </div>
-    
+
+  <div class="row">
+    <div class="col-12">
+      <h2>Program Testing</h2>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-12 col-md-6 login">
       <p>A user is currently logged in: <%= logged_in? %></p>
@@ -32,19 +38,13 @@
   </div>
 
   <div class="row">
-    <div class="col-12 col-md-6 login">
-      <h3>Log In</h3>
-      <%= erb :'/application/user_login' %>
-    </div>
     <div class="col-12 col-md-6 signup">
       <h3>Sign Up</h3>
       <%= erb :'/application/user_signup' %>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12">
-      <h2>Program Testing</h2>
+    <div class="col-12 col-md-6 login">
+      <h3>Log In</h3>
+      <%= erb :'/application/user_login' %>
     </div>
   </div>
 
