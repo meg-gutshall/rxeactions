@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    clear_session_med
     erb :rxeactions
   end
 
@@ -41,6 +42,20 @@ class ApplicationController < Sinatra::Base
   # Returns true or 'nil' if there is no current med
   def session_med?
     !!current_med
+  end
+
+  def clear_session_med
+    if !logged_in?
+      session.delete(:medication_id)
+    end
+  end
+
+  def user_check
+    if !logged_in?
+      session.delete(:medication_id)
+      flash[:error] = "You have been logged out of your session. Please log back in to continue."
+      redirect "/"
+    end
   end
 
 end

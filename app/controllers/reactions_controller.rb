@@ -65,13 +65,6 @@ class ReactionsController < ApplicationController
 
   ## ========== HELPER METHODS ========== ##
 
-  def user_check
-    if !logged_in?
-      flash[:error] = "You have been logged out of your session. Please log back in to continue."
-      redirect "/"
-    end
-  end
-
   def user_stray
     if Medication.find_by(id: @reax.medication_id).user_id != current_user.id
       flash[:error] = "You do not have permission to view or edit other users' content."
