@@ -53,20 +53,20 @@ the parent element. */
   }
 
   h1 {
-    font-family: 'Josefin Sans', Verdana, sans-serif;
+    font-family: 'Josefin Sans', Arial, sans-serif;
     font-size: 4rem;
   }
 
   h2 {
     border-bottom: 0.2rem solid rgba(164, 181, 197, 1);
-    font-family: 'Josefin Sans', Verdana, sans-serif;
+    font-family: 'Josefin Sans', Arial, sans-serif;
     font-size: 3.6rem;
     padding-bottom: 0.2rem;
     margin: 1.6rem 0rem;
   }
 
   h3 {
-    font-family: 'Josefin Sans', Verdana, sans-serif;
+    font-family: 'Josefin Sans', Arial, sans-serif;
     font-size: 3.2rem;
   }
 
