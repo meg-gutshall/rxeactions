@@ -4,16 +4,16 @@
 class ReactionsController < ApplicationController
 
   # List reactions by medication
-  get '/reactions' do
+  get '/medications/:slug/reactions' do
     user_check
-    # TODO: Figure this out
-    @reactions = current_user.reactions
+    @med = Medication.find_by_slug(params[:slug])
     erb :'/reactions/list_reactions'
   end
 
   # Render the new reaction form
-  get '/reactions/new' do
+  get '/medications/:slug/reactions/new' do
     user_check
+    @med = Medication.find_by_slug(params[:slug])
     erb :'/reactions/new_reaction'
   end
 
