@@ -7,7 +7,7 @@ class ReactionsController < ApplicationController
   get '/medications/:slug/reactions' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
-    erb :'/reactions/list_reactions'
+    erb :'/application/list_reactions'
   end
 
   # Render the new reaction form
