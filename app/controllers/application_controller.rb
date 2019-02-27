@@ -34,11 +34,6 @@ class ApplicationController < Sinatra::Base
     !!current_user
   end
 
-  # Returns the current medication of 'nil' if none exists
-  def current_med
-    Medication.find_by(id: session[:medication_id])
-  end
-
   def user_check
     if !logged_in?
       flash[:error] = "You have been logged out of your session. Please log back in to continue."

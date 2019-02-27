@@ -7,6 +7,7 @@ class ReactionsController < ApplicationController
   get '/medications/:slug/reactions' do
     user_check
     @med = Medication.find_by_slug(params[:slug])
+    user_stray
     erb :'/reactions/list_reactions'
   end
 
@@ -14,6 +15,7 @@ class ReactionsController < ApplicationController
   get '/medications/:slug/reactions/new' do
     user_check
     @med = Medication.find_by_slug(params[:slug])
+    user_stray
     erb :'/reactions/new_reaction'
   end
 
@@ -21,7 +23,7 @@ class ReactionsController < ApplicationController
   post '/medications/:slug/reactions' do
     user_check
     @med = Medication.find_by_slug(params[:slug])
-    # TODO: Add validations error message
+    # TODO: Add validations with user_stray + error message
     flash[:error] = # break down by params
     @reax = Reaction.create(params[:reax])
     @reax.medication_id = current_med.id
