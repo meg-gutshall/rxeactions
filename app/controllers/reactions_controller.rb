@@ -18,8 +18,9 @@ class ReactionsController < ApplicationController
   end
 
   # Create a new reaction based on the input collected from the user
-  post '/reactions' do
+  post '/medications/:slug/reactions' do
     user_check
+    @med = Medication.find_by_slug(params[:slug])
     # TODO: Add validations error message
     flash[:error] = # break down by params
     @reax = Reaction.create(params[:reax])
@@ -29,25 +30,27 @@ class ReactionsController < ApplicationController
   end
 
   # Show reaction details
-  get '/reactions/:slug' do
+  get '/medications/:slug/reactions/:slug' do
     user_check
+    @med = Medication.find_by_slug(params[:slug])
     @reax = Reaction.find_by_slug(params[:slug])
-    @med = Medication.find_by(id: @reax.medication_id)
     user_stray
     erb :'/reactions/reaction_detail'
   end
 
   # Render the edit reaction form
-  get '/reactions/:slug/edit' do
+  get '/medications/:slug/reactions/:slug/edit' do
     user_check
+    @med = Medication.find_by_slug(params[:slug])
     @reax = Reaction.find_by_slug(params[:slug])
     user_stray
     erb :'/reactions/edit_reaction'
   end
   
   # Edit a reaction based on the input collected from the user
-  patch '/reactions/:slug' do
+  patch '/medications/:slug/reactions/:slug' do
     user_check
+    @med = Medication.find_by_slug(params[:slug])
     @reax = Reaction.find_by_slug(params[:slug])
     user_stray
     @reax.update(params[:reax])
@@ -55,25 +58,13 @@ class ReactionsController < ApplicationController
   end
 
   # Delete a reaction
-  delete '/reactions/:slug' do
+  delete '/medications/:slug/reactions/:slug' do
     user_check
+    @med = Medication.find_by_slug(params[:slug])
     @reax = Reaction.find_by_slug(params[:slug])
     user_stray
     @reax.delete
     redirect "/reactions"
-  end
-
-  ## ========== HELPER METHODS ========== ##
-
-  def user_stray
-    if Medication.find_by(id: @reax.medication_id).user_id != current_user.id
-      flash[:error] = "You do not have permission to view or edit other users' content."
-      redirect "/"
-    end
-  end
-
-  def reax_user
-    User.find_by(id: Medication.find_by(id: @reax.medication_id).user_id)
   end
 
 end

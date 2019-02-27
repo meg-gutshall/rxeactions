@@ -66,13 +66,4 @@ class MedicationsController < ApplicationController
     redirect "/medications"
   end
 
-  ## ========== HELPER METHODS ========== ##
-
-  def user_stray
-    if @med.user_id != current_user.id
-      flash[:error] = "You do not have permission to view or edit other users' content."
-      redirect "/"
-    end
-  end
-
 end

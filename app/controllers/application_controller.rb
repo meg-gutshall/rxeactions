@@ -52,8 +52,14 @@ class ApplicationController < Sinatra::Base
 
   def user_check
     if !logged_in?
-      session.delete(:medication_id)
       flash[:error] = "You have been logged out of your session. Please log back in to continue."
+      redirect "/"
+    end
+  end
+
+  def user_stray
+    if Medication.find_by_slug(params[:slug]).user_id != current_user.id
+      flash[:error] = "You do not have permission to view or edit other users' content."
       redirect "/"
     end
   end
