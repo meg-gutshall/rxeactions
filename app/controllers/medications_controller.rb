@@ -28,25 +28,22 @@ class MedicationsController < ApplicationController
 
   # Show medication details
   get '/medications/:slug' do
-    user_check
     @med = Medication.find_by_slug(params[:slug])
-    user_stray
+    user_check_stray
     erb :'/medications/medication_detail'
   end
 
   # Render the edit medication form
   get '/medications/:slug/edit' do
-    user_check
     @med = Medication.find_by_slug(params[:slug])
-    user_stray
+    user_check_stray
     erb :'/medications/edit_medication'
   end
 
   # Edit a reaction based on the input collected from the user
   patch '/medications/:slug' do
-    user_check
     @med = Medication.find_by_slug(params[:slug])
-    user_stray
+    user_check_stray
     @med.update(params[:med])
     @med.update(user_id: current_user.id)
     redirect "/medications/#{@med.slug}"
@@ -54,9 +51,8 @@ class MedicationsController < ApplicationController
 
   # Delete a medication
   delete '/medications/:slug' do
-    user_check
     @med = Medication.find_by_slug(params[:slug])
-    user_stray
+    user_check_stray
     @med.delete
     redirect "/medications"
   end
