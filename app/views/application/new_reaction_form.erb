@@ -1,6 +1,6 @@
 <%# TODO: Redo layout for Bootstrap %>
 
-<form method="POST" action="/reactions">
+<form method="POST" action="/medications/<%= @med.slug %>/reactions">
   <p>Required fields are followed by <strong>*</strong>.</p>
 
   <label for="title">Title: <strong>*</strong></label>

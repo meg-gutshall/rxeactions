@@ -18,10 +18,10 @@
 
   <div class="row btn-row">
     <div class="col-auto">
-      <a class="btn" href="/reactions/<%= @reax.slug %>/edit">Edit Reaction</a>
+      <a class="btn" href="/medications/<%= @med.slug %>/reactions-<%= @reax.id %>/edit">Edit Reaction</a>
     </div>
     <div class="col-auto">
-      <form method="POST" action="/reactions/<%= @reax.slug %>">
+      <form method="POST" action="/medications/<%= @med.slug %>/reactions-<%= @reax.id %>">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
         <input class="btn delete-btn" type="submit" value="Delete Reaction">
       </form>

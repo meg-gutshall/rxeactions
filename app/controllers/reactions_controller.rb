@@ -24,43 +24,45 @@ class ReactionsController < ApplicationController
     # TODO: Add error message
     flash[:error] = # break down by params
     @reax = Reaction.create(params[:reax])
-    @reax.medication_id = current_med.id
+    @reax.medication_id = @med.id
+    @reax.dosage_amount = @med.dosage_amount
+    @reax.usage_instructions = @med.usage_instructions
     @reax.save
-    redirect "/reactions/#{@reax.slug}"
+    redirect "/medications/#{@med.slug}/reactions-#{@reax.id}"
   end
 
   # Show reaction details
-  get '/medications/:slug/reactions/:slug' do
+  get '/medications/:slug/reactions-:id' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
-    @reax = Reaction.find_by_slug(params[:slug])
+    @reax = Reaction.find_by(id: params[:id])
     erb :'/reactions/reaction_detail'
   end
 
   # Render the edit reaction form
-  get '/medications/:slug/reactions/:slug/edit' do
+  get '/medications/:slug/reactions-:id/edit' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
-    @reax = Reaction.find_by_slug(params[:slug])
+    @reax = Reaction.find_by(id: params[:id])
     erb :'/reactions/edit_reaction'
   end
   
   # Edit a reaction based on the input collected from the user
-  patch '/medications/:slug/reactions/:slug' do
+  patch '/medications/:slug/reactions-:id' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
-    @reax = Reaction.find_by_slug(params[:slug])
+    @reax = Reaction.find_by(id: params[:id])
     @reax.update(params[:reax])
-    redirect "/reactions/#{@reax.id}"
+    redirect "/medications/#{@med.slug}/reactions-#{@reax.id}"
   end
 
   # Delete a reaction
-  delete '/medications/:slug/reactions/:slug' do
+  delete '/medications/:slug/reactions-:id' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
-    @reax = Reaction.find_by_slug(params[:slug])
+    @reax = Reaction.find_by(id: params[:id])
     @reax.delete
-    redirect "/reactions"
+    redirect "/medications/#{@med.slug}/reactions"
   end
 
 end
