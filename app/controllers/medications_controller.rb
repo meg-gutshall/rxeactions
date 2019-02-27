@@ -23,7 +23,6 @@ class MedicationsController < ApplicationController
     @med = Medication.create(params[:med])
     @med.user_id = current_user.id
     @med.save
-    session[:medication_id] = @med.id
     redirect "/medications/#{@med.slug}"
   end
 
@@ -32,7 +31,6 @@ class MedicationsController < ApplicationController
     user_check
     @med = Medication.find_by_slug(params[:slug])
     user_stray
-    session[:medication_id] = @med.id
     erb :'/medications/medication_detail'
   end
 
@@ -41,7 +39,6 @@ class MedicationsController < ApplicationController
     user_check
     @med = Medication.find_by_slug(params[:slug])
     user_stray
-    session[:medication_id] = @med.id
     erb :'/medications/edit_medication'
   end
 
@@ -52,7 +49,6 @@ class MedicationsController < ApplicationController
     user_stray
     @med.update(params[:med])
     @med.update(user_id: current_user.id)
-    session[:medication_id] = @med.id
     redirect "/medications/#{@med.slug}"
   end
 
@@ -62,7 +58,6 @@ class MedicationsController < ApplicationController
     @med = Medication.find_by_slug(params[:slug])
     user_stray
     @med.delete
-    session.delete(:medication_id)
     redirect "/medications"
   end
 

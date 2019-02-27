@@ -22,19 +22,11 @@
   </div>
 
   <div class="row">
-    <div class="col-12 col-md-6 login">
+    <div class="col-12 login">
       <p>A user is currently logged in: <%= logged_in? %></p>
       <% if logged_in? %>
         <p>The current user is: <%= current_user.name %></p>
         <h3><a href="/users/dashboard-<%= current_user.id %>">User Dashboard</a></h3><br><br>
-      <% end %>
-    </div>
-    <div class="col-12 col-md-6 login">
-      <p>There is a medication being currently stored in the session: <%= session_med? %></p>
-      <% if session_med? %>
-        <p>The current med is: <%= current_med.name %></p>
-
-        <h3><a href="/medications/<%= current_med.slug %>">Medication Detail</a></h3><br><br>
       <% end %>
     </div>
   </div>
