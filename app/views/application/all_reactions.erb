@@ -1,12 +1,12 @@
 <%# Need to separate by current and previous %>
 
-<% @reactions.each do |r| %>
-  <p>Title: <a href="/reactions/<%= r.slug %>"><%= r.title %></a></p>
-  <p>Dosage Amount: <%= r.dosage_amount %></p>
-  <p>Created at: <%= r.created_at %></p>
-  <p>Updated at: <%= r.updated_at %></p><br>
+<% @med.reactions.each do |reax| %>
+  <p>Title: <a href="/reactions/<%= reax.slug %>"><%= reax.title %></a></p>
+  <p>Dosage Amount: <%= reax.dosage_amount %></p>
+  <p>Created at: <%= reax.created_at %></p>
+  <p>Updated at: <%= reax.updated_at %></p><br>
 <% end %>
 
-<% if @reactions.empty? %>
+<% if @med.reactions.empty? %>
   <p>You have not recorded any reactions yet</p>
 <% end %>
