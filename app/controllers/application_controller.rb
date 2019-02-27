@@ -14,7 +14,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    clear_session_med
     erb :rxeactions
   end
 
