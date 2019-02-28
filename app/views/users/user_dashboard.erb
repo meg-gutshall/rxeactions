@@ -2,16 +2,17 @@
 
 <div class="container-fluid user-dashboard">
 
-<h1><%= current_user.name %>'s Dashboard</h1><br>
+<h1><%= @user.name %>'s Dashboard</h1><br>
 
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <h2>User Details</h2>
-      <p>Email: <%= current_user.email %></p>
-      <p>Birth Date: <%= current_user.birth_date %></p>
-      <p>Allergies: <%= current_user.known_allergies %></p><br>
+      <p>Email: <%= @user.email %></p>
+      <%# TODO: Format birth date %>
+      <p>Birth Date: <%= @user.birth_date %></p>
+      <% if !@user.known_allergies.empty? %><p>Allergies: <%= @user.known_allergies %><% end %></p><br>
 
-      <a class="btn" href="/users/dashboard-<%= current_user.id %>/edit">Edit my user details</a><br><br>
+      <a class="btn" href="/users/dashboard-<%= @user.id %>/edit">Edit my user details</a><br><br>
 
       <h2>Current Medications</h2>
 
