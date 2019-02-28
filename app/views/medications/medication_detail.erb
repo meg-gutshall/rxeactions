@@ -8,30 +8,35 @@
     </div>
   </div>
 
-  <div class="row content-row">
-    <div class="col-12 col-md-6">
+  <div class="row">
+    <div class="col-12">
       <h2>Medication Details</h2>
       <p>Dosage Amount: <%= @med.dosage_amount %></p>
       <p>Dosage Form: <%= @med.dosage_form %></p>
       <p>Usage Instructions: <%= @med.usage_instructions %></p>
       <% if @med.prescribing_doctor %><p>Prescribing Doctor: <%= @med.prescribing_doctor %></p><% end %>
       <p>Currently Taking? <%= @med.currently_taking %></p>
+      <%# TODO: Format dates %>
       <% if @med.start_date %><p>Start Date: <%= @med.start_date %></p><% end %>
       <% if @med.end_date %><p>End Date: <%= @med.end_date %></p><% end %>
       <p>Ailment Treated: <%= @med.ailment_treated %></p><br>
+    </div>
+  </div>
 
-      <div class="row btn-row">
-        <div class="col-auto">
-          <a class="btn" href="/medications/<%= @med.slug %>/edit">Edit Medication</a>
-        </div>
-        <div class="col-auto">
-          <form method="POST" action="/medications/<%= @med.slug %>">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <input class="btn delete-btn" type="submit" value="Delete Medication">
-          </form>
-        </div>
-      </div>
+  <div class="row btn-row">
+    <div class="col-auto">
+      <a class="btn" href="/medications/<%= @med.slug %>/edit">Edit Medication</a>
+    </div>
+    <div class="col-auto">
+      <form method="POST" action="/medications/<%= @med.slug %>">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input class="btn delete-btn" type="submit" value="Delete Medication">
+      </form>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-12 col-md-6">
       <h2>Medication Reactions</h2>
 
       <%= erb :'/application/list_reactions' %>
@@ -48,7 +53,7 @@
 
   <div class="row btn-row">
     <div class="col-12">
-      <a class="btn" href="/users/dashboard-<%= current_user.id %>">Return to your user dashboard</a>
+      <a class="btn" href="/users/dashboard-<%= @med.user_id %>">Return to your user dashboard</a>
     </div>
   </div>
 

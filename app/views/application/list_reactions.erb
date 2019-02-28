@@ -3,6 +3,7 @@
 <% @med.reactions.each do |reax| %>
   <p>Title: <a href="/medications/<%= @med.slug %>/reactions-<%= reax.id %>"><%= reax.title %></a></p>
   <p>Dosage Amount: <%= reax.dosage_amount %></p>
+  <%# TODO: Format dates and put them side by side %>
   <p>Created at: <%= reax.created_at %></p>
   <p>Updated at: <%= reax.updated_at %></p><br>
 <% end %>
