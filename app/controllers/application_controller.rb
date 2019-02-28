@@ -14,6 +14,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    # Add if not logged in authentication
+    # Add about link to home page
     erb :rxeactions
   end
 
