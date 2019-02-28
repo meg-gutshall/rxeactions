@@ -2,11 +2,32 @@
 <%# TODO: Style error messages %>
 
 <div class="signup-error">
-  <h1>The following error may have kept you from signing up:</h1>
-  <p> <%= flash[:error] %> </p>
+  <h2>The following error may have kept you from signing up:</h2>
+  <% if flash[:dup_error] %> <p> <%= flash[:dup_error] %> <a href="/">Please log in here.</a></p> <% end %>
+  <% if flash[:pwd_sz_error] %> <p> <%= flash[:pwd_sz_error] %> </p> <% end %>
 
-  <h2>Sign Up</h2>
-  <%= erb :'/application/user_signup' %>
+  <h1>Sign Up</h1>
+  <form method="POST" action="/users">
+    <p>Required fields are followed by <strong>*</strong>.</p>
 
-  <a href="/">Already have an account? Log in here!</a>
+    <label for="name">Name: <strong>*</strong></label>
+    <input id="name" type="text" name="user[name]" <% if flash[:pwd_sz_error] %> value="<%= @user.name %>" <% end %> required><br>
+
+    <label for="email">Email: <strong>*</strong></label>
+    <input id="email" type="email" name="user[email]" <% if flash[:pwd_sz_error] %> value="<%= @user.email %>" <% end %> required><br>
+
+    <label for="pwd">Password: <strong>*</strong></label>
+    <input id="pwd" type="password" name="user[password]" required><br>
+
+    <label for="bday">Birthday: <strong>*</strong></label>
+    <%# TODO: Calculate birthdate of someone who is 18 and load that variable into `max` below %>
+    <input id="bday" type="date" name="user[birth_date]" max="2000-01-02" <% if flash[:pwd_sz_error] %> value="<%= @user.birth_date %>" <% end %> required><br>
+
+    <label for="allergies">Known Allergies: </span></label>
+    <textarea id="allergies" cols="40" rows="10" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."><% if flash[:pwd_sz_error] %><%= @user.known_allergies %><% end %></textarea><br><br>
+
+    <input class="btn" type="submit" value="Sign Up"><br><br>
+
+  </form>
+
 </div>

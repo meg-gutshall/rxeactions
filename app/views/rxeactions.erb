@@ -1,9 +1,9 @@
 <div class="container-fluid homepage">
 
-  <% if flash[:error] %>
+  <% if flash[:check_stray_error] %>
     <div class="row">
       <div class="col-12">
-        <p> <%= flash[:error] %> </p>
+        <p> <%= flash[:check_stray_error] %> </p>
       </div>
     </div>
   <% end %>
@@ -11,6 +11,7 @@
   <div class="row">
     <div class="col-12">
       <h1>Welcome to Rxeactions!</h1>
+      <%# TODO: Below %>
       <p>Write a short summary of what the app was made for and how to use the app.</p>
     </div>
   </div>

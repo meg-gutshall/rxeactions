@@ -1,27 +1,9 @@
 class UsersController < ApplicationController
 
-  # Receives information from the sessions login form, creates a new user, then renders their dashboard
-  post '/users' do
-    # Validate params using a helper method
-    if signup_invalid?
-      # TODO: Add error message
-      flash[:error] = # break down by params
-      redirect "/signup-error"
-    else
-      # Create user
-      @user = User.create(params[:user])
-      # Log user in
-      session[:user_id] = @user.id
-      # Redirect
-      redirect "/users/dashboard-#{@user.id}"
-    end
-  end
-
   # Displays the current user's information, medications, and reactions
   get '/users/dashboard-:id' do
     @user = User.find_by(id: params[:id])
-    user_check
-    user_stray
+    user_check_stray
     if @user && @user.id == current_user.id
       @meds = @user.medications
       erb :'/users/user_dashboard'
@@ -30,8 +12,7 @@ class UsersController < ApplicationController
 
   get '/users/dashboard-:id/edit' do
     @user = User.find_by(id: params[:id])
-    user_check
-    user_stray
+    user_check_stray
     if @user && @user.id == current_user.id
       erb :'/users/edit_user'
     end
@@ -39,28 +20,19 @@ class UsersController < ApplicationController
 
   patch '/users/dashboard-:id' do
     @user = User.find_by(id: params[:id])
-    user_check
-    user_stray
+    user_check_stray
     @user.update(params[:user])
     redirect "/users/dashboard-#{@user.id}"
   end
 
   ## ========== HELPER METHODS ========== ##
 
-  def signup_invalid?
-    params[:user][:email].empty? || !params[:user][:email].match(/^\w+@\w+\.\w+$/) || params[:user][:password].empty? || params[:user][:name].empty? || params[:user][:birth_date].empty?
-  end
-
-  def user_check
+  def user_check_stray
     if !logged_in? || @user == nil
-      flash[:error] = "You have been logged out of your session. Please log back in to continue."
+      flash[:check_stray_error] = "You have been logged out of your session. Please log back in to continue."
       redirect "/"
-    end
-  end
-
-  def user_stray
-    if @user.id != current_user.id
-      flash[:error] = "You do not have permission to view or edit other users' content."
+    elsif @user.id != current_user.id
+      flash[:check_stray_error] = "You do not have permission to view or edit other users' content."
       redirect "/"
     end
   end
