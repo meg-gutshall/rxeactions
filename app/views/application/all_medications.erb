@@ -6,3 +6,7 @@
   <p>Dosage Form: <%= m.dosage_form %></p>
   <p>Ailment Treated: <%= m.ailment_treated %></p><br>
 <% end %>
+
+<% if @meds.none? {|m| m.currently_taking == true} %>
+  <p>You have not recorded any medications yet</p>
+<% end %>
