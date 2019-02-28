@@ -10,5 +10,5 @@
 <% end %>
 
 <% if @meds.none? {|m| m.currently_taking == false} %>
-  <p>None</p>
+  <p>All of your medications are current</p>
 <% end %>
