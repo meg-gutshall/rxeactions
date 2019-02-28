@@ -2,10 +2,10 @@
 <%# TODO: Style error messages %>
 
 <div class="login-error">
-  <h1>The following error may have kept you from logging in:</h1>
-  <p> <%= flash[:error] %> </p>
+  <h2>The following error may have kept you from logging in:</h2>
+  <p> <%= flash[:pwd_error] || flash[:user_error] %> </p>
 
-  <h2>Log In</h2>
+  <h1>Log In</h1>
   <%= erb :'/application/user_login' %>
 
   <a href="/">Don't have an account? Sign up here!</a>
