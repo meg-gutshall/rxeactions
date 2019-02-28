@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
   # The input from this form will go to the users_controller
   get '/signup' do
     redirect "/users/dashboard-#{current_user.id}" if logged_in?
-    erb :'/sessions/signup'
+    redirect "/"
   end
 
   # Renders a login form
   get '/login' do
     redirect "/users/dashboard-#{current_user.id}" if logged_in?
-    erb :'/sessions/login'
+    redirect "/"
   end
 
   # Receives the input from the login form and creates a new session
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     # Find the user
     @user = User.find_by(email: params[:user][:email])
     if @user == nil
-      flash[:error] = "We cannot find your email address in our user database. Please check your spelling and try again, or sign up for an account using the link below."
+      flash[:user_error] = "We cannot find your email address in our user database. Please check your spelling and try again, or sign up for an account using the link below."
       redirect "/login-error"
     end
     # Make sure the user exists in the database and the password matches
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect "/users/dashboard-#{@user.id}"
     else
-      flash[:error] = "The password you entered is incorrect. Please try again."
+      flash[:pwd_error] = "The password you entered is incorrect. Please try again."
       redirect "/login-error"
     end
   end
