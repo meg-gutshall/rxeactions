@@ -1,6 +1,3 @@
-# TODO: Add user and login validations for each route
-# Must go to medication view page to create a new reaction!!
-
 class ReactionsController < ApplicationController
 
   # List reactions by medication
