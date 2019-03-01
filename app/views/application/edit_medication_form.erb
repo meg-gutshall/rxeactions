@@ -15,19 +15,17 @@
   <input id="dos_form" type="text" name="med[dosage_form]" value="<%= @med.dosage_form %>" required><br>              
 
   <label for="inst">Usage Instructions: <strong>*</strong></label><br>
-  <textarea id="inst" cols="40" rows="10" name="med[usage_instructions]" placeholder="Usage instruction details here"><%= @med.usage_instructions %></textarea><br>
+  <textarea id="inst" cols="40" rows="10" name="med[usage_instructions]" placeholder="Record your dosing instructions here. Information can include time of day, frequency, to be taken with or without food, etc."><%= @med.usage_instructions %></textarea><br>
 
   <label for="current">Are you currently taking this medication? <strong>*</strong></label>
   <input id="current" type="radio" name="med[currently_taking]" value="true" <%= "checked" if @med.currently_taking == true %> required> Yes
   <input id="current" type="radio" name="med[currently_taking]" value="false" <%= "checked" if @med.currently_taking == false %> required> No<br>
 
-  <%# TODO: Figure out how to populate month value %>
   <label for="start">Start Date: </label>
-  <input id="start" type="month" name="med[start_date]" value="<%= @med.start_date %>">
+  <input id="start" type="month" name="med[start_date]" value="<%= @med.start_date.strftime("%Y-%m") %>">
 
-  <%# TODO: Figure out how to populate month value %>
   <label for="end">End Date: </label>
-  <input id="end" type="month" name="med[end_date]" value="<%= @med.end_date %>"><br>
+  <input id="end" type="month" name="med[end_date]" value="<%= @med.start_date.strftime("%Y-%m") %>"><br>
 
   <label for="doc">Prescribing Doctor: </label>
   <input id="doc" type="text" name="med[prescribing_doctor]" value="<%= @med.prescribing_doctor %>"><br>

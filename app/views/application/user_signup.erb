@@ -13,8 +13,7 @@
   <input id="pwd" type="password" name="user[password]" required><br>
 
   <label for="bday">Birthday: <strong>*</strong></label>
-  <%# TODO: Calculate birthdate of someone who is 18 and load that variable into `max` below %>
-  <input id="bday" type="date" name="user[birth_date]" max="2000-01-02" required><br>
+  <input id="bday" type="date" name="user[birth_date]" max="<%= (Time.now - 567993600).strftime("%Y-%m-%d") %>" required><br>
 
   <label for="allergies">Known Allergies: </span></label>
   <textarea id="allergies" cols="40" rows="10" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."></textarea><br><br>
