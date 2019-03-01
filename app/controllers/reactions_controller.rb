@@ -18,13 +18,8 @@ class ReactionsController < ApplicationController
   post '/medications/:slug/reactions' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
-    # TODO: Add error message
-    flash[:error] = # break down by params
     @reax = Reaction.create(params[:reax])
-    @reax.medication_id = @med.id
-    @reax.dosage_amount = @med.dosage_amount
-    @reax.usage_instructions = @med.usage_instructions
-    @reax.save
+    @reax.update(medication_id: @med.id, dosage_amount: @med.dosage_amount, usage_instructions: @med.usage_instructions)
     redirect "/medications/#{@med.slug}/reactions-#{@reax.id}"
   end
 
@@ -59,7 +54,7 @@ class ReactionsController < ApplicationController
     user_check_stray
     @reax = Reaction.find_by(id: params[:id])
     @reax.delete
-    redirect "/medications/#{@med.slug}/reactions"
+    redirect "/medications/#{@med.slug}"
   end
 
 end

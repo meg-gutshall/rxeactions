@@ -18,11 +18,8 @@ class MedicationsController < ApplicationController
   # Create a new medication based on the input collected from the user
   post '/medications' do
     user_check
-    # TODO: Add validations error message
-    flash[:error] = # break down by params
     @med = Medication.create(params[:med])
-    @med.user_id = current_user.id
-    @med.save
+    @med.update(user_id: current_user.id)
     redirect "/medications/#{@med.slug}"
   end
 
@@ -45,7 +42,6 @@ class MedicationsController < ApplicationController
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
     @med.update(params[:med])
-    @med.update(user_id: current_user.id)
     redirect "/medications/#{@med.slug}"
   end
 
