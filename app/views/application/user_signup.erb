@@ -1,23 +1,56 @@
-<%# TODO: Redo form layout for Bootstrap %>
-
 <form method="POST" action="/users">
-  <p>Required fields are followed by <strong>*</strong>.</p>
+  
+  <div class="form-row">
+    <div class="col-12">
+      <p>Required fields are followed by <strong>*</strong>.</p>
+    </div>
+  </div>
 
-  <label for="name">Name: <strong>*</strong></label>
-  <input id="name" type="text" name="user[name]" required><br>
+  <div class="container">
 
-  <label for="email">Email: <strong>*</strong></label>
-  <input id="email" type="email" name="user[email]" required><br>
+    <div class="form-row justify-content-center">
+      <div class="form-group col-8">
+        <label for="name">Name: <strong>*</strong></label>
+        <input id="name" class="form-control" type="text" name="user[name]" required>
+      </div>
+    </div>
 
-  <label for="pwd">Password: <strong>*</strong></label>
-  <input id="pwd" type="password" name="user[password]" required><br>
+    <div class="form-row justify-content-center">
+      <div class="form-group col-8">
+        <label for="email">Email: <strong>*</strong></label>
+        <input id="email" class="form-control" type="email" name="user[email]" required>
+      </div>
+    </div>
 
-  <label for="bday">Birthday: <strong>*</strong></label>
-  <input id="bday" type="date" name="user[birth_date]" max="<%= (Time.now - 567993600).strftime("%Y-%m-%d") %>" required><br>
+    <div class="form-row justify-content-center">
+      <div class="form-group col-8">
+        <label for="pwd">Password: <strong>*</strong></label>
+        <input id="pwd" class="form-control" type="password" name="user[password]" aria-describedby="pwdHelp" required>
+        <small id="pwdHelp" class="form-text text-muted">Must be between 6 and 20 characters long.</small>
+      </div>
+    </div>
 
-  <label for="allergies">Known Allergies: </span></label>
-  <textarea id="allergies" cols="40" rows="10" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."></textarea><br><br>
+    <div class="form-row justify-content-center">
+      <div class="form-group col-8">
+        <label for="bday">Birthday: <strong>*</strong></label>
+        <input id="bday" class="form-control" type="date" name="user[birth_date]" max="<%= (Time.now - 567993600).strftime("%Y-%m-%d") %>" aria-describedby="bdayHelp" required>
+        <small id="bdayHelp" class="form-text text-muted">Must be 18 years or older to create an account.</small>
+      </div>
+    </div>
 
-  <input class="btn" type="submit" value="Sign Up"><br><br>
+    <div class="form-row justify-content-center">
+      <div class="form-group col-8">
+        <label for="allergies">Known Allergies: </span></label>
+        <textarea id="allergies" class="form-control" name="user[known_allergies]" rows="5" placeholder="List your known allergies here, even if they're not medications."></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-row">
+    <div class="col-12">
+      <input class="btn" type="submit" value="Sign Up">
+    </div>
+  </div>
 
 </form>
