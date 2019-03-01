@@ -43,3 +43,7 @@ I started implementing partials today into my views! I like how this project is 
 ## Sun, Feb 24
 
 I started styling my project a little bit just to do something fun with it! Then I sucked it up and went to finish coding out my authorizations. I was trying to use `ActiveModel::Errors` to display errors in my views but it didn't seem to want to work for me. I ended up installing `sinatra-flash` instead and it looks pretty easy to work with. I'm _really_ hoping to finish up with this requirements for this project tomorrow so I can get it out to a few people to look at before I send it in for assessment. Long time coming but I think it will be worth it in the end for my portfolio.
+
+## Wed, Feb 27/Thurs, Feb 28
+
+I discovered nested routing and it was the answer to all the frustration and confusion I went through last week!! (I wish it would have come a little earlier but, what can you do.) I implemented it and was able to get rid of a lot of unnecessary code that was junking up my app. I added a lot of validations to my forms by way of conditional redirections with flash messages. I just have to finish up with my medication and reaction controllers and then take care of all the comments throughout my code. Plus another student reminded me today of the blog post and video recordings that we have to do as well which I pretty much completely forgot about!
