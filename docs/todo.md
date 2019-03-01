@@ -6,11 +6,11 @@
 
 ### User Model
 
-- [ ] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
+- [x] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ### Medication Model
 
-- [ ] Consider start/end date input and storage format. Find out how the `date` datatype is accepted and processed.
+- [x] Consider start/end date input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ## All Controllers
 
@@ -30,6 +30,14 @@
 ## All Views
 
 - [ ] Add bullet points for list items and give them slightly larger line-height spacing.
+
+### User Dashboard
+
+- [ ] Display medications newest added to oldest
+
+### Medication Detail Page
+
+- [ ] Display reactions newest added to oldest
 
 ### Nav Bar
 
