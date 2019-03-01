@@ -18,7 +18,7 @@
     <input id="bday" type="date" name="user[birth_date]" max="<%= (Time.now - 567993600).strftime("%Y-%m-%d") %>" value="<%= @user.birth_date %>" required><br>
 
     <label for="allergies">Known Allergies: </span></label>
-    <textarea id="allergies" cols="40" rows="10" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."><%= @user.known_allergies %></textarea><br><br>
+    <textarea id="allergies" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."><%= @user.known_allergies %></textarea><br><br>
 
     <input class="btn" type="submit" value="Save Edits"><br><br>
   
