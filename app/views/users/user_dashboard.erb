@@ -8,8 +8,7 @@
     <div class="col-md-6 col-sm-12">
       <h2>User Details</h2>
       <p>Email: <%= @user.email %></p>
-      <%# TODO: Format birth date %>
-      <p>Birth Date: <%= @user.birth_date %></p>
+      <p>Birth Date: <%= @user.birth_date.strftime("%B %d, %Y") %></p>
       <% if !@user.known_allergies.empty? %><p>Allergies: <%= @user.known_allergies %><% end %></p><br>
 
       <a class="btn" href="/users/dashboard-<%= @user.id %>/edit">Edit my user details</a><br><br>
