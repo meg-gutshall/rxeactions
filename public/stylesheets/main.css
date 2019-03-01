@@ -34,6 +34,16 @@ the parent element. */
     width: 100%;
   }
 
+  /* --- Custom Megstrap Styling --- */
+
+  .container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   /* --- Welcome Page Styles --- */
   body {
     background-color: rgba(220, 160, 168, 1);
@@ -159,6 +169,11 @@ the parent element. */
 
   .branding {
     clear: both;
+  }
+
+  footer {
+    background-color: rgba(249, 251, 242, 1);
+    
   }
 
   footer.branding {
