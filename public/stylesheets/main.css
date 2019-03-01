@@ -44,6 +44,15 @@ the parent element. */
     margin-left: auto;
   }
 
+  form div.current-med {
+    margin-left: 0.1rem;
+    margin-bottom: 1rem;
+  }
+
+  form div.current-med .form-check-label {
+    margin-top: 0.5rem;
+  }
+
   /* --- Welcome Page Styles --- */
   body {
     background-color: rgba(220, 160, 168, 1);
