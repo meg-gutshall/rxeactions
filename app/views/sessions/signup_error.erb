@@ -10,18 +10,18 @@
 
   <h1>Sign Up</h1>
   <form method="POST" action="/users">
-    <p>Required fields are followed by <strong>*</strong>.</p>
+    <p>Required fields are followed by <strong class="req">*</strong>.</p>
 
-    <label for="name">Name: <strong>*</strong></label>
+    <label for="name">Name: <strong class="req">*</strong></label>
     <input id="name" type="text" name="user[name]" <% if flash[:pwd_sz_error] %> value="<%= @user.name %>" <% end %> required><br>
 
-    <label for="email">Email: <strong>*</strong></label>
+    <label for="email">Email: <strong class="req">*</strong></label>
     <input id="email" type="email" name="user[email]" <% if flash[:pwd_sz_error] %> value="<%= @user.email %>" <% end %> required><br>
 
-    <label for="pwd">Password: <strong>*</strong></label>
+    <label for="pwd">Password: <strong class="req">*</strong></label>
     <input id="pwd" type="password" name="user[password]" required><br>
 
-    <label for="bday">Birthday: <strong>*</strong></label>
+    <label for="bday">Birthday: <strong class="req">*</strong></label>
     <%# TODO: Calculate birthdate of someone who is 18 and load that variable into `max` below %>
     <input id="bday" type="date" name="user[birth_date]" max="2000-01-02" <% if flash[:pwd_sz_error] %> value="<%= @user.birth_date %>" <% end %> required><br>
 

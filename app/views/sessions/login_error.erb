@@ -10,12 +10,12 @@
 
   <h1>Log In</h1>
   <form method="POST" action="/login">
-    <p>Required fields are followed by <strong>*</strong>.</p>
+    <p>Required fields are followed by <strong class="req">*</strong>.</p>
 
-    <label for="email">Email: <strong>*</strong></label>
+    <label for="email">Email: <strong class="req">*</strong></label>
     <input id="email" type="email" name="user[email]" <% if flash[:pwd_error] %> value="<%= @user.email %>" <% end %> required><br>
 
-    <label for="pwd">Password: <strong>*</strong></label>
+    <label for="pwd">Password: <strong class="req">*</strong></label>
     <input id="pwd" type="password" name="user[password]" required><br>
 
     <input class="btn" type="submit" value="Log In"><br><br>

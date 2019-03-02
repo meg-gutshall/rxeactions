@@ -2,7 +2,7 @@
   
   <div class="form-row">
     <div class="col-12">
-      <p>Required fields are followed by <strong>*</strong>.</p>
+      <p>Required fields are followed by <strong class="req">*</strong>.</p>
     </div>
   </div>
 
@@ -10,21 +10,21 @@
 
     <div class="form-row justify-content-center">
       <div class="form-group col-8">
-        <label for="name">Name: <strong>*</strong></label>
+        <label for="name">Name: <strong class="req">*</strong></label>
         <input id="name" class="form-control" type="text" name="user[name]" required>
       </div>
     </div>
 
     <div class="form-row justify-content-center">
       <div class="form-group col-8">
-        <label for="email">Email: <strong>*</strong></label>
+        <label for="email">Email: <strong class="req">*</strong></label>
         <input id="email" class="form-control" type="email" name="user[email]" required>
       </div>
     </div>
 
     <div class="form-row justify-content-center">
       <div class="form-group col-8">
-        <label for="pwd">Password: <strong>*</strong></label>
+        <label for="pwd">Password: <strong class="req">*</strong></label>
         <input id="pwd" class="form-control" type="password" name="user[password]" aria-describedby="pwdHelp" required>
         <small id="pwdHelp" class="form-text text-muted">Must be between 6 and 20 characters long.</small>
       </div>
@@ -32,7 +32,7 @@
 
     <div class="form-row justify-content-center">
       <div class="form-group col-8">
-        <label for="bday">Birthday: <strong>*</strong></label>
+        <label for="bday">Birthday: <strong class="req">*</strong></label>
         <input id="bday" class="form-control" type="date" name="user[birth_date]" max="<%= (Time.now - 567993600).strftime("%Y-%m-%d") %>" aria-describedby="bdayHelp" required>
         <small id="bdayHelp" class="form-text text-muted">Must be 18 years or older to create an account.</small>
       </div>

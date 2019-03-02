@@ -1,12 +1,12 @@
 <%# TODO: Redo layout for Bootstrap %>
 
 <form method="POST" action="/medications/<%= @med.slug %>/reactions">
-  <p>Required fields are followed by <strong>*</strong>.</p>
+  <p>Required fields are followed by <strong class="req">*</strong>.</p>
 
-  <label for="title">Title: <strong>*</strong></label>
+  <label for="title">Title: <strong class="req">*</strong></label>
   <input id="title" type="text" name="reax[title]" required><br>           
 
-  <label for="detail">Reaction Detail: <strong>*</strong></label><br>
+  <label for="detail">Reaction Detail: <strong class="req">*</strong></label><br>
   <textarea id="detail" name="reax[reaction_detail]" placeholder="Record any side effects and/or comments pertaining to your medication here."></textarea><br><br>
 
   <input class="btn" type="submit" value="Record New Reaction">

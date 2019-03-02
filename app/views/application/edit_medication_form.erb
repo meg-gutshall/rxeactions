@@ -1,23 +1,23 @@
 <%# TODO: Redo layout for Bootstrap %>
 
 <form method="POST" action="/medications/<%= @med.slug %>">
-  <p>Required fields are followed by <strong>*</strong>.</p>
+  <p>Required fields are followed by <strong class="req">*</strong>.</p>
 
   <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-  <label for="name">Name: <strong>*</strong></label>
+  <label for="name">Name: <strong class="req">*</strong></label>
   <input id="name" type="text" name="med[name]" value="<%= @med.name %>" required><br>
 
-  <label for="dos_amt">Dosage Amount: <strong>*</strong></label>
+  <label for="dos_amt">Dosage Amount: <strong class="req">*</strong></label>
   <input id="dos_amt" type="text" name="med[dosage_amount]" value="<%= @med.dosage_amount %>" required>
 
-  <label for="dos_form">Dosage Form: <strong>*</strong></label>
+  <label for="dos_form">Dosage Form: <strong class="req">*</strong></label>
   <input id="dos_form" type="text" name="med[dosage_form]" value="<%= @med.dosage_form %>" required><br>              
 
-  <label for="inst">Usage Instructions: <strong>*</strong></label><br>
+  <label for="inst">Usage Instructions: <strong class="req">*</strong></label><br>
   <textarea id="inst" name="med[usage_instructions]" placeholder="Record your dosing instructions here. Information can include time of day, frequency, to be taken with or without food, etc."><%= @med.usage_instructions %></textarea><br>
 
-  <label for="current">Are you currently taking this medication? <strong>*</strong></label>
+  <label for="current">Are you currently taking this medication? <strong class="req">*</strong></label>
   <input id="current" type="radio" name="med[currently_taking]" value="true" <%= "checked" if @med.currently_taking == true %> required> Yes
   <input id="current" type="radio" name="med[currently_taking]" value="false" <%= "checked" if @med.currently_taking == false %> required> No<br>
 
@@ -30,7 +30,7 @@
   <label for="doc">Prescribing Doctor: </label>
   <input id="doc" type="text" name="med[prescribing_doctor]" value="<%= @med.prescribing_doctor %>"><br>
 
-  <label for="treatment">Ailment Treated: <strong>*</strong></label>
+  <label for="treatment">Ailment Treated: <strong class="req">*</strong></label>
   <input id="treatment" type="text" name="med[ailment_treated]" value="<%= @med.ailment_treated %>" required><br><br>
 
   <input class="btn" type="submit" value="Update Medication">
