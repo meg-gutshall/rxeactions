@@ -2,6 +2,8 @@
 <%# TODO: Style error messages %>
 
 <div class="login-error">
+  <% @title = "Rxeactions | Log In Error" %>
+
   <h2>The following error may have kept you from logging in:</h2>
   <% if flash[:user_error] %> <p> <%= flash[:user_error] %><a href="/"> sign up for an account.</a> </p> <% end %>
   <% if flash[:pwd_error] %> <p> <%= flash[:pwd_error] %> </p> <% end %>

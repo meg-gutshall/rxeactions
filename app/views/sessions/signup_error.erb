@@ -2,6 +2,8 @@
 <%# TODO: Style error messages %>
 
 <div class="signup-error">
+  <% @title = "Rxeactions | Sign Up Error" %>
+
   <h2>The following error may have kept you from signing up:</h2>
   <% if flash[:dup_error] %> <p> <%= flash[:dup_error] %> <a href="/">Please log in here.</a></p> <% end %>
   <% if flash[:pwd_sz_error] %> <p> <%= flash[:pwd_sz_error] %> </p> <% end %>
