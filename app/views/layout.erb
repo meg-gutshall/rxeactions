@@ -21,13 +21,8 @@
     <div class="container-fluid">
       <% if logged_in? %>
         <header>
-          <nav class="navbar navbar-expand-md sticky-top navbar-light bg-light">
-            <%# TODO: Remove homepage link after testing %>
-            <a class="navbar-brand" href="/">
-              <%# Leaving this out until I can figure out how to properly space it
-              <img src="/images/bootstrap-solid.png" width="100px" height="100px" class="d-inline-block align-top" alt=""> %>
-              Rxeactions
-            </a>
+          <nav class="navbar navbar-expand-md sticky-top">
+            <li class="nav-item home">Rxeactions</li>
             <a class="nav-item nav-link" href="/users/dashboard-<%= current_user.id %>">Dashboard</a>
             <a class="nav-item nav-link" href="/medications">Medications</a>
             <a class="nav-item nav-link" href="/about">About</a>

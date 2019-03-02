@@ -55,6 +55,10 @@ the parent element. */
   }
 
   .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     background: rgba(249, 251, 242, 1);
     -moz-box-shadow: 0 0 2rem rgba(41, 30, 53, 0.5);
     -webkit-box-shadow: 0 0 2rem rgba(41, 30, 53, 0.5);
@@ -90,6 +94,7 @@ the parent element. */
   a {
     color: rgba(175, 68, 112, 1);
     font-weight: bold;
+    text-decoration: none;
   }
 
   a:hover {
@@ -122,6 +127,27 @@ the parent element. */
     clear: both;
   }
 
+  /* --- Navbar Styling --- */
+
+  nav {
+    display: flex;
+    flex-shrink: 0;
+    background-color: rgba(249, 251, 242, 1);
+    border-bottom: 0.5rem solid rgba(112, 44, 72, 1);
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+  }
+
+  nav.navbar {
+    padding: 1.5rem;
+  }
+
+  nav li.home {
+    color: rgba(41, 30, 53, 1);
+    font-weight: bold;
+    margin-right: 1.5rem;
+  }
+
   /* --- Button Styling --- */
 
   input.btn {
@@ -130,7 +156,7 @@ the parent element. */
     font-family: 'Josefin Sans', Verdana, sans-serif;
     font-size: 2rem;
     padding: 0.8rem 2.4rem;
-    margin: 0.8rem 0rem 0rem 0.8rem;
+    margin-top: 0.8rem;
     -moz-transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
@@ -147,22 +173,23 @@ the parent element. */
   }
 
   a.btn, input.delete-btn {
-  background-color: rgba(164, 181, 197, 1);
+    background-color: rgba(164, 181, 197, 1);
     color: rgba(41, 30, 53, 1);
+    text-decoration: none;
     font-family: 'Josefin Sans', Verdana, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0.6rem 1.6rem;
-    -moz-transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -moz-transition-duration: 0.15s;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
     border: 0.2rem solid rgba(164, 181, 197, 1);
     border-radius: 0.5rem;
   }
 
   a.btn:hover, input.delete-btn:hover {
-    background-color: rgba(164, 181, 197, 1);
+    background-color: rgba(249, 251, 242, 1);
     color: rgba(41, 30, 53, 1);
-    border: 0.2rem solid rgba(164, 181, 197, 1);
+    border: 0.2rem solid rgba(41, 30, 53, 1);
     border-radius: 0.5rem;
     text-decoration: none;
   }
@@ -192,7 +219,7 @@ the parent element. */
 
   form div.current-med {
     margin-left: 0.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   form div.current-med .form-check-label {
@@ -202,14 +229,15 @@ the parent element. */
   /* --- Footer Styling --- */
 
   footer {
+    display: flex;
+    flex-shrink: 0;
     background-color: rgba(249, 251, 242, 1);
-    
   }
 
   footer.branding {
-    border-top: 0.2rem solid #ccc;
-    margin-top: 2rem;
-    padding-top: 2rem;
+    border-top: 0.5rem solid rgba(112, 44, 72, 1);
+    padding: 2rem 1.5rem;
+    margin-top: 4rem;
   }
 
 }
