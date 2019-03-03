@@ -29,26 +29,34 @@
 
 ## All Views
 
-- [ ] Add bullet points for list items and give them slightly larger line-height spacing.
-
 ### User Dashboard
 
-- [ ] Display medications newest added to oldest
+- [ ] Display medications newest added to oldest.
 
 ### Medication Detail Page
 
-- [ ] Display reactions newest added to oldest
+- [ ] Display reactions newest added to oldest.
+- [ ] Add pop-up second check for delete action.
+
+### Reaction Detail Page
+
+- [ ] Display reactions newest added to oldest.
+- [ ] Add pop-up second check for delete action.
 
 ### Nav Bar
 
 - [x] Create links to user dashboard, user's medications, about, and to log out.
 - [ ] Decide what kind of sticky I want for the navigation and when I want it to expand.
-- [ ] Build helper method to determine active link.
+- [ ] Determine active link.
+- [ ] Left align Logout link.
 - [x] Create validation to show nav bar only to logged in users.
 
 ### All Forms
 
 - [x] Use nested hashes.
+- [ ] Fix dates.
+- [ ] Populate edit forms.
+- [ ] Populate error submissions.
 
 #### Login & Signup Forms
 
@@ -62,6 +70,18 @@
 
 - [x] Use `input type="month"` for medication start and end dates. See [source](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_month).
 
-## README.md
+## Project Requirements
+
+### README.md
 
 - [ ] Update `README.md` with project info.
+
+### Blog Post
+
+- [ ] Turn `journal.md` into blog post.
+- Write post for About page.
+
+### Videos
+
+- [ ] Record 30-minute live coding video.
+- [ ] Record walkthrough video.

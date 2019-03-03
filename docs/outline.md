@@ -30,6 +30,10 @@
 - Implement an update history for when changes are made to a medication
 - Include information from official prescription source about possible side effects
 - Include information about current medication interactions
+- Add "Stop Medication" button
+  - Change `currently_taking` from `true` to `false`
+  - Set `end_date` as the current month and year
+  - Automatically trigger the option to create a reaction for the user to say why they stopped the medication
 
 ## Project Summary
 
