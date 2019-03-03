@@ -1,15 +1,14 @@
 <div class="row">
   <% @title = "Rxeactions | Home" %>
 
-  <% if flash[:check_stray_error] %>
-    <div class="col-12">
-      <p> <%= flash[:check_stray_error] %> </p>
+  <% if flash[:alert] != nil %>
+    <div class="col-12 justify-content-center alert alert-dark" role="alert">
+      <%= flash[:alert] %>
     </div>
   <% end %>
 
   <div class="col-12 headline">
     <h1 class="headline">Welcome to Rxeactions!</h1>
-    <%# TODO: Below %>
     <p class="headline">Write a short summary of what the app was made for and how to use the app.</p>
   </div>
 

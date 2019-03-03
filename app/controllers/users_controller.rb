@@ -29,10 +29,10 @@ class UsersController < ApplicationController
 
   def user_check_stray
     if !logged_in? || @user == nil
-      flash[:check_stray_error] = "You have been logged out of your session. Please log back in to continue."
+      flash[:alert] = "You have been logged out of your session. Please log back in to continue."
       redirect "/"
     elsif @user.id != current_user.id
-      flash[:check_stray_error] = "You do not have permission to view or edit other users' content."
+      flash[:alert] = "You do not have permission to view or edit other users' content."
       redirect "/"
     end
   end

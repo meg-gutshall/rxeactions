@@ -13,12 +13,14 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
   end
 
+  # Renders signup and login forms
   get "/" do
-    # Add if not logged in authentication
-    # Add about link to home page
+    # TODO: Uncomment below line
+    # redirect "/users/dashboard-#{current_user.id}" if logged_in?
     erb :rxeactions
   end
 
+  # Renders about page view
   get "/about" do
     erb :about
   end
@@ -37,17 +39,17 @@ class ApplicationController < Sinatra::Base
 
   def user_check
     if !logged_in?
-      flash[:check_stray_error] = "You have been logged out of your session. Please log back in to continue."
+      flash[:alert] = "You have been logged out of your session. Please log back in to continue."
       redirect "/"
     end
   end
 
   def user_check_stray
     if Medication.find_by_slug(params[:slug]).user_id != current_user.id
-      flash[:check_stray_error] = "You do not have permission to view or edit other users' content."
+      flash[:alert] = "You do not have permission to view or edit other users' content."
       redirect "/"
     elsif !logged_in?
-      flash[:check_stray_error] = "You have been logged out of your session. Please log back in to continue."
+      flash[:alert] = "You have been logged out of your session. Please log back in to continue."
       redirect "/"
     end
   end
