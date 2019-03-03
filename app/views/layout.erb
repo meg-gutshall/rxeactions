@@ -3,22 +3,25 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]> <html class="no-js" lang="en">           <![endif]-->
-<html lang="en"> 
+<html lang="en">
+
   <head>
     <%# Required meta tags %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%# Bootstrap CSS %>
-   <link rel="stylesheet" href="/stylesheets/bootstrap.css" >
+   <link rel="stylesheet" href="/stylesheets/bootstrap.css">
 
     <%# My custom CSS %>
-    <link rel="stylesheet" href="/stylesheets/main.css" >
+    <link rel="stylesheet" href="/stylesheets/main.css">
 
     <title><%= @title %></title>
   </head>
+
   <body>
-    <div class="container-fluid">
+
+    <div class="container-fluid"> <%# Start navbar %>
       <% if logged_in? %>
         <header>
           <nav class="navbar navbar-expand-md sticky-top">
@@ -26,36 +29,27 @@
             <a class="nav-item nav-link" href="/users/dashboard-<%= current_user.id %>">Dashboard</a>
             <a class="nav-item nav-link" href="/medications">Medications</a>
             <a class="nav-item nav-link" href="/about">About</a>
-            <%# TODO: Left-align with CSS %>
             <a class="nav-item nav-link" href="/logout">Logout</a>
-          </nav> <%# .nav %>
+          </nav>
         </header>
       <% end %>
-    </div> <%# .container-fluid %>
+    </div> <%# End navbar %>
 
-    <div class="container-fluid wrapper">
+    <div class="container-fluid wrapper"> <%# Start body %>
+      <%= yield %>
+    </div> <%# End body %>
 
-        <%= yield %>
-
-    </div> <%# .container-fluid %>
-
-    <div class="container-fluid">
+    <div class="container-fluid"> <%# Start footer %>
       <footer class="branding">
-        <small>&copy; 2019 <strong>Rxeactions</strong></small>
+        <small>&copy; 2019 <strong class="req">Rxeactions</strong></small>
       </footer>
-    </div> <%# .container-fluid %>
+    </div> <%# End footer %>
 
-    <%# Comment out Corneal gem jQuery %>
-    <%# <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> %>
-    <!--[if lt IE 7]>
-      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-    <![endif]-->
     <%# Optional JavaScript %>
     <%# jQuery first, then Popper.js, then Bootstrap JS %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="/javascripts/bootstrap.min.js" ></script>
-    <%# TODO: Check JS Bootstrap link %>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+
 </html>
