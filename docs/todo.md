@@ -29,6 +29,8 @@
 
 ## All Views
 
+- [ ] Make sure Flash alerts work.
+
 ### User Dashboard
 
 - [ ] Display medications newest added to oldest.
