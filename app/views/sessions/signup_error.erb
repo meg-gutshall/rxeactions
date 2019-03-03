@@ -1,4 +1,3 @@
-<%# TODO: Redo form layout for Bootstrap %>
 <%# TODO: Style error messages %>
 
 <div class="signup-error">
@@ -10,25 +9,55 @@
 
   <h1>Sign Up</h1>
   <form method="POST" action="/users">
-    <p>Required fields are followed by <strong class="req">*</strong>.</p>
 
-    <label for="name">Name: <strong class="req">*</strong></label>
-    <input id="name" type="text" name="user[name]" <% if flash[:pwd_sz_error] %> value="<%= @user.name %>" <% end %> required><br>
+    <div class="form-row">
+      <div class="col-12">
+        <p>Required fields are followed by <strong class="req">*</strong>.</p>
+      </div>
+    </div>
 
-    <label for="email">Email: <strong class="req">*</strong></label>
-    <input id="email" type="email" name="user[email]" <% if flash[:pwd_sz_error] %> value="<%= @user.email %>" <% end %> required><br>
+    <div class="form-row">
+      <div class="col-12">
+        <label for="name">Name: <strong class="req">*</strong></label>
+        <input id="name" class="form-control" type="text" name="user[name]" <% if flash[:pwd_sz_error] %> value="<%= @user.name %>" <% end %> required>
+      </div>
+    </div>
 
-    <label for="pwd">Password: <strong class="req">*</strong></label>
-    <input id="pwd" type="password" name="user[password]" required><br>
+    <div class="form-row">
+      <div class="col-12">
+        <label for="email">Email: <strong class="req">*</strong></label>
+        <input id="email" class="form-control" type="email" name="user[email]" <% if flash[:pwd_sz_error] %> value="<%= @user.email %>" <% end %> required>
+      </div>
+    </div>
 
-    <label for="bday">Birthday: <strong class="req">*</strong></label>
-    <%# TODO: Calculate birthdate of someone who is 18 and load that variable into `max` below %>
-    <input id="bday" type="date" name="user[birth_date]" max="2000-01-02" <% if flash[:pwd_sz_error] %> value="<%= @user.birth_date %>" <% end %> required><br>
+    <div class="form-row">
+      <div class="col-12">
+        <label for="pwd">Password: <strong class="req">*</strong></label>
+        <input id="pwd" class="form-control" type="password" name="user[password]" aria-describedby="pwdHelp" required>
+        <small id="pwdHelp" class="form-text text-muted">Must be between 6 and 20 characters long.</small>
+      </div>
+    </div>
 
-    <label for="allergies">Known Allergies: </span></label>
-    <textarea id="allergies" cols="40" rows="10" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."><% if flash[:pwd_sz_error] %><%= @user.known_allergies %><% end %></textarea><br><br>
+    <div class="form-row">
+      <div class="col-12">
+        <label for="bday">Birthday: <strong class="req">*</strong></label>
+        <input id="bday" class="form-control" type="date" name="user[birth_date]" max="<%= (Time.now - 567993600).strftime("%Y-%m-%d") %>" aria-describedby="bdayHelp" <% if flash[:pwd_sz_error] %> value="<%= @user.birth_date %>" <% end %> required>
+        <small id="bdayHelp" class="form-text text-muted">Must be 18 years or older to create an account.</small>
+      </div>
+    </div>
 
-    <input class="btn" type="submit" value="Sign Up"><br><br>
+    <div class="form-row">
+      <div class="col-12">
+        <label for="allergies">Known Allergies: </span></label>
+        <textarea id="allergies" class="form-control" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."><% if flash[:pwd_sz_error] %><%= @user.known_allergies %><% end %></textarea>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12">
+        <input class="btn" type="submit" value="Sign Up">
+      </div>
+    </div>
 
   </form>
 

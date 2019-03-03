@@ -1,16 +1,30 @@
-<%# TODO: Redo layout for Bootstrap %>
-
 <form method="POST" action="/medications/<%= @med.slug %>/reactions-<%= @reax.id %>">
-  <p>Required fields are followed by <strong class="req">*</strong>.</p>
 
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <div class="form-row">
+    <div class="col-12">
+      <p>Required fields are followed by <strong class="req">*</strong>.</p>
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
+    </div>
+  </div>
 
-  <label for="title">Title: <strong class="req">*</strong></label>
-  <input id="title" type="text" name="reax[title]" value="<%= @reax.title %>" required><br>           
+  <div class="form-row">
+    <div class="col-12">
+      <label for="title">Title: <strong class="req">*</strong></label>
+      <input id="title" class="form-control" type="text" name="reax[title]" value="<%= @reax.title %>" required>           
+    </div>
+  </div>
 
-  <label for="detail">Reaction Detail: <strong class="req">*</strong></label><br>
-  <textarea id="detail" name="reax[reaction_detail]" placeholder="Record any side effects and/or comments pertaining to your medication here."><%= @reax.reaction_detail %></textarea><br><br>
+  <div class="form-row">
+    <div class="col-12">
+      <label for="detail">Reaction Detail: <strong class="req">*</strong></label>
+      <textarea id="detail" class="form-control" name="reax[reaction_detail]" placeholder="Record any side effects and/or comments pertaining to your medication here."><%= @reax.reaction_detail %></textarea>
+    </div>
+  </div>
 
-  <input class="btn" type="submit" value="Update Reaction">
+  <div class="form-row">
+    <div class="col-12">
+      <input class="btn" type="submit" value="Update Reaction">
+    </div>
+  </div>
 
 </form>
