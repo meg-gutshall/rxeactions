@@ -3,26 +3,8 @@
 <div class="edit-user">
   <% @title = "Rxeactions | Edit User" %>
 
-  <form method="POST" action="/users/dashboard-<%= @user.id %>">
-    <h1>Edit your user profile here</h1>
-    <p>Required fields are followed by <strong>*</strong>.</p>
+  <h1>Edit your user profile here</h1>
 
-    <input id="hidden" type="hidden" name="_method" value="PATCH">
-
-    <label for="name">Name: <strong>*</strong></label>
-    <input id="name" type="text" name="user[name]" value="<%= @user.name %>" required><br>
-
-    <label for="email">Email: <strong>*</strong></label>
-    <input id="email" type="email" name="user[email]" value="<%= @user.email %>" required><br>
-
-    <label for="bday">Birthday: <strong>*</strong></label>
-    <input id="bday" type="date" name="user[birth_date]" max="<%= (Time.now - 567993600).strftime("%Y-%m-%d") %>" value="<%= @user.birth_date %>" required><br>
-
-    <label for="allergies">Known Allergies: </span></label>
-    <textarea id="allergies" name="user[known_allergies]" placeholder="List your known allergies here, even if they're not medications."><%= @user.known_allergies %></textarea><br><br>
-
-    <input class="btn" type="submit" value="Save Edits"><br><br>
-  
-  </form>
+  <%= erb :'/application/edit_user_form' %>
 
 </div>
