@@ -8,14 +8,14 @@
   </div>
 
   <div class="form-row">
-    <div class="col-12">
+    <div class="form-group col-12">
       <label for="title">Title: <strong class="req">*</strong></label>
       <input id="title" class="form-control" type="text" name="reax[title]" value="<%= @reax.title %>" required>           
     </div>
   </div>
 
   <div class="form-row">
-    <div class="col-12">
+    <div class="form-group col-12">
       <label for="detail">Reaction Detail: <strong class="req">*</strong></label>
       <textarea id="detail" class="form-control" name="reax[reaction_detail]" placeholder="Record any side effects and/or comments pertaining to your medication here."><%= @reax.reaction_detail %></textarea>
     </div>
