@@ -127,6 +127,26 @@ the parent element. */
     clear: both;
   }
 
+  /* --- Headline Styling --- */
+
+  h1.headline {
+    color: rgba(249, 251, 242, 1);
+    text-shadow: -2px -2px 10px rgba(175, 68, 112, 1), 2px 2px 10px rgba(175, 68, 112, 1), -4px -4px 15px rgba(220, 160, 168, 1), 4px 4px 15px rgba(220, 160, 168, 1); /* (Pink shadow) */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  h1.sub-headline {
+    color: rgba(249, 251, 242, 1);
+    text-shadow: -2px -2px 10px rgba(41, 30, 53, 1), 2px 2px 10px rgba(41, 30, 53, 1), -4px -4px 15px rgba(164, 181, 197, 1), 4px 4px 15px rgba(164, 181, 197, 1); /* (Blue shadow) */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  p.headline {
+    text-align: center;
+  }
+
   /* --- Navbar Styling --- */
 
   nav {
@@ -150,81 +170,70 @@ the parent element. */
 
   /* --- Button Styling --- */
 
+  .btn {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
   input.btn {
     background-color: rgba(175, 68, 112, 1);
     color: rgba(249, 251, 242, 1);
-    font-family: 'Josefin Sans', Verdana, sans-serif;
     font-size: 2rem;
+    font-family: 'Josefin Sans', Verdana, sans-serif;
     padding: 0.8rem 2.4rem;
-    margin-top: 0.8rem;
+    border: 0.2rem solid rgba(175, 68, 112, 1);
+    border-radius: 0.3rem;
     -moz-transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    border: 0.2rem solid rgba(175, 68, 112, 1);
-    border-radius: 0.3rem;
   }
 
   input.btn:hover {
     background-color: rgba(249, 251, 242, 1);
     color: rgba(175, 68, 112, 1);
-    border: 0.2rem solid rgba(175, 68, 112, 1);
-    border-radius: 0.3rem;
-    text-decoration: none;
   }
 
   input.delete-btn {
     background-color: rgba(112, 44, 72, 1);
     color: rgba(249, 251, 242, 1);
-    text-decoration: none;
-    font-family: 'Josefin Sans', Verdana, sans-serif;
     font-size: 1.6rem;
+    text-decoration: none;
+    border: 0.2rem solid rgba(112, 44, 72, 1);
+    border-radius: 0.5rem;
     -moz-transition-duration: 0.15s;
     -webkit-transition-duration: 0.15s;
     transition-duration: 0.15s;
-    border: 0.2rem solid rgba(112, 44, 72, 1);
-    border-radius: 0.5rem;
   }
 
   input.delete-btn:hover {
     background-color: rgba(249, 251, 242, 1);
     color: rgba(112, 44, 72, 1);
-    border: 0.2rem solid rgba(112, 44, 72, 1);
-    border-radius: 0.5rem;
-    text-decoration: none;
   }
 
   a.btn {
     background-color: rgba(164, 181, 197, 1);
     color: rgba(41, 30, 53, 1);
-    text-decoration: none;
-    font-family: 'Josefin Sans', Verdana, sans-serif;
     font-size: 1.6rem;
+    font-family: 'Josefin Sans', Verdana, sans-serif;
+    text-decoration: none;
+    padding: 0.8rem 2.4rem;
+    border: 0.2rem solid rgba(164, 181, 197, 1);
+    border-radius: 0.5rem;
     -moz-transition-duration: 0.15s;
     -webkit-transition-duration: 0.15s;
     transition-duration: 0.15s;
-    border: 0.2rem solid rgba(164, 181, 197, 1);
-    border-radius: 0.5rem;
-    padding: 0.8rem 2.4rem;
-    margin-top: 0.8rem;
   }
 
   a.btn:hover {
     background-color: rgba(249, 251, 242, 1);
-    color: rgba(41, 30, 53, 1);
     border: 0.2rem solid rgba(41, 30, 53, 1);
-    border-radius: 0.5rem;
-    text-decoration: none;
-  }
-
-  a.btn.back-btn {
-    margin-top: 1.6rem;
-  }
-
-  a.btn.create-new {
-    margin-top: 0rem;
   }
 
   /* --- Form Styling --- */
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
 
   .form-control {
     font-size: 1.45rem;
