@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
     # Find the user
     @user = User.find_by(email: params[:user][:email])
     if @user == nil
-      flash[:user_error] = "We cannot find your email address in our user database. Please check your spelling and try again, or"
-      erb :'/sessions/login_error'
+      flash[:alert] = "We cannot find your email address in our user database. Please check your spelling and try again, or sign up for an account."
+      redirect "/"
     end
     # Make sure the user exists in the database and the password matches
     if @user && @user.authenticate(params[:user][:password])
@@ -20,8 +20,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect "/users/dashboard-#{@user.id}"
     else
-      flash[:pwd_error] = "The password you entered is incorrect. Please try again."
-      erb :'/sessions/login_error'
+      flash[:alert] = "The password you entered is incorrect. Please try again."
+      redirect "/"
     end
   end
 
@@ -39,11 +39,11 @@ class SessionsController < ApplicationController
     @user.update(params[:user])
     # Validate params using a helper method and ActiveRecord validations
     if @user.errors[:email].any?
-      flash[:dup_error] = "There is already an account associated with this email address."
-      erb :'/sessions/signup_error'
+      flash[:alert] = "There is already an account associated with this email address."
+      redirect "/"
     elsif @user.errors[:password].any?
-      flash[:pwd_sz_error] = "Your password must be between 6 and 20 characters long."
-      erb :'/sessions/signup_error'
+      flash[:alert] = "Your password must be between 6 and 20 characters long."
+      redirect "/"
     else
     # Log user in
     session[:user_id] = @user.id
