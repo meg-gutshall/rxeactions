@@ -1,5 +1,3 @@
-# TODO: Add user and login validations for each route
-
 class MedicationsController < ApplicationController
 
   # List medications by user
