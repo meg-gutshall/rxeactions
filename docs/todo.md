@@ -29,11 +29,11 @@
 
 ## All Views
 
-- [ ] Make sure Flash alerts work.
+- [x] Make sure Flash alerts work.
 
 ### Home Page
 
-- [ ] Write a short summary of what the app was made for and how to use the app.
+- [x] Write a short summary of what the app was made for and how to use the app.
 
 ### User Dashboard
 
