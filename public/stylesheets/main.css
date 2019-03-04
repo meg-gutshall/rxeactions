@@ -154,6 +154,7 @@ the parent element. */
   }
   
   p.headline {
+    font-size: 1.8rem;
     text-align: center;
   }
 
@@ -172,7 +173,7 @@ the parent element. */
     padding: 1.5rem;
   }
 
-  nav li.home {
+  nav a.home {
     color: rgba(41, 30, 53, 1);
     font-weight: bold;
     margin-right: 1.5rem;

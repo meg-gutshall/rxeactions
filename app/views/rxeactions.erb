@@ -6,16 +6,22 @@
       <%= flash[:alert] %>
     </div>
   <% end %>
+</div>
 
-  <div class="col-12 headline">
+<div class="row justify-content-center">
+  <div class="col-8 headline">
     <h1 class="headline">Welcome to Rxeactions!</h1>
-    <p class="headline">Write a short summary of what the app was made for and how to use the app.</p>
+    <p class="headline">Rxeactions is a digital journal that allows users to privately track medications they’ve been prescribed and side effects, thoughts, and feelings associated with those medications.</p>
   </div>
+</div>
 
+<div class="row">
   <div class="col-12">
     <h2>To get started, either sign up or log in.</h2>
   </div>
+</div>
 
+<div class="row">
   <div class="col-12 col-md-6">
     <h3>Sign Up</h3>
     <%= erb :'/application/user_signup' %>
@@ -24,5 +30,4 @@
     <h3>Log In</h3>
     <%= erb :'/application/user_login' %>
   </div>
-
 </div>
