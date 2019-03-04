@@ -31,6 +31,10 @@
 
 - [ ] Make sure Flash alerts work.
 
+### Home Page
+
+- [ ] Write a short summary of what the app was made for and how to use the app.
+
 ### User Dashboard
 
 - [ ] Display medications newest added to oldest.
