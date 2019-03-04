@@ -1,39 +1,58 @@
-<%# TODO: Redo layout for Bootstrap %>
-
-<div class="container-fluid reaction-detail">
+<div class="row">
   <% @title = "Rxeactions | Reaction Details" %>
   
+  <div class="col-12">
+    <h1>Reaction Details for <%= @med.name %></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <h2><%= @reax.title %></h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3"> <p>Entry created at:</p> </div>
+  <div class="col-9"> <p><%= @reax.created_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>
+</div>
+
+<% if @reax.updated_at != @reax.created_at %>
   <div class="row">
-    <div class="col-12">
-      <h1>Reaction Details</h1>
-      <h2>Title: <%= @reax.title %></h2>
-      <p>Medication: <%= @med.name %></p>
-      <p>Dosage Amount: <%= @reax.dosage_amount %></p>
-      <p>Reaction: <%= @reax.reaction_detail %></p>
-      <p>Currently Taking: <%= @med.currently_taking %></p>
-      <p>Usage Instructions: <%= @reax.usage_instructions %></p>
-      <%# TODO: Format dates and put them side by side %>
-      <p>Entry created at: <%= @reax.created_at %></p>
-      <% if @reax.updated_at != @reax.created_at %><p>Entry updated at: <%= @reax.updated_at %></p><% end %><br>
-    </div>
-  </div>  
-
-  <div class="row btn-row">
-    <div class="col-auto">
-      <a class="btn" href="/medications/<%= @med.slug %>/reactions-<%= @reax.id %>/edit">Edit Reaction</a>
-    </div>
-    <div class="col-auto">
-      <form method="POST" action="/medications/<%= @med.slug %>/reactions-<%= @reax.id %>">
-        <input id="hidden" type="hidden" name="_method" value="DELETE">
-        <input class="btn delete-btn" type="submit" value="Delete Reaction">
-      </form>
-    </div>
+    <div class="col-3"> <p>Entry updated at:</p> </div>
+    <div class="col-9"> <p><%= @reax.updated_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>
   </div>
-    
-  <div class="row btn-row">
-    <div class="col-12">
-      <a class="btn back-btn" href="/medications/<%= @med.slug %>">Return to the <%= @med.name %> detail page</a>
-    </div>
-  </div>
+<% end %>
 
+<div class="row">
+  <div class="col-3"> <p>Reaction:</p> </div>
+  <div class="col-9"> <p><%= @reax.reaction_detail %></p> </div>
+</div>
+
+<div class="row">
+  <div class="col-3"> <p>Dosage Amount:</p> </div>
+  <div class="col-9"> <p><%= @reax.dosage_amount %></p> </div>
+</div>
+
+<div class="row">
+  <div class="col-3"> <p>Usage Instructions:</p> </div>
+  <div class="col-9"> <p><%= @reax.usage_instructions %></p> </div>
+</div>
+
+<div class="row">
+  <div class="col-auto">
+    <a class="btn" href="/medications/<%= @med.slug %>/reactions-<%= @reax.id %>/edit">Edit Reaction</a>
+  </div>
+  <div class="col-auto">
+    <form method="POST" action="/medications/<%= @med.slug %>/reactions-<%= @reax.id %>">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input class="btn delete-btn" type="submit" value="Delete Reaction">
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <a class="btn" href="/medications/<%= @med.slug %>">Return to the <%= @med.name %> detail page</a>
+  </div>
 </div>
