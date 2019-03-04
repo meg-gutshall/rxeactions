@@ -131,14 +131,16 @@ the parent element. */
 
   h1.headline {
     color: rgba(249, 251, 242, 1);
-    text-shadow: -2px -2px 10px rgba(175, 68, 112, 1), 2px 2px 10px rgba(175, 68, 112, 1), -4px -4px 15px rgba(220, 160, 168, 1), 4px 4px 15px rgba(220, 160, 168, 1); /* (Pink shadow) */
+    text-shadow: -1.5px -1.5px 0px rgba(175, 68, 112, 1), -1.5px 1.5px 0px rgba(175, 68, 112, 1), 1.5px -1.5px 0px rgba(175, 68, 112, 1), 1.5px 1.5px 0px rgba(175, 68, 112, 1), 0px 0px 15px rgba(220, 160, 168, 1), 0px 0px 15px rgba(220, 160, 168, 1);
+    /* text-shadow: -2px -2px 10px rgba(175, 68, 112, 0.5), 2px 2px 10px rgba(175, 68, 112, 0.5), -4px -4px 15px rgba(220, 160, 168, 1), 4px 4px 15px rgba(220, 160, 168, 1); (Pink shadow) */
     text-align: center;
     margin-bottom: 1rem;
   }
 
   h1.sub-headline {
     color: rgba(249, 251, 242, 1);
-    text-shadow: -2px -2px 10px rgba(41, 30, 53, 1), 2px 2px 10px rgba(41, 30, 53, 1), -4px -4px 15px rgba(164, 181, 197, 1), 4px 4px 15px rgba(164, 181, 197, 1); /* (Blue shadow) */
+    text-shadow: -1.5px -1.5px 0px rgba(41, 30, 53, 1), -1.5px 1.5px 0px rgba(41, 30, 53, 1), 1.5px -1.5px 0px rgba(41, 30, 53, 1), 1.5px 1.5px 0px rgba(41, 30, 53, 1), 2px 2px 15px rgba(164, 181, 197, 1), 2px 2px 15px rgba(164, 181, 197, 1);
+    /* text-shadow: -2px -2px 10px rgba(41, 30, 53, 0.5), 2px 2px 10px rgba(41, 30, 53, 0.5), -4px -4px 15px rgba(164, 181, 197, 1), 4px 4px 15px rgba(164, 181, 197, 1); (Blue shadow) */
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -229,6 +231,11 @@ the parent element. */
     border: 0.2rem solid rgba(41, 30, 53, 1);
   }
 
+  a.btn.new {
+    position: relative;
+    margin-top: 0;
+  }
+
   /* --- Form Styling --- */
 
   .form-group {
@@ -263,6 +270,13 @@ the parent element. */
 
   form div.current-med .form-check-label {
     margin-top: 0.5rem;
+  }
+
+  /* --- Alert Styling --- */
+
+  .alert {
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   /* --- Footer Styling --- */
