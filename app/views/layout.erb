@@ -22,17 +22,15 @@
   <body>
 
     <div class="container-fluid"> <%# Start navbar %>
-      <% if logged_in? %>
         <header>
           <nav class="navbar navbar-expand-md sticky-top">
-            <li class="nav-item home">Rxeactions</li>
-            <a class="nav-item nav-link" href="/users/dashboard-<%= current_user.id %>">Dashboard</a>
-            <a class="nav-item nav-link" href="/medications">Medications</a>
+            <a class="nav-item nav-link home" href="/">Rxeactions</a>
+            <% if logged_in? %> <a class="nav-item nav-link" href="/users/dashboard-<%= current_user.id %>">Dashboard</a> <% end %>
+            <% if logged_in? %> <a class="nav-item nav-link" href="/medications">Medications</a> <% end %>
             <a class="nav-item nav-link" href="/about">About</a>
-            <a class="nav-item nav-link" href="/logout">Logout</a>
+            <% if logged_in? %> <a class="nav-item nav-link" href="/logout">Logout</a> <% end %>
           </nav>
         </header>
-      <% end %>
     </div> <%# End navbar %>
 
     <div class="container-fluid wrapper"> <%# Start body %>
