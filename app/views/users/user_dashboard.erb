@@ -5,7 +5,7 @@
     <h1 class="headline"><%= @user.name %>'s Dashboard</h1>
   </div>
 
-  <div class="col-md-6 col-sm-12">
+  <div class="col-md-4 col-sm-12">
     <h2>User Details</h2>
     <p>Email: <%= @user.email %></p>
     <p>Birth Date: <%= @user.birth_date.strftime("%B %d, %Y") %></p>
@@ -18,7 +18,7 @@
     <%= erb :'/application/current_medications' %>
   </div>
 
-  <div class="col-md-6 col-sm-12">
+  <div class="col-md-8 col-sm-12">
     <h2>Create a New Medication</h2>
 
     <%= erb :'/application/new_medication_form' %>

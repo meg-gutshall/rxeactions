@@ -1,14 +1,14 @@
 <form method="POST" action="/medications">
   
   <div class="form-row">
-    <div class="col-12">
+    <div class="form-group col-12">
       <p>Required fields are followed by <strong class="req">*</strong>.</p>
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-12">
-      <label for="name">Medication Name: <strong class="req">*</strong></label>
+  <div class="form-group row">
+    <label for="name" class="col-auto col-form-label">Medication Name: <strong class="req">*</strong></label>
+    <div class="col">
       <input id="name" class="form-control" type="text" name="med[name]" required>
     </div>
   </div>
@@ -16,7 +16,8 @@
   <div class="form-row">
     <div class="form-group col-12 col-md-6">
       <label for="dos_amt">Dosage Amount: <strong class="req">*</strong></label>
-      <input id="dos_amt" class="form-control" type="text" name="med[dosage_amount]" required>
+      <input id="dos_amt" class="form-control" type="text" name="med[dosage_amount]" aria-describedby="dos_amtHelp" required>
+      <small id="dos_amtHelp" class="form-text text-muted">Be sure to include units (i.e. mg, mL, etc.).</small>
     </div>
     <div class="form-group col-12 col-md-6">
       <label for="dos_form">Dosage Form: <strong class="req">*</strong></label>
@@ -68,7 +69,7 @@
   </div>
 
   <div class="form-row">
-    <div class="col-12">
+    <div class="form-group col-12">
       <input class="btn" type="submit" value="Save New Medication">
     </div>
   </div>

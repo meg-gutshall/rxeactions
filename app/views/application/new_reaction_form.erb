@@ -1,7 +1,7 @@
 <form method="POST" action="/medications/<%= @med.slug %>/reactions">
 
   <div class="form-row">
-    <div class="col-12">
+    <div class="form-group col-12">
       <p>Required fields are followed by <strong class="req">*</strong>.</p>
     </div>
   </div>
@@ -16,12 +16,12 @@
   <div class="form-group form-row">
     <div class="col-12">
       <label for="detail">Reaction Detail: <strong class="req">*</strong></label>
-      <textarea id="detail" class="form-control" name="reax[reaction_detail]" placeholder="Record any side effects and/or comments pertaining to your medication here."></textarea>
+      <textarea id="detail" class="form-control" rows="5" name="reax[reaction_detail]" placeholder="Record any side effects and/or comments pertaining to your medication here."></textarea>
     </div>
   </div>
 
   <div class="form-row">
-    <div class="col-12">
+    <div class="form-group col-12">
       <input class="btn" type="submit" value="Record New Reaction">
     </div>
   </div>

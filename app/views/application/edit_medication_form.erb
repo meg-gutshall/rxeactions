@@ -7,63 +7,66 @@
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-12">
-      <label for="name">Name: <strong class="req">*</strong></label>
+  <div class="form-group row">
+    <label for="name" class="col-2 col-form-label">Medication Name: <strong class="req">*</strong></label>
+    <div class="col-10">
       <input id="name" class="form-control" type="text" name="med[name]" value="<%= @med.name %>" required>
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-12 col-md-6">
-      <label for="dos_amt">Dosage Amount: <strong class="req">*</strong></label>
-      <input id="dos_amt" class="form-control" type="text" name="med[dosage_amount]" value="<%= @med.dosage_amount %>" required>
+  <div class="form-group row">
+    <label for="dos_amt" class="col-2 col-form-label">Dosage Amount: <strong class="req">*</strong></label>
+    <div class="col-10 col-md-4">
+      <input id="dos_amt" class="form-control" type="text" name="med[dosage_amount]" aria-describedby="dos_amtHelp" value="<%= @med.dosage_amount %>" required>
+      <small id="dos_amtHelp" class="form-text text-muted">Be sure to include units (i.e. mg, mL, etc.).</small>
     </div>
-    <div class="form-group col-12 col-md-6">
-      <label for="dos_form">Dosage Form: <strong class="req">*</strong></label>
-      <input id="dos_form" class="form-control" type="text" name="med[dosage_form]" value="<%= @med.dosage_form %>" required>              
+    <label for="dos_form" class="col-2 col-form-label">Dosage Form: <strong class="req">*</strong></label>
+    <div class="col-10 col-md-4">
+      <input id="dos_form" class="form-control" type="text" name="med[dosage_form]" value="<%= @med.dosage_form %>" required>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-12">
       <label for="inst">Usage Instructions: <strong class="req">*</strong></label>
-      <textarea id="inst" class="form-control" name="med[usage_instructions]" placeholder="Record your dosing instructions here. Information can include time of day, frequency, to be taken with or without food, etc."><%= @med.usage_instructions %></textarea>
+      <textarea id="inst" class="form-control" name="med[usage_instructions]" rows="5" placeholder="Record your dosing instructions here. Information can include time of day, frequency, to be taken with or without food, etc."><%= @med.usage_instructions %></textarea>
     </div>
   </div>
 
-  <div class="form-row current-med">
-    <div class="form-check form-check-inline">
-      <label class="form-check-label">Are you currently taking this medication? <strong class="req">*</strong></label>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-4">Are you currently taking this medication? <strong class="req">*</strong></legend>
+      <div class="col">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="med[currently_taking]" id="current1" value="true" <%= "checked" if @med.currently_taking == true %> required>
+          <label class="form-check-label" for="current1">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="med[currently_taking]" id="current2" value="false" <%= "checked" if @med.currently_taking == false %> required>
+          <label class="form-check-label" for="current2">No</label>
+        </div>
+      </div>
     </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="med[currently_taking]" id="current1" value="true" <%= "checked" if @med.currently_taking == true %> required>
-      <label class="form-check-label" for="current1">Yes</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="med[currently_taking]" id="current2" value="false" <%= "checked" if @med.currently_taking == false %> required>
-      <label class="form-check-label" for="current2">No</label>
-    </div>
-  </div>
+  </fieldset>
 
-  <div class="form-row">
-    <div class="form-group col-12 col-md-6">
-      <label for="start">Start Date: </label>
+  <div class="form-group row">
+    <label for="dos_amt" class="col-2 col-form-label">Usage Start Date: </label>
+    <div class="col-10 col-md-4">
       <input id="start" class="form-control" type="month" name="med[start_date]" value="<%= @med.start_date.strftime("%Y-%m") %>">
     </div>
-    <div class="form-group col-12 col-md-6">
-      <label for="end">End Date: </label>
+    <label for="dos_form" class="col-2 col-form-label">Usage End Date: </label>
+    <div class="col-10 col-md-4">
       <input id="end" class="form-control" type="month" name="med[end_date]" value="<%= @med.start_date.strftime("%Y-%m") %>">
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-12 col-md-6">
-      <label for="doc">Prescribing Doctor: </label>
+  <div class="form-group row">
+    <label for="dos_amt" class="col-2 col-form-label">Prescribing Doctor: </label>
+    <div class="col-10 col-md-4">
       <input id="doc" class="form-control" type="text" name="med[prescribing_doctor]" value="<%= @med.prescribing_doctor %>">
     </div>
-    <div class="form-group col-12 col-md-6">
-      <label for="treatment">Ailment Treated: <strong class="req">*</strong></label>
+    <label for="dos_form" class="col-2 col-form-label">Ailment Treated: <strong class="req">*</strong></label>
+    <div class="col-10 col-md-4">
       <input id="treatment" class="form-control" type="text" name="med[ailment_treated]" value="<%= @med.ailment_treated %>" required>
     </div>
   </div>

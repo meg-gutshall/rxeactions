@@ -1,10 +1,85 @@
 <div class="row">
   <% @title = "Rxeactions | New Medication" %>
 
-  <div class="col-12">
-    <h1>Create a new medication here</h1>
-
-    <%= erb :'/application/new_medication_form' %>
-  </div>
-  
+  <h1 class="partial-header">Create a new medication here</h1>
 </div>
+
+<form method="POST" action="/medications">
+  
+  <div class="form-row">
+    <div class="form-group col-12">
+      <p>Required fields are followed by <strong class="req">*</strong>.</p>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="name" class="col-2 col-form-label">Medication Name: <strong class="req">*</strong></label>
+    <div class="col-10">
+      <input id="name" class="form-control" type="text" name="med[name]" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="dos_amt" class="col-2 col-form-label">Dosage Amount: <strong class="req">*</strong></label>
+    <div class="col-10 col-md-4">
+      <input id="dos_amt" class="form-control" type="text" name="med[dosage_amount]" aria-describedby="dos_amtHelp" required>
+      <small id="dos_amtHelp" class="form-text text-muted">Be sure to include units (i.e. mg, mL, etc.).</small>
+    </div>
+    <label for="dos_form" class="col-2 col-form-label">Dosage Form: <strong class="req">*</strong></label>
+    <div class="col-10 col-md-4">
+      <input id="dos_form" class="form-control" type="text" name="med[dosage_form]" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="inst">Usage Instructions: <strong class="req">*</strong></label>
+      <textarea id="inst" class="form-control" name="med[usage_instructions]" rows="5" placeholder="Record your dosing instructions here. Information can include time of day, frequency, to be taken with or without food, etc."></textarea>
+    </div>
+  </div>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-4">Are you currently taking this medication? <strong class="req">*</strong></legend>
+      <div class="col">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="med[currently_taking]" id="current1" value="true" required>
+          <label class="form-check-label" for="current1">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="med[currently_taking]" id="current2" value="false" required>
+          <label class="form-check-label" for="current2">No</label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-group row">
+    <label for="dos_amt" class="col-2 col-form-label">Usage Start Date: </label>
+    <div class="col-10 col-md-4">
+      <input id="start" class="form-control" type="month" name="med[start_date]">
+    </div>
+    <label for="dos_form" class="col-2 col-form-label">Usage End Date: </label>
+    <div class="col-10 col-md-4">
+      <input id="end" class="form-control" type="month" name="med[end_date]">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="dos_amt" class="col-2 col-form-label">Prescribing Doctor: </label>
+    <div class="col-10 col-md-4">
+      <input id="doc" class="form-control" type="text" name="med[prescribing_doctor]">
+    </div>
+    <label for="dos_form" class="col-2 col-form-label">Ailment Treated: <strong class="req">*</strong></label>
+    <div class="col-10 col-md-4">
+      <input id="treatment" class="form-control" type="text" name="med[ailment_treated]" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12">
+      <input class="btn" type="submit" value="Save New Medication">
+    </div>
+  </div>
+
+</form>

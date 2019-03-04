@@ -1,13 +1,34 @@
-<%# Need to separate by current and previous %>
-
 <% @med.reactions.each do |reax| %>
-  <p>Title: <a href="/medications/<%= @med.slug %>/reactions-<%= reax.id %>"><%= reax.title %></a></p>
-  <p>Dosage Amount: <%= reax.dosage_amount %></p>
-  <%# TODO: Format dates and put them side by side %>
-  <p>Created at: <%= reax.created_at %></p>
-  <p>Updated at: <%= reax.updated_at %></p><br>
+  <div class="iteration">
+    <div class="row">
+      <div class="col-12">
+        <p><a href="/medications/<%= @med.slug %>/reactions-<%= reax.id %>"><%= reax.title %></a></p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-4"> <p>Dosage Amount:</p> </div>
+      <div class="col-8"> <p><%= reax.dosage_amount %></p> </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4"> <p>Entry created at:</p> </div>
+      <div class="col-8"> <p><%= reax.created_at.strftime("%m/%d/%Y %I:%M %p") %></p> </div>
+    </div>
+
+    <% if reax.updated_at != reax.created_at %>
+      <div class="row">
+        <div class="col-4"> <p>Entry updated at:</p> </div>
+        <div class="col-8"> <p><%= reax.updated_at.strftime("%m/%d/%Y %I:%M %p") %></p> </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
-<% if @med.reactions.empty? %>
-  <p>You have not recorded any reactions yet</p>
-<% end %>
+<div class="row">
+  <% if @med.reactions.empty? %>
+    <div class="col-12">
+      <p>You have not recorded any reactions yet</p>
+    </div>
+  <% end %>
+</div>

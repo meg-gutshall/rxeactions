@@ -6,11 +6,11 @@
 
 ### User Model
 
-- [x] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
+- [ ] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ### Medication Model
 
-- [x] Consider start/end date input and storage format. Find out how the `date` datatype is accepted and processed.
+- [ ] Consider start/end date input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ## All Controllers
 
@@ -85,7 +85,7 @@
 ### Blog Post
 
 - [ ] Turn `journal.md` into blog post.
-- Write post for About page.
+- [ ] Write post for About page.
 
 ### Videos
 

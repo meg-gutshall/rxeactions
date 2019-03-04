@@ -39,6 +39,14 @@ the parent element. */
     margin-left: auto;
   }
 
+  .iteration {
+    margin-bottom: 1.5rem;
+  }
+
+  .partial-header {
+    margin-bottom: 2rem;
+  }
+
   /* --- Base-Level Styling --- */
 
   html, body {
