@@ -4,14 +4,18 @@
   <div class="col-12">
     <h1 class="headline"><%= @user.name %>'s Dashboard</h1>
   </div>
+</div>
 
+<div class="row">
   <div class="col-md-4 col-sm-12">
     <h2>User Details</h2>
     <p>Email: <%= @user.email %></p>
     <p>Birth Date: <%= @user.birth_date.strftime("%B %d, %Y") %></p>
     <% if !@user.known_allergies.empty? %><p>Allergies: <%= @user.known_allergies %><% end %></p>
 
-    <a class="btn" href="/users/dashboard-<%= @user.id %>/edit">Edit my user details</a>
+    <div class="text-center">
+      <a class="btn" href="/users/dashboard-<%= @user.id %>/edit">Edit my user details</a>
+    </div>
 
     <h2>Current Medications</h2>
 
