@@ -51,6 +51,10 @@ the parent element. */
     margin-left: 1.5rem;
   }
 
+  span.ask {
+    float: right;
+  }
+
   /* --- Base-Level Styling --- */
 
   html, body {
