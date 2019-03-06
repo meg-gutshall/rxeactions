@@ -86,14 +86,14 @@ the parent element. */
 
   h1 {
     font-family: 'Josefin Sans', Arial, sans-serif;
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: 1.5rem;
   }
 
   h2 {
     border-bottom: 0.4rem dashed rgba(164, 181, 197, 1);
     font-family: 'Josefin Sans', Arial, sans-serif;
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     padding-bottom: 0.4rem;
     margin: 1.8rem 0rem 2.4rem 0rem;
   }
