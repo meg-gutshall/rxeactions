@@ -10,18 +10,28 @@
   <div class="col-12">
     <h2>The Idea</h2>
 
-    <p>When I was in college I was diagnosed with generalized anxiety. Since then, I have 
-    changed psychiatrists several times and have added major depression and PTSD to my list 
-    of diagnoses. Over the course of the past decade, between seeking treatment from different 
-    doctors (each with their own preferred methods of treatment) and receiving new diagnoses, 
-    I've tried a LOT of different medications. Unfortunately, I couldn't tell you what most of 
-    them were, let alone the dosage or why I stopped taking them.</p>
-    <p>That is where the idea of Rxeactions stemmed from. When I would see a new psychiatrist, 
-    they would suggest a medication and sometimes I'd remember taking it before but not when, or 
-    for how long, or why I stopped it. And who wants to call a bunch of doctor's offices to track 
-    down their medical records? I don't! I really wish I would have had the foresight at the 
-    time to write down my prescribed medications and associated experiences, but I didn't. Now, 
-    it's no longer something you, or I, will have to worry about!</p>
+<div class="row">
+  <div class="col mr-auto">
+    <h2 id="faqs">FAQs</h2>
+  </div>
+  <div class="text-right col-auto">
+    <a class="btn back-btn" href="/"><% if logged_in? %>Return to your user dashboard<% else %>Return home<% end %></a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <p><strong class="req">Q:</strong> Can other people see my medications?
+    <br><strong class="req">A:</strong> No. This app only allows users to view and edit medications that they themselves have created and it will automatically log them out if they try to access anyone else's information.</p>
+    <p><strong class="req">Q:</strong> What if my dosage changes while I'm taking my medication?
+    <br><strong class="req">A:</strong> You can easily change any information about your medication by navigating to that medication's detail page (either through your dashboard or through your list medications page) and clicking the "Edit Medication" button. Any changes you save will be immediately reflected on your medication detail page, however, they will not be reflected on previously recorded reactions, only on reactions recorded from this point forward. When there is a change to a medication, it is recommended that you record a reaction with an explanation of why that particular change was made.</p>
+    <p><strong class="req">Q:</strong> Where can I find more information about my medication?
+    <br><strong class="req">A:</strong> This app is purely for user's personal medical journaling purposes and is by no means qualified to give out medical advice, professional or otherwise. That being said, I am happy to direct users towards a few trusted resources:</p>
+    <ul class="faq">
+      <li>The <a href="https://druginfo.nlm.nih.gov/drugportal/" target="_blank">Drug Information Portal</a> courtesy of NIH</li>
+      <li><a href="https://www.fda.gov/drugs/resourcesforyou/consumers/default.htm" target="_blank">Drug Information for Consumers</a> courtesy of the FDA</li>
+      <li><a href="https://www.webmd.com/drugs/2/index" target="_blank">Drugs & Medications A-Z</a> courtesy of WebMD</li>
+    </ul>
+    <p>Always consult a licensed professional before administering medication and call 9-1-1 or visit nearest hospital if you are experiencing a true medical emergency. The safety and wellness of my users is my most important goal. :)</p>
   </div>
 </div>
 
