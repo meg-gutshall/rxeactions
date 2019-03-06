@@ -41,11 +41,11 @@
   <% end %>
 </div>
 
-<div class="row">
-  <div class="col-auto">
+<div class="row justify-content-center">
+  <div class="text-center col-12 col-md-4">
     <a class="btn" href="/medications/<%= @med.slug %>/edit">Edit Medication</a>
   </div>
-  <div class="col-auto">
+  <div class="text-center col-12 col-md-4">
     <form method="POST" action="/medications/<%= @med.slug %>">
       <input id="hidden" type="hidden" name="_method" value="DELETE">
       <input class="btn delete-btn" type="submit" value="Delete Medication">
