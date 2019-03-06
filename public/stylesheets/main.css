@@ -45,6 +45,9 @@ the parent element. */
 
   .partial-header {
     margin-bottom: 2rem;
+  .req {
+    color: rgba(175, 68, 112, 1);
+  }
   }
 
   /* --- Base-Level Styling --- */
@@ -266,10 +269,6 @@ the parent element. */
   label {
     display: inline-block;
     margin-bottom: 0.4rem;
-  }
-
-  strong.req {
-    color: rgba(175, 68, 112, 1);
   }
 
   form div.current-med {
