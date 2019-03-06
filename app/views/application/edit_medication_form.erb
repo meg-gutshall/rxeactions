@@ -50,24 +50,24 @@
   </fieldset>
 
   <div class="form-group row">
-    <label for="dos_amt" class="col-2 col-form-label">Usage Start Date: </label>
+    <label for="start" class="col-2 col-form-label">Usage Start Date: </label>
     <div class="col-10 col-md-4">
       <input id="start" class="form-control" type="month" name="med[start_date]" value="<% if @med.start_date %><%= @med.start_date.strftime("%Y-%m") %><% end %>" max="<%= Time.now.strftime("%Y-%m") %>">
     </div>
-    <label for="dos_form" class="col-2 col-form-label">Usage End Date: </label>
+    <label for="end" class="col-2 col-form-label">Usage End Date: </label>
     <div class="col-10 col-md-4">
       <input id="end" class="form-control" type="month" name="med[end_date]" value="<% if @med.end_date %><%= @med.end_date.strftime("%Y-%m") %><% end %>" max="<%= Time.now.strftime("%Y-%m") %>">
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="dos_amt" class="col-2 col-form-label">Prescribing Doctor: </label>
+    <label for="doc" class="col-2 col-form-label">Prescribing Doctor: </label>
     <div class="col-10 col-md-4">
       <input id="doc" class="form-control" type="text" name="med[prescribing_doctor]" value="<%= @med.prescribing_doctor %>">
     </div>
-    <label for="dos_form" class="col-2 col-form-label">Ailment Treated: <strong class="req">*</strong></label>
+    <label for="purpose" class="col-2 col-form-label">Usage Purpose: <strong class="req">*</strong></label>
     <div class="col-10 col-md-4">
-      <input id="treatment" class="form-control" type="text" name="med[ailment_treated]" value="<%= @med.ailment_treated %>" required>
+      <input id="purpose" class="form-control" type="text" name="med[usage_purpose]" value="<%= @med.usage_purpose %>" required>
     </div>
   </div>
 
