@@ -43,8 +43,6 @@ the parent element. */
     margin-bottom: 1.5rem;
   }
 
-  .partial-header {
-    margin-bottom: 2rem;
   .req {
     color: rgba(175, 68, 112, 1);
   }
@@ -89,6 +87,7 @@ the parent element. */
   h1 {
     font-family: 'Josefin Sans', Arial, sans-serif;
     font-size: 4rem;
+    margin-bottom: 1.5rem;
   }
 
   h2 {
