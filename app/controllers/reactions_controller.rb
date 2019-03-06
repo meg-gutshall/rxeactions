@@ -20,6 +20,7 @@ class ReactionsController < ApplicationController
     user_check_stray
     @reax = Reaction.create(params[:reax])
     @reax.update(medication_id: @med.id, dosage_amount: @med.dosage_amount, usage_instructions: @med.usage_instructions)
+    @med.update(updated_at: @reax.created_at)
     redirect "/medications/#{@med.slug}/reactions-#{@reax.id}"
   end
 
