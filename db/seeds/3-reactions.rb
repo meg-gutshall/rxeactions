@@ -12,7 +12,6 @@ Reaction.create!(
   dosage_amount: "25 mg",
   usage_instructions: "Take one daily",
   created_at: Time.strptime('2015-12-11 17:17', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 1
 )
 Reaction.create!(
@@ -21,7 +20,6 @@ Reaction.create!(
   dosage_amount: "25 mg",
   usage_instructions: "Take once daily in the morning",
   created_at: Time.strptime('2016-02-12 12:46', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 1
 )
 
@@ -32,7 +30,6 @@ Reaction.create!(
   dosage_amount: "60 mg",
   usage_instructions: "Take once daily for 5 days with food",
   created_at: Time.strptime('2018-02-27 08:21', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 2
 )
 
@@ -43,7 +40,6 @@ Reaction.create!(
   dosage_amount: "0.5 mg",
   usage_instructions: "Take once daily for 3 days, then twice daily for 12 weeks",
   created_at: Time.strptime('2019-01-01 13:33', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 3
 )
 Reaction.create!(
@@ -52,7 +48,6 @@ Reaction.create!(
   dosage_amount: "0.5 mg",
   usage_instructions: "Take once daily for 3 days, then twice daily for 12 weeks",
   created_at: Time.strptime('2019-01-23 13:31', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 3
 )
 
@@ -63,7 +58,6 @@ Reaction.create!(
   dosage_amount: "150 mg",
   usage_instructions: "Take once daily before bed",
   created_at: Time.strptime('2016-05-24 18:58', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 4
 )
 Reaction.create!(
@@ -72,7 +66,6 @@ Reaction.create!(
   dosage_amount: "150 mg",
   usage_instructions: "Take once daily before bed",
   created_at: Time.strptime('2016-07-14 14:13', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 4
 )
 
@@ -83,7 +76,6 @@ Reaction.create!(
   dosage_amount: "50 mg",
   usage_instructions: "Take once daily before bed",
   created_at: Time.strptime('2016-05-24 19:06', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 5
 )
 
@@ -94,7 +86,6 @@ Reaction.create!(
   dosage_amount: "75 mg",
   usage_instructions: "Take once daily",
   created_at: Time.strptime('2015-07-01 11:09', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 6
 )
 Reaction.create!(
@@ -103,7 +94,6 @@ Reaction.create!(
   dosage_amount: "75 mg",
   usage_instructions: "Take once daily",
   created_at: Time.strptime('2017-12-11 18:38', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 6
 )
 Reaction.create!(
@@ -112,7 +102,6 @@ Reaction.create!(
   dosage_amount: "25 mg",
   usage_instructions: "Take once daily in the morning",
   created_at: Time.strptime('2019-02-11 09:17', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 6
 )
 
@@ -123,7 +112,6 @@ Reaction.create!(
   dosage_amount: "33 mg",
   usage_instructions: "Take once daily at the same time each day",
   created_at: Time.strptime('2015-10-30 20:08', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 7
 )
 Reaction.create!(
@@ -132,7 +120,6 @@ Reaction.create!(
   dosage_amount: "33 mg",
   usage_instructions: "Take once daily at the same time each day",
   created_at: Time.strptime('2018-09-04 16:34', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 7
 )
 
@@ -143,7 +130,6 @@ Reaction.create!(
   dosage_amount: "20 mg",
   usage_instructions: "Take once daily one hour before a meal. Do not take for more than 14 days at a time.",
   created_at: Time.strptime('2017-04-20 12:32', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 8
 )
 Reaction.create!(
@@ -152,7 +138,6 @@ Reaction.create!(
   dosage_amount: "20 mg",
   usage_instructions: "Take once daily one hour before a meal. Do not take for more than 14 days at a time.",
   created_at: Time.strptime('2017-05-02 13:41', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 8
 )
 
@@ -163,7 +148,6 @@ Reaction.create!(
   dosage_amount: "20 mg",
   usage_instructions: "Take once daily with food",
   created_at: Time.strptime('2017-04-30 15:01', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 10
 )
 
@@ -174,7 +158,6 @@ Reaction.create!(
   dosage_amount: "5 mg",
   usage_instructions: "Take once daily",
   created_at: Time.strptime('2017-10-14 19:22', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 11
 )
 Reaction.create!(
@@ -183,6 +166,5 @@ Reaction.create!(
   dosage_amount: "5 mg",
   usage_instructions: "Take once daily",
   created_at: Time.strptime('2017-10-28 14:36', '%Y-%m-%d %H:%M'),
-  updated_at: "",
   medication_id: 11
 )
