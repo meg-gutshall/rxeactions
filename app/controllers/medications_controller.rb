@@ -17,6 +17,8 @@ class MedicationsController < ApplicationController
   post '/medications' do
     user_check
     @med = Medication.create(params[:med])
+    @med.update(start_date: params[:med][:start_date]+"-01")
+    @med.update(end_date: params[:med][:end_date]+"-01")
     @med.update(user_id: current_user.id)
     redirect "/medications/#{@med.slug}"
   end
@@ -39,7 +41,10 @@ class MedicationsController < ApplicationController
   patch '/medications/:slug' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
+    # binding.pry
     @med.update(params[:med])
+    @med.update(start_date: params[:med][:start_date]+"-01")
+    @med.update(end_date: params[:med][:end_date]+"-01")
     redirect "/medications/#{@med.slug}"
   end
 

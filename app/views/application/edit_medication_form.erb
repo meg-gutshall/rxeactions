@@ -52,11 +52,11 @@
   <div class="form-group row">
     <label for="dos_amt" class="col-2 col-form-label">Usage Start Date: </label>
     <div class="col-10 col-md-4">
-      <input id="start" class="form-control" type="month" name="med[start_date]" value="<%= @med.start_date %>">
+      <input id="start" class="form-control" type="month" name="med[start_date]" value="<% if @med.start_date %><%= @med.start_date.strftime("%Y-%m") %><% end %>" max="<%= Time.now.strftime("%Y-%m") %>">
     </div>
     <label for="dos_form" class="col-2 col-form-label">Usage End Date: </label>
     <div class="col-10 col-md-4">
-      <input id="end" class="form-control" type="month" name="med[end_date]" value="<%= @med.start_date %>">
+      <input id="end" class="form-control" type="month" name="med[end_date]" value="<% if @med.end_date %><%= @med.end_date.strftime("%Y-%m") %><% end %>" max="<%= Time.now.strftime("%Y-%m") %>">
     </div>
   </div>
 

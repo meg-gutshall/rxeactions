@@ -16,12 +16,6 @@
       <div class="col-8"> <p><%= reax.created_at.strftime("%m/%d/%Y %I:%M %p") %></p> </div>
     </div>
 
-    <% if reax.updated_at != reax.created_at %>
-      <div class="row">
-        <div class="col-4"> <p>Entry updated at:</p> </div>
-        <div class="col-8"> <p><%= reax.updated_at.strftime("%m/%d/%Y %I:%M %p") %></p> </div>
-      </div>
-    <% end %>
   </div>
 <% end %>
 

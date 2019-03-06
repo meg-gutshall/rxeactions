@@ -18,7 +18,7 @@
   <div class="col-10"> <p><%= @reax.created_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>
 </div>
 
-<% if @reax.updated_at != @reax.created_at %>
+<% if @reax.updated_at.strftime("%A, %B %d, %Y") != @reax.created_at.strftime("%A, %B %d, %Y") %>
   <div class="row">
     <div class="col-2"> <p>Entry updated at:</p> </div>
     <div class="col-10"> <p><%= @reax.updated_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>

@@ -11,15 +11,27 @@
   <% if @med.currently_taking %>
     <div class="col-12">
       <p>I am currently taking <%= @med.name %> at a dosage of <%= @med.dosage_amount %> in <%= @med.dosage_form %> form. My usage instructions are as follows: <%= @med.usage_instructions %></p>
-      <p>The purpose of using this medication is for <%= @med.ailment_treated %>. <% if @med.start_date %>I began taking <%= @med.name %> in <%= @med.start_date.strftime("%B %Y") %>.<% end %> <% if !@med.prescribing_doctor.empty? %><%= @med.prescribing_doctor %> is my prescribing doctor.<% end %></p>
+      <p>The purpose of using this medication is for <%= @med.ailment_treated %>. <% if @med.start_date %>I began taking <%= @med.name %> in <%= @med.start_date.strftime("%B %Y") %>.<% end %> <% if !@med.prescribing_doctor.empty? %><%= @med.prescribing_doctor %> is my prescribing doctor.<% end %></p><br>
     </div>
   <% else %>
     <div class="col-12">
       <p>I am no longer taking <%= @med.name %>. My last dosage was <%= @med.dosage_amount %> in <%= @med.dosage_form %> form. My most recent usage instructions were as follows: <%= @med.usage_instructions %></p>
-      <p>The purpose of using this medication was for <%= @med.ailment_treated %>. <% if @med.start_date %>I began taking <%= @med.name %> in <%= @med.start_date.strftime("%B %Y") %> and ended in <% if @med.end_date %><%= @med.end_date.strftime("%B %Y") %><% end %>.<% end %> <% if !@med.prescribing_doctor.empty? %><%= @med.prescribing_doctor %> prescribed me this medication.<% end %></p>
+      <p>The purpose of using this medication was for <%= @med.ailment_treated %>. <% if @med.start_date %>I began taking <%= @med.name %> in <%= @med.start_date.strftime("%B %Y") %> and ended in <% if @med.end_date %><%= @med.end_date.strftime("%B %Y") %><% end %>.<% end %> <% if !@med.prescribing_doctor.empty? %><%= @med.prescribing_doctor %> prescribed me this medication.<% end %></p><br>
     </div>
   <% end %>
 </div>
+
+<div class="row">
+  <div class="col-2"> <p>Medication created on:</p> </div>
+  <div class="col-10"> <p><%= @med.created_at.strftime("%A, %B %d, %Y") %></p> </div>
+</div>
+
+<% if @med.updated_at.strftime("%A, %B %d, %Y") != @med.created_at.strftime("%A, %B %d, %Y") %>
+  <div class="row">
+    <div class="col-2"> <p>Medication updated on:</p> </div>
+    <div class="col-10"> <p><%= @med.updated_at.strftime("%A, %B %d, %Y") %></p> </div>
+  </div>
+<% end %>
 
 <div class="row justify-content-center">
   <div class="text-center col-12 col-md-4">
