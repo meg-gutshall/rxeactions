@@ -48,6 +48,9 @@ the parent element. */
   .req {
     color: rgba(175, 68, 112, 1);
   }
+
+  ul.faq {
+    margin-left: 1.5rem;
   }
 
   /* --- Base-Level Styling --- */
