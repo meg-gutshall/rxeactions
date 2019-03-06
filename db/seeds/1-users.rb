@@ -27,3 +27,10 @@ User.create!(
   birth_date: "1975-11-25",
   known_allergies: "Penicillin"
 )
+User.create!(
+  name: "Gerry Canter",
+  email: "gerbear@yahoo.com",
+  password: "password",
+  birth_date: "1950-08-10",
+  known_allergies: ""
+)
