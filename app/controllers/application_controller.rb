@@ -15,8 +15,7 @@ class ApplicationController < Sinatra::Base
 
   # Renders signup and login forms
   get "/" do
-    # TODO: Uncomment below line
-    # redirect "/users/dashboard-#{current_user.id}" if logged_in?
+    redirect "/users/dashboard-#{current_user.id}" if logged_in?
     erb :rxeactions
   end
 
