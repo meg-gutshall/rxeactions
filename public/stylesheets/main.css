@@ -222,6 +222,7 @@ the parent element. */
     color: rgba(249, 251, 242, 1);
     font-size: 1.6rem;
     text-decoration: none;
+    padding: 0.8rem 5rem;
     border: 0.2rem solid rgba(112, 44, 72, 1);
     border-radius: 0.5rem;
     -moz-transition-duration: 0.15s;
@@ -240,7 +241,7 @@ the parent element. */
     font-size: 1.6rem;
     font-family: 'Josefin Sans', Verdana, sans-serif;
     text-decoration: none;
-    padding: 0.8rem 2.4rem;
+    padding: 0.8rem 5rem;
     border: 0.2rem solid rgba(164, 181, 197, 1);
     border-radius: 0.5rem;
     -moz-transition-duration: 0.15s;
@@ -251,6 +252,10 @@ the parent element. */
   a.btn:hover {
     background-color: rgba(249, 251, 242, 1);
     border: 0.2rem solid rgba(41, 30, 53, 1);
+  }
+
+  a.btn.back-btn {
+    padding: 0.8rem 10rem;
   }
 
   a.btn.new {
