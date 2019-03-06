@@ -6,11 +6,11 @@
 
 ### User Model
 
-- [ ] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
+- [x] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ### Medication Model
 
-- [ ] Consider start/end date input and storage format. Find out how the `date` datatype is accepted and processed.
+- [x] Consider start/end date input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ## All Controllers
 
@@ -60,7 +60,7 @@
 ### All Forms
 
 - [x] Use nested hashes.
-- [ ] Fix dates.
+- [x] Fix dates.
 - [ ] Populate edit forms.
 - [ ] Populate error submissions.
 
@@ -85,7 +85,7 @@
 ### Blog Post
 
 - [ ] Turn `journal.md` into blog post.
-- [ ] Write post for About page.
+- [x] Write post for About page.
 
 ### Videos
 
