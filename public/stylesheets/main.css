@@ -51,8 +51,24 @@ the parent element. */
     margin-left: 1.5rem;
   }
 
+  /* --- FontAwesome Icon Styling --- */
+
+  div.fa-icons {
+    margin-top: 3.5rem;
+  }
+
+  span.fab, span.fas {
+    color: #DCA0A8;
+    font-size: 3rem;
+    margin-right: 1rem;
+  }
+
   span.ask {
     float: right;
+  }
+
+  span.fab:hover, span.fas:hover {
+    color: rgba(164, 181, 197, 1);
   }
 
   /* --- Base-Level Styling --- */
