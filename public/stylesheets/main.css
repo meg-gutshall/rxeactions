@@ -105,6 +105,13 @@ the parent element. */
     margin-bottom: 1.2rem;
   }
 
+  h4 {
+    font-family: 'Josefin Sans', Arial, sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
   a {
     color: rgba(175, 68, 112, 1);
     font-weight: bold;
