@@ -19,7 +19,6 @@ class ReactionsController < ApplicationController
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
     @reax = Reaction.create(params[:reax])
-    # TODO: Add currently_taking: @med.currently_taking
     @reax.update(medication_id: @med.id, dosage_amount: @med.dosage_amount, usage_instructions: @med.usage_instructions)
     redirect "/medications/#{@med.slug}/reactions-#{@reax.id}"
   end
