@@ -8,36 +8,16 @@
 </div>
 
 <div class="row">
-  <div class="col-6 col-md-3"> <p>Dosage Amount:</p> </div>
-  <div class="col-6 col-md-3"> <p><%= @med.dosage_amount %></p> </div>
-  <div class="col-6 col-md-3"> <p>Dosage Form:</p> </div>
-  <div class="col-6 col-md-3"> <p><%= @med.dosage_form %></p> </div>
-</div>
-
-<div class="row">
-  <div class="col-6 col-md-3"> <p>Usage Instructions:</p> </div>
-  <div class="col-6 col-md-3"> <%= @med.usage_instructions %></p> </div>
-  <div class="col-6 col-md-3"> <p>Ailment Treated:</p> </div>
-  <div class="col-6 col-md-3"> <%= @med.ailment_treated %></p> </div>
-</div>
-
-<div class="row">
-  <% if @med.start_date %>
-    <div class="col-6 col-md-3"> <p>Start Date:</p> </div>
-    <div class="col-6 col-md-3"> <p><%= @med.start_date.strftime("%B %Y") %></p> </div>
-    <div class="col-6 col-md-3"> <p>End Date:</p> </div>
-    <% if @med.end_date %>
-      <div class="col-6 col-md-3"> <p><%= @med.end_date.strftime("%B %Y") %></p> </div>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="row">
-  <div class="col-6 col-md-3"> <p>Currently Taking?</p> </div>
-  <div class="col-6 col-md-3"> <p><%= @med.currently_taking %></p> </div>
-  <% if !@med.prescribing_doctor.empty? %>
-    <div class="col-6 col-md-3"> <p>Prescribing Doctor:</p> </div>
-    <div class="col-6 col-md-3"> <p><%= @med.prescribing_doctor %></p> </div>
+  <% if @med.currently_taking %>
+    <div class="col-12">
+      <p>I am currently taking <%= @med.name %> at a dosage of <%= @med.dosage_amount %> in <%= @med.dosage_form %> form. My usage instructions are as follows: <%= @med.usage_instructions %></p>
+      <p>The purpose of using this medication is for <%= @med.ailment_treated %>. <% if @med.start_date %>I began taking <%= @med.name %> in <%= @med.start_date.strftime("%B %Y") %>.<% end %> <% if !@med.prescribing_doctor.empty? %><%= @med.prescribing_doctor %> is my prescribing doctor.<% end %></p>
+    </div>
+  <% else %>
+    <div class="col-12">
+      <p>I am no longer taking <%= @med.name %>. My last dosage was <%= @med.dosage_amount %> in <%= @med.dosage_form %> form. My most recent usage instructions were as follows: <%= @med.usage_instructions %></p>
+      <p>The purpose of using this medication was for <%= @med.ailment_treated %>. <% if @med.start_date %>I began taking <%= @med.name %> in <%= @med.start_date.strftime("%B %Y") %> and ended in <% if @med.end_date %><%= @med.end_date.strftime("%B %Y") %><% end %>.<% end %> <% if !@med.prescribing_doctor.empty? %><%= @med.prescribing_doctor %> prescribed me this medication.<% end %></p>
+    </div>
   <% end %>
 </div>
 

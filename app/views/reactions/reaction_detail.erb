@@ -14,30 +14,39 @@
 </div>
 
 <div class="row">
-  <div class="col-3"> <p>Entry created at:</p> </div>
-  <div class="col-9"> <p><%= @reax.created_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>
+  <div class="col-2"> <p>Entry created at:</p> </div>
+  <div class="col-10"> <p><%= @reax.created_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>
 </div>
 
 <% if @reax.updated_at != @reax.created_at %>
   <div class="row">
-    <div class="col-3"> <p>Entry updated at:</p> </div>
-    <div class="col-9"> <p><%= @reax.updated_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>
+    <div class="col-2"> <p>Entry updated at:</p> </div>
+    <div class="col-10"> <p><%= @reax.updated_at.strftime("%A, %B %d, %Y %I:%M %p") %></p> </div>
   </div>
 <% end %>
 
 <div class="row">
-  <div class="col-3"> <p>Reaction:</p> </div>
-  <div class="col-9"> <p><%= @reax.reaction_detail %></p> </div>
+  <div class="col-2"> <p>Reaction:</p> </div>
+  <div class="col-10"> <p><%= @reax.reaction_detail %></p><br> </div>
 </div>
 
 <div class="row">
-  <div class="col-3"> <p>Dosage Amount:</p> </div>
+  <div class="col-3"> <p>Dosage Amount at Time of Entry:</p> </div>
   <div class="col-9"> <p><%= @reax.dosage_amount %></p> </div>
 </div>
 
 <div class="row">
-  <div class="col-3"> <p>Usage Instructions:</p> </div>
+  <div class="col-3"> <p>Usage Instructions at Time of Entry:</p> </div>
   <div class="col-9"> <p><%= @reax.usage_instructions %></p> </div>
+</div>
+
+<div class="row">
+  <div class="col-3"> <p>Present Medication Status:</p> </div>
+  <% if @med.currently_taking %>
+    <div class="col-9"> <p><%= @med.name %> is on your list of current medications</p> </div>
+  <% else %>
+    <div class="col-9"> <p><%= @med.name %> is on your list of previous medications</p> </div>
+  <% end %>
 </div>
 
 <div class="row justify-content-center">
