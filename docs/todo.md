@@ -80,7 +80,7 @@
 
 ### README.md
 
-- [ ] Update `README.md` with project info.
+- [x] Update `README.md` with project info.
 
 ### Blog Post
 
@@ -89,5 +89,5 @@
 
 ### Videos
 
-- [ ] Record 30-minute live coding video.
+- [x] Record 30-minute live coding video.
 - [ ] Record walkthrough video.
