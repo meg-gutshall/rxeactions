@@ -61,8 +61,7 @@
 
 - [x] Use nested hashes.
 - [x] Fix dates.
-- [ ] Populate edit forms.
-- [ ] Populate error submissions.
+- [x] Populate edit forms.
 
 #### Login & Signup Forms
 
@@ -90,4 +89,4 @@
 ### Videos
 
 - [x] Record 30-minute live coding video.
-- [ ] Record walkthrough video.
+- [x] Record walkthrough video.
