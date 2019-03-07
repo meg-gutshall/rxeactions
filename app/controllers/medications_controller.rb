@@ -36,7 +36,6 @@ class MedicationsController < ApplicationController
     user_check_stray
     @med.update(currently_taking: "false")
     @med.update(end_date: Time.now)
-    binding.pry
     redirect "/medications/#{@med.slug}/reactions/new"
   end
 
