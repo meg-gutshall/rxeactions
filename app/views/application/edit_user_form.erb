@@ -1,9 +1,9 @@
 <form method="POST" action="/users/dashboard-<%= @user.id %>">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
 
   <div class="form-row">
     <div class="form-group col-12">
       <p>Required fields are followed by <strong class="req">*</strong>.</p>
-      <input id="hidden" type="hidden" name="_method" value="PATCH">
     </div>
   </div>
 
@@ -36,9 +36,13 @@
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-12">
-      <input class="btn" type="submit" value="Save Edits">
+  <div class="form-group row align-items-end edit-user-form">
+    <label for="pwd" class="col-auto col-form-label">Enter password to save edits: <strong class="req">*</strong></label>
+    <div class="col-4 mr-auto">
+      <input id="pwd" class="form-control" type="password" name="user[password]" value="<%= @user.password %>" required>
+    </div>
+    <div class="col-auto">
+      <input class="btn edit-user-form" type="submit" value="Save Edits">
     </div>
   </div>
 

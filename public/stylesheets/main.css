@@ -236,6 +236,13 @@ the parent element. */
     color: rgba(175, 68, 112, 1);
   }
 
+  input.btn.edit-user-form {
+    font-size: 1.6rem;
+    padding: 0.4rem 2.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   input.delete-btn {
     background-color: rgba(112, 44, 72, 1);
     color: rgba(249, 251, 242, 1);
@@ -284,6 +291,10 @@ the parent element. */
   }
 
   /* --- Form Styling --- */
+
+  div.edit-user-form {
+    min-height: 6rem;
+  }
 
   .form-group {
     margin-bottom: 1.5rem;
