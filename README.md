@@ -1,87 +1,34 @@
-# Project Title
+# Rxeactions
 
-One paragraph of project description goes here
+Rxeactions is a digital journal that allows users to privately track medications they’ve been prescribed as well as side effects, thoughts, and feelings associated with those medications.
 
-## Getting Started
+## Installation
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Fork the [rxeactions repo](https://github.com/meg-gutshall/rxeactions) and clone it down to your computer. In the terminal, `cd` to the rxeactions root folder. Run `bundle install` to load the required Ruby gems and dependencies. Then type in `rake db:migrate` to create a new database from the migration tables stored under `db/migrate`. Type `rake db:seed` if you'd like to pre-populate the app with seed data.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```ruby
-#Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```ruby
-#Give the example
-```
-
-And repeat
-
-```ruby
-#until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```ruby
-#Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```ruby
-#Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+To deploy the Rxeactions web app locally, type `shotgun` into your terminal and open your browser to `localhost:9393`. From there, you'll be able to navigate and interact with the app as if it were live.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Ruby](https://www.ruby-lang.org/en/) - The programming language used
+* [Sinatra](http://sinatrarb.com/) and [ActiveRecord](https://apidock.com/rails/ActiveRecord/Base) - The Ruby frameworks used
+* [Bootstrap](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), and [GoogleFonts](https://fonts.google.com/) - The styling tools used
+* And don't forget good old HTML5 and CSS3! <3
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Issues and pull requests are welcome at [https://github.com/meg-gutshall/rxeactions](https://github.com/meg-gutshall/rxeactions). This project as well as all other content on my GitHub are intended to be safe, welcoming, and open for collaboration. Users are expected to adhere to the [Contributor Covenant code of conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct) and those that do not will be reported and blocked. I got no time for that nonsense.
 
-## Versioning
+## Author
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+**[Meg Gutshall](https://github.com/meg-gutshall/)**
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/meg-gutshall/rxeactions/blob/master/LICENSE.md) file for details.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* [Flatiron School](https://flatironschool.com/) for making my ass do this project in the first place
+* Dr. Gruenberg for getting me on the right medications and helping me get my life back in order
+* My parents for giving me the means to see Dr. Gruenberg as a patient and being supportive in my recovery
