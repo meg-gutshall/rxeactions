@@ -1,12 +1,19 @@
 class SessionsController < ApplicationController
 
-  # Renders a login form
+  # Conditionally redirect to the home page where a signup form is displayed
+  # The input from this form will go to the users_controller.rb
+  get '/signup' do
+    redirect "/users/dashboard-#{current_user.id}" if logged_in?
+    redirect "/"
+  end
+  
+  # Conditionally redirect to the home page where a login form is displayed
   get '/login' do
     redirect "/users/dashboard-#{current_user.id}" if logged_in?
     redirect "/"
   end
 
-  # Receives the input from the login form and creates a new session
+  # Receive the input from the login form and create a new session
   post '/login' do
     # Find the user
     @user = User.find_by(email: params[:user][:email])
@@ -25,34 +32,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  # Renders a signup form
-  # The input from this form will go to the users_controller
-  get '/signup' do
-    redirect "/users/dashboard-#{current_user.id}" if logged_in?
-    redirect "/"
-  end
-  
-  # Receives information from the sessions login form, creates a new user, then renders their dashboard
-  post '/users' do
-    # Create user object based on params passed in from new user form
-    @user = User.new
-    @user.update(params[:user])
-    # Validate params using a helper method and ActiveRecord validations
-    if @user.errors[:email].any?
-      flash[:alert] = "There is already an account associated with this email address."
-      redirect "/"
-    elsif @user.errors[:password].any?
-      flash[:alert] = "Your password must be between 6 and 20 characters long."
-      redirect "/"
-    else
-    # Log user in
-    session[:user_id] = @user.id
-    # Redirect
-    redirect "/users/dashboard-#{@user.id}"
-    end
-  end
-
-  # Clears the current session
+  # Clear the current session
   get '/logout' do
     session.clear
     redirect "/"
