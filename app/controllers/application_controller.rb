@@ -3,7 +3,7 @@ require './config/environment'
 class ApplicationController < Sinatra::Base
 
   configure do
-    # Enable the use of sessions and call the session_secret ENV variable
+    # Enable the use of sessions
     enable :sessions
     set :session_secret, "eggs4megs"
     # Set app configurations
