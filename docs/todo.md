@@ -30,6 +30,9 @@
 ## All Views
 
 - [x] Make sure Flash alerts work.
+- [ ] Make mobile-friendly.
+- [ ] Create breakpoint displays.
+- [ ] Display local time instead of UTC.
 
 ### Home Page
 
@@ -43,11 +46,13 @@
 
 - [ ] Display reactions newest added to oldest.
 - [ ] Add pop-up second check for delete action.
+- [ ] Use Bootstrap cards.
 
 ### Reaction Detail Page
 
 - [ ] Display reactions newest added to oldest.
 - [ ] Add pop-up second check for delete action.
+- [ ] Use Bootstrap cards.
 
 ### Nav Bar
 
