@@ -6,7 +6,7 @@
 
 ### User Model
 
-- [x] Consider birthdate input and storage format. Find out how the `date` datatype is accepted and processed.
+- [x] Consider birth date input and storage format. Find out how the `date` datatype is accepted and processed.
 
 ### Medication Model
 

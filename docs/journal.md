@@ -14,7 +14,7 @@ I did, however, learn a LOT about ActiveRecord validations and associations by r
 
 ## Sun, Feb 17
 
-I learned how to build out seed files and create custom Rake tasks using namespacing options to seed my database with those files. I created three different seed files, one for each of my models. I know you don't have to do that but it helped me to seed my database one class at a time and play around with the data and see how the associations were working one layer at a time rather than just loading it all up at once and having this big tangled mess to sort through.
+I learned how to build out seed files and create custom Rake tasks using name spacing options to seed my database with those files. I created three different seed files, one for each of my models. I know you don't have to do that but it helped me to seed my database one class at a time and play around with the data and see how the associations were working one layer at a time rather than just loading it all up at once and having this big tangled mess to sort through.
 
 I created a bunch of view erb files as well as all of my controllers, I just haven't coded them out yet. I DID code out my `ApplicationController` which holds my configure block as well as my homepage route and some helper methods. In the configure block, I enabled sessions and set my session secret using the Sysrandom gem. I also set the paths for other files my controller will need access to throughout running the app. I created my `current_user` and `logged_in?` helper methods which I'll be able to call on throughout my app as well.
 
