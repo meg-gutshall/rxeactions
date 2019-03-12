@@ -88,7 +88,7 @@
 
 ### Blog Post
 
-- [ ] Turn `journal.md` into blog post.
+- [x] Turn `journal.md` into blog post.
 - [x] Write post for About page.
 
 ### Videos
