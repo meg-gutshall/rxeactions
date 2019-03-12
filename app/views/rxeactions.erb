@@ -1,6 +1,7 @@
 <div class="row">
   <% @title = "Rxeactions | Home" %>
 
+  <%# Flash message for errors %>
   <% if flash[:alert] != nil %>
     <div class="col-12 justify-content-center alert alert-dark" role="alert">
       <%= flash[:alert] %>
@@ -8,6 +9,7 @@
   <% end %>
 </div>
 
+<%# Welcome message %>
 <div class="row justify-content-center">
   <div class="col-9 headline">
     <h1 class="headline">Welcome to Rxeactions!</h1>
@@ -18,6 +20,7 @@
   </div>
 </div>
 
+<%# About page info buttons %>
 <div class="row justify-content-center">
   <div class="text-center col-4">
     <a class="btn" href="/about">How To Use</a>
@@ -30,6 +33,7 @@
   </div>
 </div>
 
+<%# Sign Up/Log In %>
 <div class="row">
   <div class="col-12">
     <h2>To get started, either sign up or log in.</h2>
