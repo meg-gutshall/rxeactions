@@ -10,7 +10,7 @@ Fork the [rxeactions repo](https://github.com/meg-gutshall/rxeactions) and clone
 
 To deploy the Rxeactions web app locally, type `shotgun` into your terminal and open your browser to `localhost:9393`. From there, you'll be able to navigate and interact with the app as if it were live. Don't forget to return to your terminal and type `Ctrl + C` to stop your session when you're done!
 
-<iframe width="100%" height="400px" src="https://youtu.be/8eX_lv9Lwfk" frameborder="0" scrolling="no"></iframe>
+[![Demo video](https://img.youtube.com/vi/xRKItzdbQwk/0.jpg)](https://youtu.be/xRKItzdbQwk)
 
 ## Built With
 
