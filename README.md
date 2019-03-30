@@ -14,8 +14,6 @@ To deploy the Rxeactions web app locally, type `shotgun` into your terminal and 
 
 [![Demo video](https://img.youtube.com/vi/xRKItzdbQwk/0.jpg)](https://youtu.be/xRKItzdbQwk)
 
-<iframe width="100%" frameborder="0" src="https://www.youtube.com/embed/xRKItzdbQwk" allowfullscreen></iframe>
-
 ## Built With
 
 * [Ruby](https://www.ruby-lang.org/en/) - The programming language used
