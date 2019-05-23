@@ -4,7 +4,7 @@ Rxeactions is a digital journal that allows users to privately track medications
 
 ## Installation & Setup
 
-Fork the [rxeactions repo](https://github.com/meg-gutshall/rxeactions) and clone it down to your computer. In the terminal, `cd` to the rxeactions root folder. Run `bundle install` to load the required Ruby gems and dependencies. Then type in `rake db:migrate` to create a new database from the migration tables stored under `db/migrate`. Type `rake db:seed` if you'd like to pre-populate the app with seed data.
+Fork the [rxeactions repo](https://github.com/meg-gutshall/rxeactions) and clone it down to your computer. In the terminal, `cd` to the rxeactions root folder. Run `bundle install` to load the required Ruby gems and dependencies. Then type in `rake db:migrate` to create a new database from the migration tables stored under `db/migrate`. Type `rake db:seed` if you'd like to pre-populate the app with seed data. Look in `db/seeds/1-users.rb` for login information to explore a pre-populated account.
 
 ## Usage
 
@@ -18,6 +18,7 @@ To deploy the Rxeactions web app locally, type `shotgun` into your terminal and 
 
 * [Ruby](https://www.ruby-lang.org/en/) - The programming language used
 * [Sinatra](http://sinatrarb.com/) and [ActiveRecord](https://apidock.com/rails/ActiveRecord/Base) - The Ruby frameworks used
+* [SQLite](https://www.sqlite.org/index.html) - The database management system used
 * [Bootstrap 4](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), and [GoogleFonts](https://fonts.google.com/) - The styling tools used
 * And don't forget good old HTML5 and CSS3! <3
 
