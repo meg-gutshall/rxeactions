@@ -4,5 +4,10 @@
     "fwitter",
     "reaxtions",
     "sysrandom"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1D312F",
+    "titleBar.activeBackground": "#294441",
+    "titleBar.activeForeground": "#FAFCFC"
+  }
 }

@@ -20,6 +20,7 @@
   - All users can view doctors’ info
   - Can view their prescribed medications and details of the user it belongs to
 - Reminder/alarm to take medication
+  - Check box for after you take it
 - Add family members function
 - Track the quantity of a medication and when the user will need a refill
   - Possibly send an alert to the prescribing doctor
