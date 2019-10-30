@@ -1,0 +1,8 @@
+# VS Code file
+.vscode
+
+# dotenv
+.env
+
+# Mac files
+.DS_Store
