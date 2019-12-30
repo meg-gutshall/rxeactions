@@ -12,3 +12,6 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'sinatra-flash', '~> 0.3.0'
+
+# Fix rack gem vulnerability
+gem 'rack', '>= 2.0.8'
