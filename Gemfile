@@ -18,7 +18,7 @@ gem 'sinatra-flash', '~> 0.3.0'
 gem 'rack', '>= 2.0.8'
 
 group :development do
-  gem 'sqlite3', '~> 1.3.6'
+  gem 'sqlite3', '~> 1.3.13'
 end
 
 group :production do
