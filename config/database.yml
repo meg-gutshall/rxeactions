@@ -1,16 +1,17 @@
 development:
   adapter: postgresql
   database: rxeactions_development
-  pool: 5
+  pool: <%= ENV['MAX_THREADS'] || 5 %>
   timeout: 5000
 test:
   adapter: postgresql
   database: rxeactions_test
-  pool: 5
+  pool: <%= ENV['MAX_THREADS'] || 5 %>
   timeout: 5000
 
 production:
   adapter: postgresql
   database: rxeactions_production
-  pool: 5
+  pool: <%= ENV['MAX_THREADS'] || 5 %>
   timeout: 5000
+  url:  <%= ENV["DATABASE_URL"] %>
