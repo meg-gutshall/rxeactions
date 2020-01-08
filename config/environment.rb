@@ -1,21 +1,10 @@
-# Set Rack ENV variable
-ENV['RACK_ENV'] ||= "production"
-
 # Require Gemfile and bundle gems with dependencies
 require 'bundler/setup'
-Bundler.require(:default, ENV['RACK_ENV'].to_sym)
+Bundler.require(:default)
+require 'active_record'
 
 # Establish connection with the database
-db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-
-ActiveRecord::Base.establish_connection(
-  :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
-  :host     => db.host,
-  :username => db.user,
-  :password => db.password,
-  :database => db.path[1..-1],
-  :encoding => 'utf8'
-)
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
 # Require ApplicationController before all other files
 require './app/controllers/application_controller'

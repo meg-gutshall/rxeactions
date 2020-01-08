@@ -14,4 +14,4 @@ production:
   database: rxeactions_production
   pool: <%= ENV['MAX_THREADS'] || 5 %>
   timeout: 5000
-  url:  <%= ENV["DATABASE_URL"] %>
+  url:  <%= ENV['DATABASE_URL'] %>
