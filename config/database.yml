@@ -1,14 +1,16 @@
 development:
-  adapter: sqlite3
-  database: database.db
-
+  adapter: postgresql
+  database: rxeactions_development
+  pool: 5
+  timeout: 5000
 test:
-  adapter: sqlite3
-  database: database.db
+  adapter: postgresql
+  database: rxeactions_test
+  pool: 5
+  timeout: 5000
 
 production:
   adapter: postgresql
-  database: rxeactions-production
-  username: username
-  password: password
-  host: localhost
+  database: rxeactions_production
+  pool: 5
+  timeout: 5000
