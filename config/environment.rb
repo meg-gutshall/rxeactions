@@ -3,7 +3,7 @@ ENV['SINATRA_ENV'] ||= "development"
 
 # Require Gemfile and bundle gems with dependencies
 require 'bundler/setup'
-Bundler.require(:default, ENV['SINATRA_ENV'])
+# Bundler.require(:default, ENV['SINATRA_ENV'])
 
 # Establish connection with the database
 configure :development do
