@@ -38,6 +38,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.6.0)
     rake (13.0.1)
     require_all (3.0.0)
     ripl (0.7.1)
@@ -87,6 +88,7 @@ DEPENDENCIES
   pry
   puma
   rack (>= 2.0.8)
+  rack-timeout
   rake
   require_all
   shotgun
