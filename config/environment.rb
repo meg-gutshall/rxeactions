@@ -1,6 +1,9 @@
+# Set Rack ENV variable
+ENV['RACK_ENV'] ||= "production"
+
 # Require Gemfile and bundle gems with dependencies
 require 'bundler/setup'
-# Bundler.require(:default, ENV['RACK_ENV'])
+Bundler.require(:default)
 
 # Establish connection with the database
 db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
