@@ -4,7 +4,7 @@ Bundler.require(:default)
 require 'active_record'
 
 # Establish connection with the database
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/rxeactions_development')
 
 # Require ApplicationController before all other files
 require './app/controllers/application_controller'
