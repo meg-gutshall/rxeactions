@@ -8,13 +8,11 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'pg'
 gem 'activerecord-postgresql-adapter'
-gem 'rack-timeout', require: 'rack/timeout/base'
 gem 'require_all'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
-gem 'tux'
 gem 'sinatra-flash', '~> 0.3.0'
 
 # Fix rack gem vulnerability
