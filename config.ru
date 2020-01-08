@@ -1,4 +1,5 @@
 require './config/environment'
+require 'rack-timeout'
 
 if ActiveRecord::Base.connection.migration_context.needs_migration?
   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
@@ -12,4 +13,8 @@ use ReactionsController
 use MedicationsController
 use UsersController
 use SessionsController
+
+# Add Rack timeout Middleware
+use Rack::Timeout, service_timeout: 15
+
 run ApplicationController
