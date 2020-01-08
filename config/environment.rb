@@ -1,6 +1,9 @@
+# Set Rack env variable
+ENV['RACK_ENV'] = "production"
+
 # Require Gemfile and bundle gems with dependencies
 require 'bundler/setup'
-Bundler.require(:default)
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 require 'active_record'
 
 # Establish connection with the database
