@@ -71,6 +71,7 @@
 #### Login & Signup Forms
 
 - [x] Link login form to signup form and vice versa in case the user navigated to the wrong page.
+- [ ] Make login case-insensitive and keep password case-sensitive.
 
 #### New User Signup Form
 
