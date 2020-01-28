@@ -44,11 +44,9 @@ class ApplicationController < Sinatra::Base
   end
 
   def user_check_stray
+    user_check
     if Medication.find_by_slug(params[:slug]).user_id != current_user.id
       flash[:alert] = "You do not have permission to view or edit other users' content."
-      redirect "/"
-    elsif !logged_in?
-      flash[:alert] = "You have been logged out of your session. Please log back in to continue."
       redirect "/"
     end
   end
