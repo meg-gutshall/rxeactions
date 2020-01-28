@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   # Display the current user's information, medications, and reactions
   get '/users/dashboard-:id' do
     @user = User.find_by(id: params[:id])
-    user_check_stray
+    user_stray
     # Make sure the user exists in the current user is trying to view their own info
     if @user && @user.id == current_user.id
       @meds = @user.medications
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   # Render the user edit form for the current user
   get '/users/dashboard-:id/edit' do
     @user = User.find_by(id: params[:id])
-    user_check_stray
+    user_stray
     # Make sure the user exists in the current user is trying to edit their own info
     if @user && @user.id == current_user.id
       erb :'/users/edit_user'
@@ -44,14 +44,14 @@ class UsersController < ApplicationController
   # Receive information from the user edit form, update the user, then render their dashboard
   patch '/users/dashboard-:id' do
     @user = User.find_by(id: params[:id])
-    user_check_stray
+    user_stray
     @user.update(params[:user])
     redirect "/users/dashboard-#{@user.id}"
   end
 
   ## ========== HELPER METHODS ========== ##
 
-  def user_check_stray
+  def user_stray
     if !logged_in? || @user == nil
       flash[:alert] = "You have been logged out of your session. Please log back in to continue."
       redirect "/"
