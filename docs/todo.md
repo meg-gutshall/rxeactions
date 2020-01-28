@@ -17,7 +17,7 @@
 - [x] Can I wrap all of my controller routes in one validation or does it have to be separated per controller?
 - [x] Decide whether or not to use bang versions for methods that trigger validations (i.e. `create`, `save`, `update`). These methods will only save to the database if the object is valid, otherwise:
   - The bang versions (i.e. `create!`, `save!`, `update!`) raise an exception if the record is invalid.
-  - The non-bang versions dont: `save` and `update` return `false`, and `create` returns the object.
+  - The non-bang versions don't: `save` and `update` return `false`, and `create` returns the object.
 
 ### MedicationsController
 
@@ -59,7 +59,7 @@
 - [x] Create links to user dashboard, user's medications, about, and to log out.
 - [ ] Decide what kind of sticky I want for the navigation and when I want it to expand.
 - [ ] Determine active link.
-- [ ] Left align Logout link.
+- [ ] Left align logout link.
 - [x] Create validation to show nav bar only to logged in users.
 
 ### All Forms
