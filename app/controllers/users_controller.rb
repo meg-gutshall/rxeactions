@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     user_stray
     # Make sure the user exists in the current user is trying to view their own info
     if @user && @user.id == current_user.id
-      @meds = @user.medications
+      @current_meds = Medication.where(user_id: current_user.id).current.newest_first
       erb :'/users/user_dashboard'
     end
   end

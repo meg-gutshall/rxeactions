@@ -3,7 +3,9 @@ class MedicationsController < ApplicationController
   # List medications by user
   get '/medications' do
     user_check
-    @meds = Medication.all.select {|med| med.user_id == current_user.id}
+    @meds = Medication.where(user_id: current_user.id).abc_name
+    @current_meds = @meds.current.abc_name
+    @previous_meds = @meds.previous.abc_name
     erb :'/medications/list_medications'
   end
 

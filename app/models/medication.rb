@@ -7,6 +7,12 @@ class Medication < ActiveRecord::Base
   belongs_to :user
   has_many :reactions
 
+  # Create scopes
+  scope :current, -> { where(currently_taking: true) }
+  scope :previous, -> { where(currently_taking: false) }
+  scope :newest_first, -> { order(start_date: :desc) }
+  scope :abc_name, -> { order(:name) }
+
   # Create slug methods
   def slug
     name.downcase.gsub(" ","-") << "-#{id}"

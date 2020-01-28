@@ -1,19 +1,17 @@
 <%# Displays a list of all of the current user's current medications %>
 
 <div class="row">
-  <% @meds.each do |m| %>
-    <% if m.currently_taking %>
-        <div class="col-12 iteration">
-          <p><a href="/medications/<%= m.slug %>"><%= m.name %></a></p>
-          <p>Dosage Amount: <%= m.dosage_amount %></p>
-          <p>Dosage Form: <%= m.dosage_form %></p>
-          <p>Usage Purpose: <%= m.usage_purpose %></p>
-        </div>
-    <% end %>
+  <% @current_meds.each do |m| %>
+    <div class="col-12 iteration">
+      <p><a href="/medications/<%= m.slug %>"><%= m.name %></a></p>
+      <p>Dosage Amount: <%= m.dosage_amount %></p>
+      <p>Dosage Form: <%= m.dosage_form %></p>
+      <p>Usage Purpose: <%= m.usage_purpose %></p>
+    </div>
   <% end %>
 </div>
 
-<% if @meds.none? {|m| m.currently_taking == true} %>
+<% if @current_meds.none? %>
   <div class="row">
     <div class="col-12">
       <p>You are not current taking any medications</p>
