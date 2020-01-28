@@ -40,7 +40,7 @@
 
 ### User Dashboard
 
-- [ ] Display medications newest added to oldest.
+- [X] Display medications newest added to oldest.
 
 ### Medication Detail Page
 
