@@ -16,12 +16,12 @@ class UsersController < ApplicationController
     # Log user in
     session[:user_id] = @user.id
     # Redirect
-    redirect "/users/dashboard-#{@user.id}"
+    redirect "/users/#{@user.id}"
     end
   end
 
   # Display the current user's information, medications, and reactions
-  get '/users/dashboard-:id' do
+  get '/users/:id' do
     @user = User.find_by(id: params[:id])
     user_stray
     # Make sure the user exists in the current user is trying to view their own info
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   # Render the user edit form for the current user
-  get '/users/dashboard-:id/edit' do
+  get '/users/:id/edit' do
     @user = User.find_by(id: params[:id])
     user_stray
     # Make sure the user exists in the current user is trying to edit their own info
@@ -42,11 +42,11 @@ class UsersController < ApplicationController
   end
 
   # Receive information from the user edit form, update the user, then render their dashboard
-  patch '/users/dashboard-:id' do
+  patch '/users/:id' do
     @user = User.find_by(id: params[:id])
     user_stray
     @user.update(params[:user])
-    redirect "/users/dashboard-#{@user.id}"
+    redirect "/users/#{@user.id}"
   end
 
   ## ========== HELPER METHODS ========== ##

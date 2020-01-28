@@ -3,13 +3,13 @@ class SessionsController < ApplicationController
   # Conditionally redirect to the home page where a signup form is displayed
   # The input from this form will go to the users_controller.rb
   get '/signup' do
-    redirect "/users/dashboard-#{current_user.id}" if logged_in?
+    redirect "/users/#{current_user.id}" if logged_in?
     redirect "/"
   end
   
   # Conditionally redirect to the home page where a login form is displayed
   get '/login' do
-    redirect "/users/dashboard-#{current_user.id}" if logged_in?
+    redirect "/users/#{current_user.id}" if logged_in?
     redirect "/"
   end
 
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       # Log user in
       session[:user_id] = @user.id
-      redirect "/users/dashboard-#{@user.id}"
+      redirect "/users/#{@user.id}"
     else
       flash[:alert] = "The password you entered is incorrect. Please try again."
       redirect "/"

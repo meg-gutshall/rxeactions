@@ -15,7 +15,7 @@
     <% if !@user.known_allergies.empty? %><p>Allergies: <%= @user.known_allergies %><% end %></p>
 
     <div class="text-center">
-      <a class="btn" href="/users/dashboard-<%= @user.id %>/edit">Edit my user details</a>
+      <a class="btn" href="/users/<%= @user.id %>/edit">Edit my user details</a>
     </div>
 
     <h2>Current Medications</h2>

@@ -28,7 +28,7 @@
         <header>
           <nav class="navbar navbar-expand-md sticky-top">
             <a class="nav-item nav-link home" href="/">Rxeactions</a>
-            <% if logged_in? %> <a class="nav-item nav-link" href="/users/dashboard-<%= current_user.id %>">Dashboard</a> <% end %>
+            <% if logged_in? %> <a class="nav-item nav-link" href="/users/<%= current_user.id %>">Dashboard</a> <% end %>
             <% if logged_in? %> <a class="nav-item nav-link" href="/medications">Medications</a> <% end %>
             <a class="nav-item nav-link" href="/about">About</a>
             <% if logged_in? %> <a class="nav-item nav-link" href="/logout">Logout</a> <% end %>

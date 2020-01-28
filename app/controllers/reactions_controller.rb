@@ -21,11 +21,11 @@ class ReactionsController < ApplicationController
     @reax = @med.reactions.create(params[:reax])
     @reax.update(medication_id: @med.id, dosage_amount: @med.dosage_amount, usage_instructions: @med.usage_instructions)
     @med.update(updated_at: @reax.created_at)
-    redirect "/medications/#{@med.slug}/reactions-#{@reax.id}"
+    redirect "/medications/#{@med.slug}/reactions/#{@reax.id}"
   end
 
   # Show reaction details
-  get '/medications/:slug/reactions-:id' do
+  get '/medications/:slug/reactions/:id' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
     @reax = Reaction.find_by(id: params[:id])
@@ -33,7 +33,7 @@ class ReactionsController < ApplicationController
   end
 
   # Render the edit reaction form
-  get '/medications/:slug/reactions-:id/edit' do
+  get '/medications/:slug/reactions/:id/edit' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
     @reax = Reaction.find_by(id: params[:id])
@@ -41,16 +41,16 @@ class ReactionsController < ApplicationController
   end
   
   # Edit a reaction based on the input collected from the user
-  patch '/medications/:slug/reactions-:id' do
+  patch '/medications/:slug/reactions/:id' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
     @reax = Reaction.find_by(id: params[:id])
     @reax.update(params[:reax])
-    redirect "/medications/#{@med.slug}/reactions-#{@reax.id}"
+    redirect "/medications/#{@med.slug}/reactions/#{@reax.id}"
   end
 
   # Delete a reaction
-  delete '/medications/:slug/reactions-:id' do
+  delete '/medications/:slug/reactions/:id' do
     @med = Medication.find_by_slug(params[:slug])
     user_check_stray
     @reax = Reaction.find_by(id: params[:id])
