@@ -16,4 +16,4 @@ gem 'bcrypt'
 gem 'sinatra-flash', '~> 0.3.0'
 
 # Fix rack gem vulnerability
-gem 'rack', '>= 2.0.8'
+# gem 'rack', '>= 2.0.8'
