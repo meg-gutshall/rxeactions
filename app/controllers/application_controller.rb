@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
 
   # Returns the current user or 'nil' if none exists
   def current_user
-    User.find_by(id: session[:user_id])
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
   # Returns true or 'nil' if there is no current user
