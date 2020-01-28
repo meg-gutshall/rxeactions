@@ -1,5 +1,5 @@
 # Set Rack env variable
-ENV['RACK_ENV'] = "development"
+ENV['RACK_ENV'] = "production"
 
 # Require Gemfile and bundle gems with dependencies
 require 'bundler/setup'
