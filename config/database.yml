@@ -1,17 +1,21 @@
 development:
   adapter: postgresql
+  host: localhost
+  username: meghangutshall
   database: rxeactions_development
   pool: <%= ENV.fetch('MAX_THREADS') { 5 } %>
   timeout: 5000
 test:
   adapter: postgresql
+  host: localhost
+  username: meghangutshall
   database: rxeactions_test
   pool: <%= ENV.fetch('MAX_THREADS') { 5 } %>
   timeout: 5000
-
 production:
   adapter: postgresql
+  host: localhost
+  username: meghangutshall
   database: rxeactions_production
   pool: <%= ENV.fetch('MAX_THREADS') { 5 } %>
   timeout: 5000
-  url:  <%= ENV['DATABASE_URL'] %>

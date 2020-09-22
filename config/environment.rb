@@ -1,12 +1,12 @@
 # Set Rack env variable
-ENV['RACK_ENV'] = "production"
+ENV['RACK_ENV'] = "development"
 
 # Require Gemfile and bundle gems with dependencies
 require 'bundler/setup'
 Bundler.require(:default)
 
 # Establish connection with the database
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/rxeactions_development')
+ActiveRecord::Base.establish_connection("postgres://localhost/rxeactions_#{ENV['RACK_ENV']}")
 
 # Require ApplicationController before all other files
 require './app/controllers/application_controller'
