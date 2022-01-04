@@ -1,19 +1,16 @@
-source 'http://rubygems.org'
+source "http://rubygems.org"
 
-ruby '2.6.5'
+ruby "3.0.2"
 
-gem 'sinatra'
-gem 'activerecord', '~> 6.0.3', :require => 'active_record'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
-gem 'rake'
-gem 'pg'
-gem 'activerecord-postgresql-adapter'
-gem 'require_all'
-gem 'thin'
-gem 'shotgun'
-gem 'pry'
-gem 'bcrypt'
-gem 'sinatra-flash', '~> 0.3.0'
-
-# Fix rack gem vulnerability
-# gem 'rack', '>= 2.0.8'
+gem "sinatra", "~> 2.1"
+gem "activerecord", "~> 7.0"
+gem "sinatra-activerecord", "~> 2.0", ">= 2.0.25"
+gem "rake", "~> 13.0", ">= 13.0.6"
+gem "pg", "~> 1.2", ">= 1.2.3"
+gem "activerecord-postgresql-adapter", "~> 0.0.1"
+gem "require_all", "~> 3.0"
+gem "thin", "~> 1.8", ">= 1.8.1"
+gem "shotgun", "~> 0.9.2"
+gem "pry", "~> 0.14.1"
+gem "bcrypt", "~> 3.1", ">= 3.1.16"
+gem "sinatra-flash", "~> 0.3.0"
